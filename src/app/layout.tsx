@@ -1,0 +1,48 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "Quality Performance | Professional Paint Protection Film",
+    template: "%s | Quality Performance",
+  },
+  description:
+    "Professional PPF installation for dealerships and car owners. Protect your vehicle's paint with precision-cut, self-healing paint protection film.",
+  keywords: [
+    "PPF",
+    "paint protection film",
+    "car paint protection",
+    "dealership PPF",
+    "Quality Performance",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Quality Performance",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col font-sans">
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
