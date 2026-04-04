@@ -37,12 +37,20 @@ export default function Navbar() {
       const y = window.scrollY;
       setScrolled(y > 50);
 
-      // Hide on scroll down, show on scroll up (mobile only via CSS)
-      if (y > 80) {
-        setHidden(y > lastScrollY.current && y - lastScrollY.current > 5);
-      } else {
+      const delta = y - lastScrollY.current;
+
+      // Only change hidden state with a meaningful scroll delta to prevent bouncing
+      if (y <= 80) {
+        setHidden(false);
+      } else if (delta > 10) {
+        // Scrolling down — hide
+        setHidden(true);
+      } else if (delta < -10) {
+        // Scrolling up — show
         setHidden(false);
       }
+      // If delta is between -10 and 10, keep current state (no change)
+
       lastScrollY.current = y;
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -241,14 +249,15 @@ export default function Navbar() {
             </div>
           </button>
         </nav>
+      </header>
 
-        {/* Mobile Menu — Full-Screen Overlay (Fella-style) */}
-        <div
-          id="mobile-menu"
-          className={`fixed inset-0 z-[60] bg-[#0B1120] transition-opacity duration-300 ease-out lg:hidden ${
-            mobileOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-          }`}
-        >
+      {/* Mobile Menu — Full-Screen Overlay (outside header so translate doesn't affect it) */}
+      <div
+        id="mobile-menu"
+        className={`fixed inset-0 z-[60] bg-[#0B1120] transition-opacity duration-300 ease-out lg:hidden ${
+          mobileOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      >
           {/* Top Bar: Logo + Close */}
           <div className="flex items-center justify-between px-7 pt-5">
             <Link href="/" onClick={() => setMobileOpen(false)} className="flex shrink-0 items-center gap-2">
@@ -432,7 +441,6 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      </header>
 
     </>
   );
