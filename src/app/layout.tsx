@@ -44,6 +44,16 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.$zoho=window.$zoho||{};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}`,
+          }}
+        />
+        <script
+          id="zsiqscript"
+          src="https://salesiq.zohopublic.com/widget?wc=siq6ec4d50b83704d862cdf6a83484cc398f752ce0cd6cb61351717223771877edf"
+          defer
+        />
       </body>
     </html>
   );
