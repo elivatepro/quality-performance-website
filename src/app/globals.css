@@ -1,23 +1,36 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #2563EB;
-  --color-primary-hover: #1D4ED8;
-  --color-dark: #0F172A;
+  /* ─── Midnight Premium Palette ─── */
+  --color-gold: #C9A84C;
+  --color-gold-hover: #E8C95A;
+  --color-gold-subtle: rgba(201, 168, 76, 0.15);
+  --color-blue: #2563EB;
+  --color-blue-hover: #1D4ED8;
+
+  --color-dark: #0B1120;
   --color-dark-alt: #1E293B;
-  --color-text-primary: #0F172A;
-  --color-text-secondary: #64748B;
+  --color-dark-tertiary: #162032;
+
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #94A3B8;
+  --color-text-tertiary: #64748B;
   --color-text-on-dark: #F8FAFC;
-  --color-surface: #FFFFFF;
-  --color-surface-alt: #F8FAFC;
-  --color-border: #E2E8F0;
+  --color-text-on-dark-muted: #94A3B8;
+
+  --color-surface: #0B1120;
+  --color-surface-alt: #162032;
+  --color-surface-warm: #1E293B;
+
+  --color-border: #1E293B;
+  --color-border-dark: #334155;
   --color-success: #10B981;
   --color-error: #EF4444;
 
   --font-sans: var(--font-inter);
 
-  --shadow-card: 0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
-  --shadow-elevated: 0 4px 16px rgba(0,0,0,0.12), 0 12px 40px rgba(0,0,0,0.08);
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2);
+  --shadow-elevated: 0 4px 16px rgba(0,0,0,0.4), 0 12px 40px rgba(0,0,0,0.3);
 }
 
 html {
@@ -30,57 +43,92 @@ body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
 
-/* Scroll-triggered fade-in animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-.animate-fade-up {
-  animation: fadeUp 0.5s ease-out forwards;
-  opacity: 0;
-}
-
-.animate-fade-up-delay-1 {
-  animation: fadeUp 0.5s ease-out 0.1s forwards;
-  opacity: 0;
-}
-
-.animate-fade-up-delay-2 {
-  animation: fadeUp 0.5s ease-out 0.2s forwards;
-  opacity: 0;
-}
-
-.animate-fade-up-delay-3 {
-  animation: fadeUp 0.5s ease-out 0.3s forwards;
-  opacity: 0;
-}
-
-/* Hero text animation */
+/* ─── Hero text stagger animation ─── */
 @keyframes heroFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-hero {
-  animation: heroFadeIn 0.6s ease-out 0.2s forwards;
+  animation: heroFadeIn 0.6s ease-out 0.3s forwards;
   opacity: 0;
 }
 
-/* Count-up will be handled in JS, but the container needs this */
-@keyframes countUp {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ─── Scroll indicator bounce ─── */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(8px); opacity: 0.8; }
+}
+
+.animate-scroll-cue {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* ─── Marquee animation ─── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* ─── Protection map dot pulse ─── */
+@keyframes pulseRing {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+.animate-pulse-ring {
+  animation: pulseRing 2s ease-out infinite;
+}
+
+/* ─── Loading screen logo animation ─── */
+@keyframes logoPulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes logoShimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes loadingFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-logo-pulse {
+  animation: logoPulse 2s ease-in-out infinite;
+}
+
+.animate-logo-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(201, 168, 76, 0) 0%,
+    rgba(201, 168, 76, 0.3) 50%,
+    rgba(201, 168, 76, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: logoShimmer 2s ease-in-out infinite;
+}
+
+.animate-loading-in {
+  animation: loadingFadeIn 0.3s ease-out;
+}
+
+/* ─── Tabular figures for stat counters ─── */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }

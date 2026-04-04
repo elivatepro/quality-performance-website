@@ -3,82 +3,105 @@ import Image from "next/image";
 import { products } from "@/data/products";
 import AnimatedSection from "@/components/AnimatedSection";
 import StatCounter from "@/components/StatCounter";
+import HeroVideo from "@/components/HeroVideo";
+
+import ProtectionMapSection from "@/components/protection-map/ProtectionMapSection";
 import CTABlock from "@/components/CTABlock";
-import SectionHeading from "@/components/SectionHeading";
 
 export default function Home() {
   return (
     <>
-      {/* ─── HERO ─── */}
-      <section className="relative flex min-h-screen items-center bg-dark">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=1920&q=80"
-            alt="Premium vehicle close-up"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+      {/* ─── 1. HERO ─── */}
+      <section className="relative flex min-h-screen items-center justify-center bg-dark">
+        <div className="absolute inset-0 overflow-hidden">
+          <HeroVideo />
         </div>
+        <div className="relative mx-auto w-full max-w-[900px] px-6 py-32 text-center">
+          {/* Trust Badge */}
+          <div className="animate-hero mb-8 inline-flex items-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.06] px-4 py-2 backdrop-blur-sm">
+            <svg className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <span className="text-[13px] font-medium text-white/80">
+              Trusted by 50+ dealerships across 8 states
+            </span>
+          </div>
 
-        <div className="relative mx-auto w-full max-w-[1280px] px-6 py-32 lg:px-12">
-          <div className="max-w-2xl">
-            <h1
-              className="animate-hero text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl"
-              style={{ letterSpacing: "-0.03em" }}
+          <h1
+            className="animate-hero text-4xl font-bold leading-[1.1] text-white md:text-5xl lg:text-[64px]"
+            style={{ letterSpacing: "-0.03em", animationDelay: "0.15s" }}
+          >
+            Protect What You Invest In.
+          </h1>
+          <p
+            className="animate-hero mx-auto mt-6 max-w-[620px] text-base leading-relaxed text-white/65 md:text-lg"
+            style={{ animationDelay: "0.35s" }}
+          >
+            Professional paint protection film installations for dealerships and
+            vehicle owners. Self-healing, virtually invisible, backed by a
+            5&#8209;year warranty.
+          </p>
+          <div
+            className="animate-hero mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            style={{ animationDelay: "0.55s" }}
+          >
+            <Link
+              href="/contact"
+              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-8 py-[14px] text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.03]"
             >
-              Precision Paint Protection for Every Vehicle.
-            </h1>
-            <p className="animate-hero mt-6 text-lg text-white/70 md:text-xl" style={{ animationDelay: "0.3s" }}>
-              Professional PPF installation serving dealerships and car owners
-              across multiple US states. Protect what matters.
-            </p>
-            <div className="animate-hero mt-8 flex flex-col gap-4 sm:flex-row" style={{ animationDelay: "0.4s" }}>
-              <Link
-                href="/for-dealerships"
-                className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-primary-hover hover:scale-[1.02]"
-              >
-                For Dealerships
-              </Link>
-              <Link
-                href="/for-car-owners"
-                className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-white hover:text-dark"
-              >
-                For Car Owners
-              </Link>
-            </div>
+              Get a Free Quote
+              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg
-            className="h-6 w-6 text-white/40"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+        {/* Logo Strip at bottom of hero */}
+        <div className="absolute bottom-0 left-0 right-0 border-t border-white/[0.06] bg-dark/40 backdrop-blur-sm">
+          <div className="mx-auto flex max-w-[1280px] items-center justify-center gap-10 overflow-hidden px-6 py-5 md:gap-16 lg:px-12">
+            {["Made in the USA", "5-Year Warranty", "Self-Healing", "100K+ Installs", "Certified Pros"].map((item, i) => (
+              <span
+                key={item}
+                className="shrink-0 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[2px] text-white/30 md:text-[12px]"
+              >
+                {i > 0 && <span className="mr-10 text-white/15 md:mr-16">✦</span>}
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ─── TRUST BAR ─── */}
-      <section className="bg-white py-12">
+      {/* ─── 2. MARQUEE STRIP ─── */}
+      <section className="overflow-hidden bg-dark py-4">
+        <div className="animate-marquee flex whitespace-nowrap">
+          {[...Array(2)].map((_, rep) => (
+            <div key={rep} className="flex shrink-0 items-center gap-12 px-6">
+              {["MADE IN THE USA", "5-YEAR WARRANTY", "SELF-HEALING TECHNOLOGY", "100,000+ INSTALLATIONS", "CERTIFIED INSTALLERS", "MADE IN THE USA", "5-YEAR WARRANTY", "SELF-HEALING TECHNOLOGY", "100,000+ INSTALLATIONS", "CERTIFIED INSTALLERS"].map((text, i) => (
+                <span key={`${rep}-${i}`} className="flex items-center gap-12 text-sm font-semibold uppercase tracking-[3px] text-gold/70">
+                  {text}
+                  <span className="text-gold/30">✦</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ─── 3. TRUST BAR ─── */}
+      <section className="bg-dark py-14">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <AnimatedSection>
-            <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16">
+            <div className="flex flex-col items-center justify-center gap-10 md:flex-row md:gap-0">
               {[
-                { value: "50+", label: "Dealerships Served" },
-                { value: "8", label: "States Covered" },
-                { value: "10,000+", label: "Installs Completed" },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="text-2xl font-bold text-text-primary">{stat.value}</div>
-                  <div className="mt-1 text-sm text-text-secondary">{stat.label}</div>
+                { value: "100,000+", label: "INSTALLATIONS" },
+                { value: "50+", label: "DEALERSHIPS SERVED" },
+                { value: "8", label: "STATES COVERED" },
+              ].map((stat, i) => (
+                <div key={stat.label} className={`flex-1 text-center ${i > 0 ? "md:border-l md:border-border" : ""}`}>
+                  <div className="text-[42px] font-bold leading-none text-gold tabular-nums">{stat.value}</div>
+                  <div className="mt-2 text-[13px] font-medium uppercase tracking-[1.5px] text-text-secondary">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -86,146 +109,183 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── AUDIENCE SPLIT ─── */}
+      {/* ─── 4. AUDIENCE SPLIT ─── */}
       <section className="bg-surface-alt py-20 md:py-28">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <AnimatedSection>
-            <SectionHeading
-              label="Who We Serve"
-              title="Protection Tailored to Your Needs"
-              description="Whether you manage a dealership fleet or own a single vehicle, we deliver professional PPF installation with precision and care."
-            />
+            <div className="mb-12 text-center">
+              <p className="mb-3 text-[13px] font-semibold uppercase tracking-[2px] text-gold">Who We Serve</p>
+              <h2 className="text-3xl font-bold text-text-primary md:text-4xl" style={{ letterSpacing: "-0.02em" }}>Two Audiences, One Standard of Excellence</h2>
+              <p className="mx-auto mt-4 max-w-[640px] text-lg text-text-secondary">Whether you manage a dealership fleet or own a single vehicle, we deliver professional PPF installation with precision and care.</p>
+            </div>
           </AnimatedSection>
-
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {/* Dealership Card */}
             <AnimatedSection delay={100}>
-              <div className="group relative overflow-hidden rounded-xl bg-dark">
-                <Image
-                  src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80"
-                  alt="Dealership lot with vehicles"
-                  width={800}
-                  height={500}
-                  className="h-[400px] w-full object-cover opacity-40 transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 flex flex-col justify-end p-8">
-                  <h3 className="text-2xl font-bold text-white">For Dealerships</h3>
-                  <ul className="mt-4 space-y-2">
-                    {[
-                      "Protect inventory & increase resale value",
-                      "Digital portal for tracking & billing",
-                      "Multi-state coverage with certified installers",
-                    ].map((benefit) => (
-                      <li key={benefit} className="flex items-start gap-2 text-sm text-white/80">
-                        <svg className="mt-0.5 h-4 w-4 shrink-0 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        {benefit}
+              <Link href="/partner-with-us" className="group relative block min-h-[480px] overflow-hidden rounded-xl bg-dark">
+                <Image src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80" alt="Dealership lot" width={800} height={600} className="absolute inset-0 h-full w-full object-cover transition-all duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/70 to-[#0B1120]/20 transition-opacity duration-500 group-hover:opacity-80" />
+                <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
+                  <h3 className="text-2xl font-bold text-white md:text-3xl">Partner With Us</h3>
+                  <ul className="mt-5 space-y-2.5">
+                    {["Protect inventory & increase resale value", "Digital portal for tracking & billing", "Multi-state coverage with certified installers"].map((b) => (
+                      <li key={b} className="flex items-start gap-2.5 text-[15px] text-white/80">
+                        <svg className="mt-0.5 h-4 w-4 shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                        {b}
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href="/for-dealerships"
-                    className="mt-6 inline-flex w-fit items-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-primary-hover hover:scale-[1.02]"
-                  >
-                    Learn More
-                  </Link>
+                  <div className="mt-7">
+                    <span className="inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-dark transition-all group-hover:bg-gold-hover group-hover:scale-[1.02]">
+                      Learn More <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </AnimatedSection>
-
-            {/* Car Owner Card */}
             <AnimatedSection delay={200}>
-              <div className="group relative overflow-hidden rounded-xl bg-dark">
-                <Image
-                  src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80"
-                  alt="Pristine vehicle detail"
-                  width={800}
-                  height={500}
-                  className="h-[400px] w-full object-cover opacity-40 transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 flex flex-col justify-end p-8">
-                  <h3 className="text-2xl font-bold text-white">For Car Owners</h3>
-                  <ul className="mt-4 space-y-2">
-                    {[
-                      "Preserve your paint & resale value",
-                      "Self-healing film for lasting protection",
-                      "Professional installation you can trust",
-                    ].map((benefit) => (
-                      <li key={benefit} className="flex items-start gap-2 text-sm text-white/80">
-                        <svg className="mt-0.5 h-4 w-4 shrink-0 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        {benefit}
+              <Link href="/protect-your-car" className="group relative block min-h-[480px] overflow-hidden rounded-xl bg-dark">
+                <Image src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80" alt="Pristine vehicle" width={800} height={600} className="absolute inset-0 h-full w-full object-cover transition-all duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/70 to-[#0B1120]/20 transition-opacity duration-500 group-hover:opacity-80" />
+                <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
+                  <h3 className="text-2xl font-bold text-white md:text-3xl">Protect Your Car</h3>
+                  <ul className="mt-5 space-y-2.5">
+                    {["Preserve your paint & resale value", "Self-healing film for lasting protection", "Professional installation you can trust"].map((b) => (
+                      <li key={b} className="flex items-start gap-2.5 text-[15px] text-white/80">
+                        <svg className="mt-0.5 h-4 w-4 shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                        {b}
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href="/for-car-owners"
-                    className="mt-6 inline-flex w-fit items-center rounded-lg border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-white hover:text-dark"
-                  >
-                    Learn More
-                  </Link>
+                  <div className="mt-7">
+                    <span className="inline-flex items-center gap-2 rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-all group-hover:border-gold group-hover:bg-gold group-hover:text-dark">
+                      Learn More <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* ─── SERVICES GRID ─── */}
-      <section className="bg-white py-20 md:py-28">
+      {/* ─── 5. SERVICES GRID ─── */}
+      <section className="bg-dark py-20 md:py-28">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <AnimatedSection>
-            <SectionHeading
-              label="Our Services"
-              title="Comprehensive Protection Coverage"
-              description="From door edges to partial hoods, we offer precision-cut paint protection film for every vulnerable area of your vehicle."
-            />
+            <div className="mb-14 text-center">
+              <p className="mb-3 text-[13px] font-semibold uppercase tracking-[2px] text-gold">Our Services</p>
+              <h2 className="text-3xl font-bold text-text-primary md:text-4xl" style={{ letterSpacing: "-0.02em" }}>Our Premium Install Points</h2>
+              <p className="mx-auto mt-4 max-w-[640px] text-lg text-text-secondary">Precision-cut PPF for every vulnerable area of your vehicle.</p>
+            </div>
           </AnimatedSection>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {products.map((product, i) => (
-              <AnimatedSection key={product.slug} delay={i * 100}>
-                <Link
-                  href={`/services/${product.slug}`}
-                  className="group block overflow-hidden rounded-xl border border-border bg-white transition-all hover:shadow-card"
-                >
-                  <div className="relative h-48 bg-dark-alt">
-                    <Image
-                      src={`https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=600&q=80`}
-                      alt={product.name}
-                      fill
-                      className="object-cover opacity-60 transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-4 left-4">
-                      <h3 className="text-lg font-bold text-white">{product.name}</h3>
+              <AnimatedSection key={product.slug} delay={i * 80}>
+                <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-dark-tertiary transition-all duration-300 hover:border-gold/30 hover:-translate-y-1">
+                  {/* Image */}
+                  <div className="relative h-44 bg-dark-alt">
+                    <Image src={product.heroImage} alt={product.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                  {/* Content */}
+                  <div className="flex flex-1 flex-col p-5">
+                    <h3 className="text-lg font-bold text-white">{product.name}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-white/60">{product.tagline}</p>
+                    {/* Tag pills */}
+                    <div className="mt-4 flex flex-wrap gap-1.5">
+                      {product.protectionAreas.map((area) => (
+                        <span
+                          key={area}
+                          className="rounded-full border border-white/[0.08] bg-white/[0.04] px-2.5 py-1 text-[10px] font-medium text-white/50"
+                        >
+                          {area}
+                        </span>
+                      ))}
+                    </div>
+                    {/* CTA button */}
+                    <div className="mt-auto pt-5">
+                      <Link
+                        href={`/services/${product.slug}`}
+                        className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/[0.12] bg-white/[0.04] py-2.5 text-[13px] font-semibold uppercase tracking-[0.5px] text-white/80 transition-all duration-200 hover:border-gold/40 hover:bg-gold/10 hover:text-gold"
+                      >
+                        Learn More
+                        <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                      </Link>
                     </div>
                   </div>
-                  <div className="p-5">
-                    <p className="text-sm text-text-secondary">{product.tagline}</p>
-                    <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                      Learn More
-                      <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </span>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+          <AnimatedSection delay={600}>
+            <div className="mt-10 text-center">
+              <Link href="/services" className="group inline-flex items-center gap-2 text-base font-semibold text-gold">
+                View All Services <svg className="h-4 w-4 transition-transform group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+              </Link>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ─── 5b. PROTECTION MAP ─── */}
+      <ProtectionMapSection />
+
+      {/* ─── 6. OUR PROCESS ─── */}
+      <section className="relative overflow-hidden py-20 md:py-28">
+        {/* Blurred car background */}
+        <div className="absolute inset-0">
+          <Image src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=1920&q=80" alt="" fill className="object-cover blur-md" />
+          <div className="absolute inset-0 bg-dark/80" />
+        </div>
+
+        <div className="relative mx-auto max-w-[1280px] px-6 lg:px-12">
+          <AnimatedSection>
+            <div className="mb-14 max-w-xl">
+              <p className="mb-3 text-[13px] font-semibold uppercase tracking-[2px] text-gold">Our Process</p>
+              <h2 className="text-3xl font-bold text-white md:text-4xl" style={{ letterSpacing: "-0.02em" }}>Three Steps to Protection</h2>
+              <p className="mt-4 text-lg text-white/60">From consultation to completion — a seamless experience backed by certified installers and professional-grade materials.</p>
+            </div>
+          </AnimatedSection>
+
+          {/* Step Cards */}
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              { step: "01", title: "Consult", desc: "Tell us about your vehicle and protection needs. We'll recommend the right coverage for your situation.", icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg> },
+              { step: "02", title: "Install", desc: "Our certified installers precision-cut and apply the film on-site at your location with meticulous care.", icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" /></svg> },
+              { step: "03", title: "Protect", desc: "Your vehicle is shielded with self-healing, optically clear paint protection film — backed by warranty.", icon: <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg> },
+            ].map((item, i) => (
+              <AnimatedSection key={item.step} delay={i * 150}>
+                <div className="flex h-full flex-col rounded-2xl border border-white/[0.12] bg-white/[0.08] p-7 backdrop-blur-md transition-all duration-300 hover:border-gold/30 hover:bg-white/[0.12]">
+                  {/* Step number + icon row */}
+                  <div className="mb-6 flex items-center justify-between">
+                    <span className="text-[32px] font-bold leading-none text-gold/50">{item.step}.</span>
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold/30 bg-gold/15 text-gold">
+                      {item.icon}
+                    </div>
                   </div>
-                </Link>
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                  {/* Description */}
+                  <p className="mt-3 text-sm leading-relaxed text-white/80">{item.desc}</p>
+                </div>
               </AnimatedSection>
             ))}
           </div>
 
-          <AnimatedSection delay={400}>
-            <div className="mt-10 text-center">
+          {/* Bottom CTA bar */}
+          <AnimatedSection delay={500}>
+            <div className="mt-8 flex flex-col items-center justify-between gap-5 rounded-2xl border border-white/[0.08] bg-white/[0.04] px-7 py-5 backdrop-blur-sm sm:flex-row">
+              <p className="text-[15px] text-white/70">
+                Ready to get started? <span className="font-semibold text-white">Get a personalized quote today.</span>
+              </p>
               <Link
-                href="/services"
-                className="inline-flex items-center gap-2 text-base font-semibold text-primary hover:underline"
+                href="/contact"
+                className="group inline-flex shrink-0 items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
               >
-                View All Services
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                Get a Quote
+                <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
               </Link>
             </div>
@@ -233,108 +293,114 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── HOW IT WORKS ─── */}
-      <section className="bg-surface-alt py-20 md:py-28">
+      {/* ─── 7. PLATFORM PREVIEW ─── */}
+      <section className="bg-dark py-20 md:py-28">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
-          <AnimatedSection>
-            <SectionHeading
-              label="How It Works"
-              title="Three Steps to Protection"
-              description="A simple process designed to get your vehicle protected quickly and professionally."
-            />
-          </AnimatedSection>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {[
-              {
-                step: "01",
-                title: "Consult",
-                description:
-                  "Tell us about your vehicle and protection needs. We'll recommend the right coverage for your situation.",
-                icon: (
-                  <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
-                  </svg>
-                ),
-              },
-              {
-                step: "02",
-                title: "Install",
-                description:
-                  "Our certified installers precision-cut and apply the film on-site at your dealership or preferred location.",
-                icon: (
-                  <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-3.264a.75.75 0 010-1.272l5.1-3.264a.75.75 0 011.08.67v6.588a.75.75 0 01-1.08.67zm5.58-3.264a.75.75 0 010 1.272l-5.1 3.264a.75.75 0 01-1.08-.67V9.176a.75.75 0 011.08-.67l5.1 3.264z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                ),
-              },
-              {
-                step: "03",
-                title: "Protect",
-                description:
-                  "Your vehicle is now shielded with self-healing, optically clear paint protection film. Drive with confidence.",
-                icon: (
-                  <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                  </svg>
-                ),
-              },
-            ].map((item, i) => (
-              <AnimatedSection key={item.step} delay={i * 150}>
-                <div className="relative rounded-xl bg-white p-8 text-center">
-                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    {item.icon}
-                  </div>
-                  <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-text-secondary">
-                    Step {item.step}
-                  </div>
-                  <h3 className="text-xl font-bold text-text-primary">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-                    {item.description}
-                  </p>
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <AnimatedSection>
+              <p className="mb-3 text-[13px] font-semibold uppercase tracking-[2px] text-gold">Our Technology</p>
+              <h2 className="text-3xl font-bold text-text-primary md:text-4xl" style={{ letterSpacing: "-0.02em" }}>The Platform Behind the Protection</h2>
+              <p className="mt-4 text-lg text-text-secondary">We built a purpose-driven technology platform that powers every aspect of our operations — from scheduling to quality assurance.</p>
+              <ul className="mt-8 space-y-4">
+                {["Real-time install tracking with status updates", "Automated invoicing and PO integration", "Quality assurance workflow with admin review", "Installer performance analytics", "Multi-location scheduling and coordination"].map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-text-primary">
+                    <svg className="mt-0.5 h-5 w-5 shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    <span className="text-[15px]">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/technology" className="group mt-8 inline-flex items-center gap-2 text-base font-semibold text-gold">
+                Explore Our Technology <svg className="h-4 w-4 transition-transform group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+              </Link>
+            </AnimatedSection>
+            <AnimatedSection delay={200}>
+              <div className="overflow-hidden rounded-xl border border-white/[0.08] bg-dark-alt p-2 shadow-elevated">
+                <div className="flex items-center gap-2 px-3 py-2">
+                  <div className="h-3 w-3 rounded-full bg-red-500/60" /><div className="h-3 w-3 rounded-full bg-yellow-500/60" /><div className="h-3 w-3 rounded-full bg-green-500/60" />
+                  <span className="ml-2 text-xs text-white/40">app.qualityperformance.io</span>
                 </div>
-              </AnimatedSection>
-            ))}
+                <div className="rounded-lg bg-dark p-6">
+                  <div className="mb-4 flex items-center justify-between">
+                    <div className="text-sm font-semibold text-white">Install Dashboard</div>
+                    <div className="rounded bg-gold/20 px-2 py-1 text-xs font-medium text-gold">Live</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-3">
+                    {[{ l: "Active Installs", v: "12" }, { l: "This Month", v: "47" }, { l: "Pending Review", v: "3" }].map((s) => (
+                      <div key={s.l} className="rounded-lg bg-dark-alt p-3"><div className="text-lg font-bold text-white">{s.v}</div><div className="text-[11px] text-text-on-dark-muted">{s.l}</div></div>
+                    ))}
+                  </div>
+                  <div className="mt-4 space-y-2">
+                    {[{ vin: "•••4521", status: "In Progress", color: "text-yellow-400" }, { vin: "•••8903", status: "Completed", color: "text-green-400" }, { vin: "•••2217", status: "Scheduled", color: "text-gold" }].map((inst) => (
+                      <div key={inst.vin} className="flex items-center justify-between rounded-lg bg-dark-alt px-3 py-2">
+                        <span className="text-xs text-text-on-dark-muted">VIN {inst.vin}</span>
+                        <span className={`text-xs font-medium ${inst.color}`}>{inst.status}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* ─── STATS / SOCIAL PROOF ─── */}
-      <section className="bg-dark py-20 md:py-28">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
-          <AnimatedSection>
-            <div className="grid gap-8 md:grid-cols-4">
-              <StatCounter end={10000} suffix="+" label="Installs Completed" />
-              <StatCounter end={50} suffix="+" label="Dealerships Served" />
-              <StatCounter end={8} label="States Covered" />
-              <StatCounter end={7} label="Protection Products" />
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ─── TESTIMONIAL ─── */}
-      <section className="bg-white py-20 md:py-28">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
-          <AnimatedSection>
-            <div className="mx-auto max-w-3xl text-center">
-              <svg className="mx-auto h-10 w-10 text-primary/20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-              </svg>
-              <blockquote className="mt-6 text-xl font-medium leading-relaxed text-text-primary md:text-2xl">
-                &ldquo;Quality Performance transformed how we handle PPF across our dealership network. The portal tracking alone saved us hours every week, and the install quality is consistently outstanding.&rdquo;
-              </blockquote>
-              <div className="mt-6">
-                <div className="font-semibold text-text-primary">Mike Reynolds</div>
-                <div className="text-sm text-text-secondary">Service Director, Reynolds Auto Group</div>
+      {/* ─── 8. STATS ─── */}
+      <section className="overflow-hidden bg-dark">
+        <div className="mx-auto max-w-[1280px]">
+          <div className="grid lg:grid-cols-2">
+            {/* Left — Image */}
+            <AnimatedSection>
+              <div className="relative h-64 sm:h-80 lg:h-full lg:min-h-[520px]">
+                <Image
+                  src="/images/stats-install.png"
+                  alt="Professional PPF installation"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-dark" />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-dark/50" />
               </div>
+            </AnimatedSection>
+
+            {/* Right — Content + Stats */}
+            <div className="flex flex-col justify-center px-6 py-16 sm:px-10 md:py-20 lg:px-14 lg:py-24">
+              <AnimatedSection>
+                <p className="mb-3 text-[13px] font-semibold uppercase tracking-[2px] text-gold">
+                  Our Track Record
+                </p>
+                <h2
+                  className="text-3xl font-bold text-white md:text-4xl"
+                  style={{ letterSpacing: "-0.02em" }}
+                >
+                  Trusted by Dealerships Nationwide
+                </h2>
+                <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/60">
+                  From single vehicles to entire dealer fleets, we deliver consistent quality, on time, across multiple states — backed by data and driven by precision.
+                </p>
+              </AnimatedSection>
+
+              {/* 2x2 Stats Grid */}
+              <AnimatedSection delay={200}>
+                <div className="mt-10 grid grid-cols-2 gap-y-8 gap-x-6 sm:gap-x-10">
+                  {[
+                    { end: 100000, suffix: "+", label: "Installations" },
+                    { end: 50, suffix: "+", label: "Dealerships Served" },
+                    { end: 8, suffix: "", label: "States Covered" },
+                    { end: 7, suffix: "", label: "Protection Products" },
+                  ].map((stat) => (
+                    <div key={stat.label} className="border-l-2 border-gold/30 pl-4 sm:pl-5">
+                      <StatCounter end={stat.end} suffix={stat.suffix} label={stat.label} />
+                    </div>
+                  ))}
+                </div>
+              </AnimatedSection>
             </div>
-          </AnimatedSection>
+          </div>
         </div>
       </section>
 
-      {/* ─── FINAL CTA ─── */}
+
+      {/* ─── 10. FINAL CTA ─── */}
       <CTABlock />
     </>
   );

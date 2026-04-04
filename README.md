@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quality Performance — Website
+
+Marketing website for **Quality Performance**, a multi-state paint protection film (PPF) installation company serving automotive dealerships and individual vehicle owners.
+
+**Live site:** [qualityperformance.io](https://qualityperformance.io)
+**Dealer Portal:** [app.qualityperformance.io](https://app.qualityperformance.io)
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Font:** Inter (via `next/font`)
+- **Runtime:** React 19
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx            # Homepage
+│   ├── about/              # About Us
+│   ├── careers/            # Careers
+│   ├── contact/            # Contact (multi-mode: quote, contact, demo)
+│   ├── faq/                # FAQ
+│   ├── gallery/            # Gallery
+│   ├── partner-with-us/    # Dealership partnerships
+│   ├── privacy/            # Privacy Policy
+│   ├── protect-your-car/   # Car owner landing page
+│   ├── protection-map/     # Interactive vehicle protection map
+│   ├── reviews/            # Customer reviews
+│   ├── services/           # Services listing + dynamic [slug] pages
+│   ├── technology/         # Dealer Portal / Our Technology
+│   ├── terms/              # Terms of Service
+│   ├── vin-decoder/        # VIN decoder tool
+│   ├── api/decode-vin/     # VIN decode API route (NHTSA)
+│   ├── not-found.tsx       # Custom 404 page
+│   ├── loading.tsx         # Route-level loading screen
+│   ├── layout.tsx          # Root layout (Navbar + Footer)
+│   ├── globals.css         # Global styles + Tailwind theme
+│   └── sitemap.ts          # Dynamic sitemap generation
+├── components/             # Shared UI components
+│   ├── Navbar.tsx           # Header with mega menu + mobile drawer
+│   ├── Footer.tsx           # Site footer
+│   ├── CTABlock.tsx         # Reusable CTA section
+│   ├── HeroVideo.tsx        # Video background with preload
+│   ├── LoadingScreen.tsx    # Animated loading overlay
+│   ├── TeamCarousel.tsx     # Horizontal team card carousel
+│   ├── AnimatedSection.tsx  # Scroll-triggered animations
+│   ├── SectionHeading.tsx   # Consistent section headers
+│   ├── StatCounter.tsx      # Animated number counter
+│   └── protection-map/     # Interactive vehicle map components
+└── data/
+    ├── products.ts          # 7 PPF product definitions
+    └── installPoints.ts     # Protection map coordinates
+```
 
-## Learn More
+## Pages Overview
 
-To learn more about Next.js, take a look at the following resources:
+| Page | Route | Description |
+|------|-------|-------------|
+| Homepage | `/` | Hero video, services grid, stats, protection map, process |
+| Services | `/services` | All 7 PPF products |
+| Service Detail | `/services/[slug]` | Individual product pages (x7) |
+| Partner With Us | `/partner-with-us` | Dealership partnership landing page |
+| Protect Your Car | `/protect-your-car` | Car owner landing page |
+| About | `/about` | Company story, values, team carousel |
+| Technology | `/technology` | Dealer portal features + mock UI previews |
+| Contact | `/contact` | Multi-mode form (quote / contact / demo) |
+| VIN Decoder | `/vin-decoder` | VIN lookup tool via NHTSA API |
+| Protection Map | `/protection-map` | Interactive vehicle hotspot diagram |
+| Gallery | `/gallery` | Installation photo gallery |
+| Reviews | `/reviews` | Customer testimonials |
+| FAQ | `/faq` | Frequently asked questions |
+| Careers | `/careers` | Job opportunities |
+| Privacy Policy | `/privacy` | Privacy policy |
+| Terms of Service | `/terms` | Terms of service |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Design System
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The site uses a **"Midnight Premium"** dark theme:
 
-## Deploy on Vercel
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--color-gold` | `#C9A84C` | Primary accent, CTAs, highlights |
+| `--color-dark` | `#0B1120` | Page backgrounds |
+| `--color-dark-alt` | `#111827` | Card backgrounds |
+| `--color-dark-tertiary` | `#162032` | Input backgrounds |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact Form Modes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The contact page supports three modes via URL parameter `?type=`:
+
+- **`/contact`** — Multi-step quote request form (default)
+- **`/contact?type=contact`** — Simple message form
+- **`/contact?type=demo`** — Dealer portal demo request form
+
+## API Routes
+
+- **`POST /api/decode-vin`** — Decodes a 17-character VIN using the [NHTSA Vehicle API](https://vpic.nhtsa.dot.gov/api/) and returns make, model, year, and other vehicle data.
+
+## Key Features
+
+- Video hero background with silent preload and fallback image
+- Interactive vehicle protection map with pulsing hotspots
+- VIN decoder with NHTSA API integration (used in both `/vin-decoder` and `/contact` form)
+- Multi-step quote form with VIN auto-fill
+- Mock dealer portal UI built with CSS (no screenshots — pure code)
+- Team carousel with avatar initials and gradient backgrounds
+- Scroll-triggered section animations
+- Mobile-responsive with header hide-on-scroll-down
+- Route-level loading screen with animated QP logo
+- Auto-generated sitemap and robots.txt
+- Structured data (JSON-LD) for local business SEO

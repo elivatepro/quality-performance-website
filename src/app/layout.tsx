@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { LocalBusinessJsonLd } from "@/components/JsonLd";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,8 +38,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans">
+        <LocalBusinessJsonLd />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
