@@ -112,6 +112,7 @@ export default function Footer() {
               {[
                 { href: "/vin-decoder", label: "VIN Decoder" },
                 { href: "/faq", label: "FAQ" },
+                { href: "/support", label: "Support" },
                 { href: "/technology", label: "Our Technology" },
                 { href: "/contact?type=contact", label: "Contact Us" },
               ].map((link) => (
