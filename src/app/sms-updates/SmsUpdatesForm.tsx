@@ -2,6 +2,7 @@
 
 import { startTransition, useState, type ChangeEvent, type FormEvent } from "react";
 import Link from "next/link";
+import { formatPhoneNumber } from "@/lib/phone";
 
 type Audience = "" | "vehicle-owner" | "dealership-staff" | "installer";
 
@@ -34,15 +35,6 @@ const audienceLabels: Record<Exclude<Audience, "">, string> = {
 const fieldClass =
   "mt-2 w-full rounded-xl border border-white/[0.1] bg-white/[0.03] px-4 py-3.5 text-sm text-white placeholder:text-white/30 outline-none transition-colors focus:border-gold focus:ring-1 focus:ring-gold";
 
-function formatPhone(value: string) {
-  const digits = value.replace(/\D/g, "").slice(0, 10);
-
-  if (digits.length <= 3) return digits;
-  if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
-
-  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
-}
-
 export default function SmsUpdatesForm() {
   const [form, setForm] = useState<FormState>(initialForm);
   const [submitting, setSubmitting] = useState(false);
@@ -56,7 +48,7 @@ export default function SmsUpdatesForm() {
 
     setForm((current) => ({
       ...current,
-      [name]: name === "phone" ? formatPhone(value) : value,
+      [name]: name === "phone" ? formatPhoneNumber(value) : value,
     }));
   }
 

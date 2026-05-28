@@ -3,6 +3,8 @@
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import LoadingScreen from "@/components/LoadingScreen";
+import PhoneConsentField from "@/components/PhoneConsentField";
+import { formatPhoneNumber } from "@/lib/phone";
 
 interface VehicleData {
   [key: string]: string;
@@ -34,6 +36,7 @@ export default function VinDecoderPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [phoneConsent, setPhoneConsent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [vehicle, setVehicle] = useState<VehicleData | null>(null);
@@ -306,11 +309,19 @@ export default function VinDecoderPage() {
                     type="tel"
                     id="phone"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    onChange={(e) => setPhone(formatPhoneNumber(e.target.value))}
                     className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-gold focus:ring-1 focus:ring-gold"
                     placeholder="(555) 123-4567"
                   />
                 </div>
+
+                <PhoneConsentField
+                  checkboxId="vin-phone-consent"
+                  checked={phoneConsent}
+                  onChange={(e) => setPhoneConsent(e.target.checked)}
+                  required={phone.trim().length > 0}
+                  purpose="your VIN request and related protection service follow-up"
+                />
 
                 {error && (
                   <div className="rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-3">

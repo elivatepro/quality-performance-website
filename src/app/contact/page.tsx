@@ -5,7 +5,9 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
+import PhoneConsentField from "@/components/PhoneConsentField";
 import { products } from "@/data/products";
+import { formatPhoneNumber } from "@/lib/phone";
 
 const inputClass =
   "w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-gold focus:ring-1 focus:ring-gold";
@@ -56,6 +58,7 @@ function ContactInner() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [phoneConsent, setPhoneConsent] = useState(false);
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
 
@@ -297,10 +300,10 @@ function ContactInner() {
                             <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required className={inputClass} placeholder="john@example.com" />
                           </div>
                         </div>
-                        <div>
-                          <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-text-primary">Phone *</label>
-                          <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} required className={inputClass} placeholder="(555) 123-4567" />
-                        </div>
+                          <div>
+                            <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-text-primary">Phone *</label>
+                            <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(formatPhoneNumber(e.target.value))} required className={inputClass} placeholder="(555) 123-4567" />
+                          </div>
                         {audienceType === "dealership" && (
                           <div className="grid gap-4 sm:grid-cols-2">
                             <div>
@@ -451,6 +454,13 @@ function ContactInner() {
                           <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-text-primary">Anything else we should know?</label>
                           <textarea id="message" value={message} onChange={(e) => setMessage(e.target.value)} rows={4} className={`${inputClass} resize-none`} placeholder="e.g., specific concerns about your paint, previous PPF experience, preferred contact time..." />
                         </div>
+                        <PhoneConsentField
+                          checkboxId="quote-phone-consent"
+                          checked={phoneConsent}
+                          onChange={(e) => setPhoneConsent(e.target.checked)}
+                          required
+                          purpose="your quote request, appointment scheduling, and service coordination"
+                        />
                       </div>
                     )}
 
@@ -492,8 +502,15 @@ function ContactInner() {
                   </div>
                   <div>
                     <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-text-primary">Phone</label>
-                    <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} className={inputClass} placeholder="(555) 123-4567" />
+                    <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(formatPhoneNumber(e.target.value))} className={inputClass} placeholder="(555) 123-4567" />
                   </div>
+                  <PhoneConsentField
+                    checkboxId="contact-phone-consent"
+                    checked={phoneConsent}
+                    onChange={(e) => setPhoneConsent(e.target.checked)}
+                    required={phone.trim().length > 0}
+                    purpose="your inquiry and any related follow-up service coordination"
+                  />
                   <div>
                     <label htmlFor="subject" className="mb-1.5 block text-sm font-medium text-text-primary">Subject</label>
                     <select id="subject" className={inputClass}>
@@ -536,7 +553,7 @@ function ContactInner() {
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-text-primary">Phone *</label>
-                      <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} required className={inputClass} placeholder="(555) 123-4567" />
+                      <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(formatPhoneNumber(e.target.value))} required className={inputClass} placeholder="(555) 123-4567" />
                     </div>
                     <div>
                       <label htmlFor="company" className="mb-1.5 block text-sm font-medium text-text-primary">Dealership / Company *</label>
@@ -573,6 +590,13 @@ function ContactInner() {
                     <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-text-primary">What are you most interested in seeing?</label>
                     <textarea id="message" value={message} onChange={(e) => setMessage(e.target.value)} rows={4} className={`${inputClass} resize-none`} placeholder="e.g., Installation tracking, billing automation, how onboarding works..." />
                   </div>
+                  <PhoneConsentField
+                    checkboxId="demo-phone-consent"
+                    checked={phoneConsent}
+                    onChange={(e) => setPhoneConsent(e.target.checked)}
+                    required
+                    purpose="your demo request, dealership onboarding follow-up, and service coordination"
+                  />
                   <div className="flex justify-end pt-2">
                     <button type="submit" disabled={submitting} className="inline-flex items-center gap-2 rounded-lg bg-gold px-8 py-3 text-sm font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed">
                       {submitting ? (<><svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>Submitting...</>) : "Request Demo"}
