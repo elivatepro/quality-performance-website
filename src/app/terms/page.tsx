@@ -27,7 +27,7 @@ export default function TermsOfService() {
               className="animate-hero mt-4 text-lg text-white/60"
               style={{ animationDelay: "0.3s" }}
             >
-              Last Updated: April 2026
+              Last Updated: May 2026
             </p>
           </div>
         </div>
@@ -64,6 +64,33 @@ export default function TermsOfService() {
                     </li>
                   ))}
                 </ul>
+
+                <h3 id="sms-communications" className="mt-6 text-lg font-semibold text-white/90">
+                  SMS Communications
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-white/70">
+                  If you voluntarily provide your mobile number and opt in through our website
+                  or service workflows, you agree to receive automated text messages from
+                  Quality Performance related to installer arrival updates and service status
+                  updates for active appointments, installations, and dealership coordination.
+                </p>
+                <p className="mt-3 text-base leading-relaxed text-white/70">
+                  Message frequency varies and may be up to 2 messages per month, with
+                  additional messages only when there is an active service need. Message and
+                  data rates may apply. Consent is not a condition of purchase. You may opt out
+                  at any time by replying STOP. For assistance, reply HELP or contact us at{" "}
+                  <a href="tel:8605011818" className="text-gold hover:underline">
+                    (860) 501-1818
+                  </a>{" "}
+                  or{" "}
+                  <a
+                    href="mailto:hello@qualityperformance.io"
+                    className="text-gold hover:underline"
+                  >
+                    hello@qualityperformance.io
+                  </a>
+                  .
+                </p>
               </div>
 
               {/* Section 2 */}
@@ -283,7 +310,8 @@ export default function TermsOfService() {
                 <div className="mt-4 rounded-xl border border-white/[0.08] bg-white/[0.04] p-5">
                   <p className="font-semibold text-white">Quality Performance</p>
                   <div className="mt-2 space-y-1 text-sm text-white/60">
-                    <p>Email: <a href="mailto:support@qualityinstallsco.com" className="text-gold hover:underline">support@qualityinstallsco.com</a></p>
+                    <p>Phone: <a href="tel:8605011818" className="text-gold hover:underline">(860) 501-1818</a></p>
+                    <p>Email: <a href="mailto:hello@qualityperformance.io" className="text-gold hover:underline">hello@qualityperformance.io</a></p>
                     <p>Website: <a href="https://qualityperformance.io" className="text-gold hover:underline">qualityperformance.io</a></p>
                     <p>Dealer Portal: <a href="https://app.qualityperformance.io" className="text-gold hover:underline">app.qualityperformance.io</a></p>
                   </div>

@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
               className="animate-hero mt-4 text-lg text-white/60"
               style={{ animationDelay: "0.3s" }}
             >
-              Last Updated: April 2026
+              Last Updated: May 2026
             </p>
           </div>
         </div>
@@ -67,6 +67,22 @@ export default function PrivacyPolicy() {
                     </li>
                   ))}
                 </ul>
+
+                <h3 id="text-messages" className="mt-6 text-lg font-semibold text-white/90">
+                  Mobile Numbers and Text Message Preferences
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-white/70">
+                  If you request SMS updates from us, we collect the mobile number you submit,
+                  your consent selection, the date and time of that request, and any related
+                  reference details you provide so we can manage installer arrival updates and
+                  service status updates for active appointments, installations, and dealership
+                  coordination.
+                </p>
+                <p className="mt-3 text-base leading-relaxed text-white/70">
+                  We use this information to send opted-in operational text messages, honor
+                  STOP and HELP requests, document consent history, and respond to support
+                  inquiries connected to the SMS program.
+                </p>
 
                 <h3 className="mt-6 text-lg font-semibold text-white/90">Information Collected Automatically</h3>
                 <p className="mt-3 text-base leading-relaxed text-white/70">
@@ -227,7 +243,8 @@ export default function PrivacyPolicy() {
                 <div className="mt-4 rounded-xl border border-white/[0.08] bg-white/[0.04] p-5">
                   <p className="font-semibold text-white">Quality Performance</p>
                   <div className="mt-2 space-y-1 text-sm text-white/60">
-                    <p>Email: <a href="mailto:support@qualityinstallsco.com" className="text-gold hover:underline">support@qualityinstallsco.com</a></p>
+                    <p>Phone: <a href="tel:8605011818" className="text-gold hover:underline">(860) 501-1818</a></p>
+                    <p>Email: <a href="mailto:hello@qualityperformance.io" className="text-gold hover:underline">hello@qualityperformance.io</a></p>
                     <p>Website: <a href="https://qualityperformance.io" className="text-gold hover:underline">qualityperformance.io</a></p>
                     <p>Dealer Portal: <a href="https://app.qualityperformance.io" className="text-gold hover:underline">app.qualityperformance.io</a></p>
                   </div>
