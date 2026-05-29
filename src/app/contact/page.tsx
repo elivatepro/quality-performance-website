@@ -458,7 +458,6 @@ function ContactInner() {
                           checkboxId="quote-phone-consent"
                           checked={phoneConsent}
                           onChange={(e) => setPhoneConsent(e.target.checked)}
-                          required
                           purpose="your quote request, appointment scheduling, and service coordination"
                         />
                       </div>
@@ -508,7 +507,6 @@ function ContactInner() {
                     checkboxId="contact-phone-consent"
                     checked={phoneConsent}
                     onChange={(e) => setPhoneConsent(e.target.checked)}
-                    required={phone.trim().length > 0}
                     purpose="your inquiry and any related follow-up service coordination"
                   />
                   <div>
@@ -594,7 +592,6 @@ function ContactInner() {
                     checkboxId="demo-phone-consent"
                     checked={phoneConsent}
                     onChange={(e) => setPhoneConsent(e.target.checked)}
-                    required
                     purpose="your demo request, dealership onboarding follow-up, and service coordination"
                   />
                   <div className="flex justify-end pt-2">

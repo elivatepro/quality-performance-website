@@ -75,11 +75,6 @@ export default function SmsUpdatesForm() {
       return;
     }
 
-    if (!form.consent) {
-      setFormError("You must actively confirm consent before submitting this form.");
-      return;
-    }
-
     setFormError("");
     setSubmitting(true);
 
@@ -128,9 +123,10 @@ export default function SmsUpdatesForm() {
                 Thanks, {firstName}.
               </h1>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">
-                Your SMS update request has been received. We may review your details before
-                activating service-related text messages for active appointments, installations,
-                or dealership coordination.
+                Your communication preference request has been received.
+                {submittedForm.consent
+                  ? " You opted in to service-related SMS updates for active appointments, installations, or dealership coordination."
+                  : " You did not opt in to SMS updates, and this submission can still be reviewed without text message consent."}
               </p>
             </div>
 
@@ -151,6 +147,12 @@ export default function SmsUpdatesForm() {
                   <div className="flex items-start justify-between gap-4">
                     <dt className="text-white/45">Audience</dt>
                     <dd className="text-right text-white">{audienceLabel}</dd>
+                  </div>
+                  <div className="flex items-start justify-between gap-4">
+                    <dt className="text-white/45">SMS Consent</dt>
+                    <dd className="text-right text-white">
+                      {submittedForm.consent ? "Opted in" : "Not opted in"}
+                    </dd>
                   </div>
                   {submittedForm.organization ? (
                     <div className="flex items-start justify-between gap-4">
@@ -265,8 +267,8 @@ export default function SmsUpdatesForm() {
               <ul className="mt-5 space-y-3">
                 {[
                   "Use the mobile number where you want to receive service-related updates.",
-                  "Only submit this form if you want SMS messages connected to active appointments, installations, or dealership coordination.",
-                  "Consent is not a condition of purchase, and this form does not enroll you in unrelated promotional campaigns.",
+                  "The SMS consent checkbox is optional and is not required to submit this form, receive service, complete a transaction, or make a purchase.",
+                  "Checking the box only applies to service-related messages connected to active appointments, installations, or dealership coordination.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-white/65">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
@@ -400,10 +402,10 @@ export default function SmsUpdatesForm() {
                 <p className="text-sm font-semibold text-white">Consent Details</p>
                 <div className="mt-4 space-y-3 text-sm leading-relaxed text-white/62">
                   <p>
-                    By checking the box below and submitting this form, you agree to receive
-                    automated text messages from Quality Performance about installer arrival
-                    updates and service status updates for active appointments, installations,
-                    or dealership coordination.
+                    If you check the optional box below and submit this form, you agree to
+                    receive automated text messages from Quality Performance about installer
+                    arrival updates and service status updates for active appointments,
+                    installations, or dealership coordination.
                   </p>
                   <p>
                     Message frequency varies. You may receive up to 2 messages per month,
@@ -411,7 +413,8 @@ export default function SmsUpdatesForm() {
                   </p>
                   <p>
                     Message and data rates may apply. Reply HELP for help or STOP to cancel
-                    at any time. Consent is not a condition of purchase.
+                    at any time. Consent is not required to submit this form, receive service,
+                    complete a transaction, or make a purchase.
                   </p>
                 </div>
 
@@ -424,9 +427,9 @@ export default function SmsUpdatesForm() {
                     className="mt-1 h-4 w-4 rounded border-white/20 bg-transparent text-gold focus:ring-gold"
                   />
                   <span className="text-sm leading-relaxed text-white/78">
-                    I agree to receive automated text messages from Quality Performance for
-                    installer arrival updates and service status updates, and I understand the
-                    disclosure above.
+                    Optional: I agree to receive automated text messages from Quality
+                    Performance for installer arrival updates and service status updates, and
+                    I understand the disclosure above.
                   </span>
                 </label>
 
@@ -454,7 +457,7 @@ export default function SmsUpdatesForm() {
                 disabled={submitting}
                 className="mt-7 inline-flex w-full items-center justify-center rounded-xl bg-gold px-5 py-3.5 text-sm font-semibold text-dark transition-all hover:bg-gold-hover disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {submitting ? "Submitting..." : "Submit SMS Request"}
+                {submitting ? "Submitting..." : "Submit Communication Request"}
               </button>
             </form>
           </div>

@@ -77,8 +77,9 @@ export default function TermsOfService() {
                 <p className="mt-3 text-base leading-relaxed text-white/70">
                   Message frequency varies and may be up to 2 messages per month, with
                   additional messages only when there is an active service need. Message and
-                  data rates may apply. Consent is not a condition of purchase. You may opt out
-                  at any time by replying STOP. For assistance, reply HELP or contact us at{" "}
+                  data rates may apply. Consent is not required to submit a form, receive
+                  service, complete a transaction, or make a purchase. You may opt out at any
+                  time by replying STOP. For assistance, reply HELP or contact us at{" "}
                   <a href="tel:8605011818" className="text-gold hover:underline">
                     (860) 501-1818
                   </a>{" "}

@@ -319,7 +319,6 @@ export default function VinDecoderPage() {
                   checkboxId="vin-phone-consent"
                   checked={phoneConsent}
                   onChange={(e) => setPhoneConsent(e.target.checked)}
-                  required={phone.trim().length > 0}
                   purpose="your VIN request and related protection service follow-up"
                 />
 
