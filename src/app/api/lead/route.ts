@@ -210,6 +210,136 @@ async function sendLeadEmail(lead: LeadPayload): Promise<void> {
   await tx.sendMail(email);
 }
 
+/* ── Confirmation / auto-reply sent to the visitor ── */
+
+function buildConfirmationText(lead: LeadPayload): string {
+  const first = lead.name.split(" ")[0] || "there";
+  return [
+    `Hi ${first},`,
+    ``,
+    `Thanks for reaching out to Quality Performance. We've received your`,
+    `message about ${lead.dealership} and a member of our team will get back`,
+    `to you shortly${lead.wantsCall ? ", including to set up the call you requested" : ""}.`,
+    ``,
+    `Here's a copy of what you sent:`,
+    lead.interests.length ? `  Interested in: ${lead.interests.join(", ")}` : ``,
+    lead.comments.trim() ? `  Comments: ${lead.comments.trim()}` : ``,
+    ``,
+    `If you need us in the meantime, just reply to this email or reach us at`,
+    `${contact.email}.`,
+    ``,
+    `— Quality Performance`,
+  ]
+    .filter((l) => l !== "")
+    .join("\n");
+}
+
+function buildConfirmationHtml(lead: LeadPayload): string {
+  const gold = "#C9A84C";
+  const dark = "#0B1120";
+  const ink = "#1A2333";
+  const muted = "#6B7688";
+  const line = "#E6E9EF";
+  const first = esc(lead.name.split(" ")[0] || "there");
+
+  const recap = [
+    lead.interests.length
+      ? `<div style="margin-bottom:6px;"><span style="color:${muted};">Interested in:</span> ${esc(lead.interests.join(", "))}</div>`
+      : "",
+    lead.comments.trim()
+      ? `<div><span style="color:${muted};">Your message:</span> ${esc(lead.comments.trim()).replace(/\n/g, "<br>")}</div>`
+      : "",
+  ]
+    .filter(Boolean)
+    .join("");
+
+  return `<!doctype html>
+<html>
+<body style="margin:0;padding:0;background:#F3F4F7;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F3F4F7;padding:24px 12px;">
+    <tr><td align="center">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#FFFFFF;border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(16,24,40,.08);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+        <!-- Header -->
+        <tr>
+          <td style="background:${dark};padding:24px 32px;">
+            <div style="font-size:18px;font-weight:800;letter-spacing:.3px;color:#FFFFFF;">QUALITY<span style="color:${gold};">PERFORMANCE</span></div>
+            <div style="margin-top:4px;color:#8B97AC;font-size:13px;">We've received your message</div>
+          </td>
+        </tr>
+        <!-- Body -->
+        <tr>
+          <td style="padding:28px 32px 8px;">
+            <div style="color:${dark};font-size:22px;font-weight:800;line-height:1.3;">Thanks, ${first}.</div>
+            <p style="margin:14px 0 0;color:${ink};font-size:15px;line-height:1.6;">
+              We've received your message about <strong>${esc(lead.dealership)}</strong> and a member of our team will get back to you shortly${lead.wantsCall ? ", including to set up the call you requested" : ""}.
+            </p>
+          </td>
+        </tr>
+        ${
+          recap
+            ? `<tr>
+          <td style="padding:16px 32px 4px;">
+            <div style="color:${muted};font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;">Your request</div>
+            <div style="background:#F7F8FA;border-left:3px solid ${gold};border-radius:0 8px 8px 0;padding:14px 16px;color:${ink};font-size:14px;line-height:1.55;">${recap}</div>
+          </td>
+        </tr>`
+            : ""
+        }
+        <!-- Contact -->
+        <tr>
+          <td style="padding:20px 32px 28px;color:${ink};font-size:15px;line-height:1.6;">
+            Need us sooner? Just reply to this email or reach us at
+            <a href="mailto:${esc(contact.email)}" style="color:#B08A1F;text-decoration:none;font-weight:600;">${esc(contact.email)}</a>.
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="padding:18px 32px;background:#FAFBFC;border-top:1px solid ${line};color:${muted};font-size:12px;line-height:1.5;">
+            Quality Performance &middot; Professional paint protection film for dealerships. You're receiving this because you contacted us through qualityperformance.io.
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`;
+}
+
+function buildConfirmationEmail(lead: LeadPayload) {
+  const from = process.env.GMAIL_USER || contact.email;
+
+  return {
+    from: `Quality Performance <${from}>`,
+    to: lead.email,
+    // Replies from the visitor should reach the team inbox, not the raw sender.
+    replyTo: contact.email,
+    subject: "We've received your message — Quality Performance",
+    text: buildConfirmationText(lead),
+    html: buildConfirmationHtml(lead),
+  };
+}
+
+/**
+ * Best-effort confirmation to the visitor. Never throws into the request flow —
+ * the internal lead notification is the source of truth; a failed confirmation
+ * must not turn a captured lead into an error for the visitor.
+ */
+async function sendConfirmationEmail(lead: LeadPayload): Promise<void> {
+  const email = buildConfirmationEmail(lead);
+  const tx = getTransporter();
+
+  if (!tx) {
+    console.info("[lead] SMTP not configured; composed confirmation", email);
+    return;
+  }
+
+  try {
+    await tx.sendMail(email);
+  } catch (err) {
+    console.error("[lead] confirmation email failed (non-fatal)", err);
+  }
+}
+
 export async function POST(request: NextRequest) {
   let body: Partial<LeadPayload>;
   try {
@@ -256,6 +386,10 @@ export async function POST(request: NextRequest) {
       { status: 502 },
     );
   }
+
+  // Confirmation to the visitor — best-effort, must not fail the request once
+  // the internal lead has been captured above.
+  await sendConfirmationEmail(lead);
 
   return NextResponse.json({ ok: true });
 }
