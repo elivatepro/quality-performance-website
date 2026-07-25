@@ -6,21 +6,22 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { products } from "@/data/products";
 
+// Dealer-focused navigation. Consumer paths (Protect Your Car, Gallery) are
+// hidden per the Josh sync — see src/lib/siteConfig.ts. Bring them back by
+// re-adding entries here when dealerOnlyMode is turned off.
 const navLinks = [
   { href: "/services", label: "How We Protect", hasDropdown: true },
   { href: "/partner-with-us", label: "Partner With Us" },
-  { href: "/protect-your-car", label: "Protect Your Car" },
   { href: "/about", label: "About" },
-  { href: "/gallery", label: "Gallery" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 const mobileLinks = [
   { href: "/services", label: "How We Protect", hasSubmenu: true },
   { href: "/partner-with-us", label: "Partner With Us" },
-  { href: "/protect-your-car", label: "Protect Your Car" },
   { href: "/about", label: "About" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/contact?type=contact", label: "Contact Us" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Navbar() {
@@ -228,10 +229,10 @@ export default function Navbar() {
               </svg>
             </a>
             <Link
-              href="/contact?type=contact"
+              href="/contact"
               className="inline-flex items-center rounded-lg border-[1.5px] border-gold px-5 py-2 text-[13px] font-semibold tracking-[0.3px] text-gold transition-all duration-200 hover:bg-gold hover:text-dark"
             >
-              Contact Us
+              Partner With Us
             </Link>
           </div>
 
@@ -386,9 +387,6 @@ export default function Navbar() {
                 <a href="mailto:hello@qualityperformance.io" className="block text-[14px] text-white/70">
                   hello@qualityperformance.io
                 </a>
-                <a href="tel:8605011818" className="mt-1.5 block text-[14px] text-white/70">
-                  (860) 501-1818
-                </a>
               </div>
 
               {/* Social */}
@@ -429,7 +427,7 @@ export default function Navbar() {
               {/* Status */}
               <div className="border-t border-white/[0.06] pt-5">
                 <p className="mb-3 text-[11px] font-medium uppercase tracking-[1.5px] text-white/30">
-                  Serving Dealerships Nationwide
+                  Serving Dealerships Across the Northeast
                 </p>
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-green-500" />

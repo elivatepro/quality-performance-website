@@ -5,8 +5,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 import StatCounter from "@/components/StatCounter";
 import HeroVideo from "@/components/HeroVideo";
 
-import ProtectionMapSection from "@/components/protection-map/ProtectionMapSection";
+import DealerCoverageMap from "@/components/protection-map/DealerCoverageMap";
 import CTABlock from "@/components/CTABlock";
+import { features } from "@/lib/siteConfig";
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
             <span className="text-[13px] font-medium text-white/80">
-              Trusted by 50+ dealerships across 8 states
+              Trusted by 20+ dealerships across 4&#8211;5 states
             </span>
           </div>
 
@@ -37,9 +38,9 @@ export default function Home() {
             className="animate-hero mx-auto mt-6 max-w-[620px] text-base leading-relaxed text-white/65 md:text-lg"
             style={{ animationDelay: "0.35s" }}
           >
-            Professional paint protection film installations for dealerships and
-            vehicle owners. Self-healing, virtually invisible, backed by a
-            5&#8209;year warranty.
+            Professional paint protection film for dealership inventory.
+            Self-healing, virtually invisible, backed by a 5&#8209;year warranty.
+            Installed on-site by certified pros.
           </p>
           <div
             className="animate-hero mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
@@ -49,7 +50,7 @@ export default function Home() {
               href="/contact"
               className="group inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-8 py-[14px] text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.03]"
             >
-              Get a Free Quote
+              Partner With Us
               <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
@@ -60,7 +61,7 @@ export default function Home() {
         {/* Logo Strip at bottom of hero */}
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/[0.06] bg-dark/40 backdrop-blur-sm">
           <div className="mx-auto flex max-w-[1280px] items-center justify-center gap-10 overflow-hidden px-6 py-5 md:gap-16 lg:px-12">
-            {["Made in the USA", "5-Year Warranty", "Self-Healing", "100K+ Installs", "Certified Pros"].map((item, i) => (
+            {["Made in the USA", "5-Year Warranty", "Self-Healing", "20K+ Installs", "Certified Pros"].map((item, i) => (
               <span
                 key={item}
                 className="shrink-0 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[2px] text-white/30 md:text-[12px]"
@@ -78,7 +79,7 @@ export default function Home() {
         <div className="animate-marquee flex whitespace-nowrap">
           {[...Array(2)].map((_, rep) => (
             <div key={rep} className="flex shrink-0 items-center gap-12 px-6">
-              {["MADE IN THE USA", "5-YEAR WARRANTY", "SELF-HEALING TECHNOLOGY", "100,000+ INSTALLATIONS", "CERTIFIED INSTALLERS", "MADE IN THE USA", "5-YEAR WARRANTY", "SELF-HEALING TECHNOLOGY", "100,000+ INSTALLATIONS", "CERTIFIED INSTALLERS"].map((text, i) => (
+              {["MADE IN THE USA", "5-YEAR WARRANTY", "SELF-HEALING TECHNOLOGY", "20,000+ INSTALLATIONS", "CERTIFIED INSTALLERS", "MADE IN THE USA", "5-YEAR WARRANTY", "SELF-HEALING TECHNOLOGY", "20,000+ INSTALLATIONS", "CERTIFIED INSTALLERS"].map((text, i) => (
                 <span key={`${rep}-${i}`} className="flex items-center gap-12 text-sm font-semibold uppercase tracking-[3px] text-gold/70">
                   {text}
                   <span className="text-gold/30">✦</span>
@@ -95,9 +96,9 @@ export default function Home() {
           <AnimatedSection>
             <div className="flex flex-col items-center justify-center gap-10 md:flex-row md:gap-0">
               {[
-                { value: "100,000+", label: "INSTALLATIONS" },
-                { value: "50+", label: "DEALERSHIPS SERVED" },
-                { value: "8", label: "STATES COVERED" },
+                { value: "20,000+", label: "INSTALLATIONS" },
+                { value: "20+", label: "DEALERSHIPS SERVED" },
+                { value: "4–5", label: "STATES COVERED" },
               ].map((stat, i) => (
                 <div key={stat.label} className={`flex-1 text-center ${i > 0 ? "md:border-l md:border-border" : ""}`}>
                   <div className="text-[42px] font-bold leading-none text-gold tabular-nums">{stat.value}</div>
@@ -109,62 +110,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 4. AUDIENCE SPLIT ─── */}
+      {/* ─── 4. WHY DEALERS PARTNER (win-win) ─── */}
+      {/* Reworked from the old two-audience split (Josh sync): the consumer
+          "Protect Your Car" card is hidden for the dealer-only launch. This now
+          frames the dealer value directly — a win for the dealership and a win
+          for the driver. */}
       <section className="bg-surface-alt py-20 md:py-28">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
+        <div className="mx-auto grid max-w-[1280px] items-center gap-12 px-6 lg:grid-cols-2 lg:px-12">
           <AnimatedSection>
-            <div className="mb-12 text-center">
-              <p className="mb-3 text-[13px] font-semibold uppercase tracking-[2px] text-gold">Who We Serve</p>
-              <h2 className="text-3xl font-bold text-text-primary md:text-4xl" style={{ letterSpacing: "-0.02em" }}>Two Audiences, One Standard of Excellence</h2>
-              <p className="mx-auto mt-4 max-w-[640px] text-lg text-text-secondary">Whether you manage a dealership fleet or own a single vehicle, we deliver professional PPF installation with precision and care.</p>
+            <div className="relative min-h-[360px] overflow-hidden rounded-2xl bg-dark lg:min-h-[460px]">
+              <Image src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80" alt="Dealership lot" width={800} height={600} className="absolute inset-0 h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/40 to-transparent" />
             </div>
           </AnimatedSection>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            <AnimatedSection delay={100}>
-              <Link href="/partner-with-us" className="group relative block min-h-[480px] overflow-hidden rounded-xl bg-dark">
-                <Image src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80" alt="Dealership lot" width={800} height={600} className="absolute inset-0 h-full w-full object-cover transition-all duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/70 to-[#0B1120]/20 transition-opacity duration-500 group-hover:opacity-80" />
-                <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
-                  <h3 className="text-2xl font-bold text-white md:text-3xl">Partner With Us</h3>
-                  <ul className="mt-5 space-y-2.5">
-                    {["Protect inventory & increase resale value", "Digital portal for tracking & billing", "Multi-state coverage with certified installers"].map((b) => (
-                      <li key={b} className="flex items-start gap-2.5 text-[15px] text-white/80">
-                        <svg className="mt-0.5 h-4 w-4 shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-7">
-                    <span className="inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-dark transition-all group-hover:bg-gold-hover group-hover:scale-[1.02]">
-                      Learn More <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </AnimatedSection>
-            <AnimatedSection delay={200}>
-              <Link href="/protect-your-car" className="group relative block min-h-[480px] overflow-hidden rounded-xl bg-dark">
-                <Image src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80" alt="Pristine vehicle" width={800} height={600} className="absolute inset-0 h-full w-full object-cover transition-all duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/70 to-[#0B1120]/20 transition-opacity duration-500 group-hover:opacity-80" />
-                <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
-                  <h3 className="text-2xl font-bold text-white md:text-3xl">Protect Your Car</h3>
-                  <ul className="mt-5 space-y-2.5">
-                    {["Preserve your paint & resale value", "Self-healing film for lasting protection", "Professional installation you can trust"].map((b) => (
-                      <li key={b} className="flex items-start gap-2.5 text-[15px] text-white/80">
-                        <svg className="mt-0.5 h-4 w-4 shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-7">
-                    <span className="inline-flex items-center gap-2 rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-all group-hover:border-gold group-hover:bg-gold group-hover:text-dark">
-                      Learn More <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </AnimatedSection>
-          </div>
+          <AnimatedSection delay={150}>
+            <h2 className="text-3xl font-bold text-text-primary md:text-4xl" style={{ letterSpacing: "-0.02em" }}>
+              A win for your lot. A win for every driver.
+            </h2>
+            <p className="mt-4 text-lg text-text-secondary">
+              Dealers protect inventory and add a profit center. Drivers get a
+              car that stays protected for as long as they own it. We handle the
+              film, the install, and the tracking. You keep the credit.
+            </p>
+            <ul className="mt-8 space-y-3.5">
+              {[
+                "Protect inventory and increase resale value",
+                "A new profit center with no added overhead",
+                "Certified installers on-site, tracked by VIN",
+                "Coverage across the Northeast, room to grow",
+              ].map((b) => (
+                <li key={b} className="flex items-start gap-3 text-[15px] text-text-primary">
+                  <svg className="mt-0.5 h-5 w-5 shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                  {b}
+                </li>
+              ))}
+            </ul>
+            <Link href="/partner-with-us" className="group mt-8 inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]">
+              How Partnership Works
+              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            </Link>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -228,8 +213,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 5b. PROTECTION MAP ─── */}
-      <ProtectionMapSection />
+      {/* ─── 5b. DEALER COVERAGE MAP (single labeled 5-point diagram) ─── */}
+      <DealerCoverageMap />
 
       {/* ─── 6. OUR PROCESS ─── */}
       <section className="relative overflow-hidden py-20 md:py-28">
@@ -277,13 +262,13 @@ export default function Home() {
           <AnimatedSection delay={500}>
             <div className="mt-8 flex flex-col items-center justify-between gap-5 rounded-2xl border border-white/[0.08] bg-white/[0.04] px-7 py-5 backdrop-blur-sm sm:flex-row">
               <p className="text-[15px] text-white/70">
-                Ready to get started? <span className="font-semibold text-white">Get a personalized quote today.</span>
+                Ready to protect your inventory? <span className="font-semibold text-white">Let&apos;s talk partnership.</span>
               </p>
               <Link
                 href="/contact"
                 className="group inline-flex shrink-0 items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
               >
-                Get a Quote
+                Partner With Us
                 <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
@@ -294,6 +279,10 @@ export default function Home() {
       </section>
 
       {/* ─── 7. PLATFORM PREVIEW ─── */}
+      {/* Hidden for the dealer-only launch (Josh sync): the platform/dashboard
+          detail is a sales-conversation / deck asset, not public web. Flip
+          features.platformShowcase in siteConfig to bring it back. */}
+      {features.platformShowcase && (
       <section className="bg-dark py-20 md:py-28">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -343,6 +332,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ─── 8. STATS ─── */}
       <section className="overflow-hidden bg-dark">
@@ -383,9 +373,9 @@ export default function Home() {
               <AnimatedSection delay={200}>
                 <div className="mt-10 grid grid-cols-2 gap-y-8 gap-x-6 sm:gap-x-10">
                   {[
-                    { end: 100000, suffix: "+", label: "Installations" },
-                    { end: 50, suffix: "+", label: "Dealerships Served" },
-                    { end: 8, suffix: "", label: "States Covered" },
+                    { end: 20000, suffix: "+", label: "Installations" },
+                    { end: 20, suffix: "+", label: "Dealerships Served" },
+                    { end: 5, suffix: "", label: "States Covered" },
                     { end: 7, suffix: "", label: "Protection Products" },
                   ].map((stat) => (
                     <div key={stat.label} className="border-l-2 border-gold/30 pl-4 sm:pl-5">

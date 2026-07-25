@@ -9,9 +9,9 @@ interface CTABlockProps {
 }
 
 export default function CTABlock({
-  headline = "Ready to Protect Your Investment?",
-  description = "Get a free consultation and quote for professional paint protection film installation.",
-  buttonText = "Get a Quote",
+  headline = "Ready to Protect Your Inventory?",
+  description = "Partner with Quality Performance for professional, on-site paint protection film across your lot.",
+  buttonText = "Partner With Us",
   buttonHref = "/contact",
 }: CTABlockProps) {
   return (

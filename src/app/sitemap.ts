@@ -1,6 +1,14 @@
 import type { MetadataRoute } from "next";
 import { products } from "@/data/products";
 
+/**
+ * Sitemap for the dealer-focused site (Josh sync).
+ *
+ * Consumer / hidden routes (protect-your-car, technology, vin-decoder,
+ * protection-map, gallery, reviews, sms-updates) are intentionally excluded so
+ * search engines index only the dealer experience. Those routes still exist in
+ * the app; re-add them here when the consumer experience is brought back.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://qualityperformance.io";
 
@@ -25,48 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/protect-your-car`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
       url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     ...productPages,
-    {
-      url: `${baseUrl}/technology`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/vin-decoder`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/protection-map`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/gallery`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/reviews`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
     {
       url: `${baseUrl}/faq`,
       lastModified: new Date(),
@@ -96,12 +68,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/sms-updates`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
     },
     {
       url: `${baseUrl}/privacy`,

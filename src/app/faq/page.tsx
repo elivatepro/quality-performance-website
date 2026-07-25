@@ -146,16 +146,16 @@ export default function FAQ() {
               </p>
               <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <Link
-                  href="/contact?type=contact"
+                  href="/contact"
                   className="inline-flex items-center rounded-lg bg-gold px-6 py-3 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
                 >
                   Contact Us
                 </Link>
                 <a
-                  href="tel:8605011818"
+                  href="mailto:hello@qualityperformance.io"
                   className="text-sm font-semibold text-gold hover:underline"
                 >
-                  Or call (860) 501-1818
+                  Or email hello@qualityperformance.io
                 </a>
               </div>
             </div>

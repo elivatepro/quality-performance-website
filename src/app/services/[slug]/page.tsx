@@ -74,7 +74,7 @@ export default async function ProductPage({ params }: PageProps) {
                 href="/contact"
                 className="inline-flex items-center rounded-lg bg-gold px-6 py-3.5 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
               >
-                Get a Quote
+                Partner With Us
               </Link>
             </div>
           </div>
@@ -256,9 +256,9 @@ export default async function ProductPage({ params }: PageProps) {
       )}
 
       <CTABlock
-        headline={`Get ${product.name} for Your Vehicle`}
-        description="Request a personalized quote for professional installation."
-        buttonText="Get a Quote"
+        headline={`Offer ${product.name} on Your Lot`}
+        description="Partner with us to add professional PPF installation to your inventory."
+        buttonText="Partner With Us"
       />
     </>
   );

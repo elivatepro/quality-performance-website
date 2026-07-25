@@ -105,17 +105,34 @@ The site uses a **"Midnight Premium"** dark theme:
 | `--color-dark-alt` | `#111827` | Card backgrounds |
 | `--color-dark-tertiary` | `#162032` | Input backgrounds |
 
-## Contact Form Modes
+## Dealer Lead Form
 
-The contact page supports three modes via URL parameter `?type=`:
+`/contact` is a single-submit dealership lead form (name, email, dealership name,
+direct line, "how can we help you?" interest checkmarks, an optional phone-call
+request with best time + call/text preference, and a comments box). It posts to
+`POST /api/lead`, which emails the lead to Josh via Gmail SMTP with reply-to set
+to the dealer.
 
-- **`/contact`** — Multi-step quote request form (default)
-- **`/contact?type=contact`** — Simple message form
-- **`/contact?type=demo`** — Dealer portal demo request form
+Direct-to-consumer surfaces (the old multi-step quote flow, VIN decoder,
+gallery, Protect Your Car) are hidden — not deleted — via `src/lib/siteConfig.ts`
+(`dealerOnlyMode`). Flip that flag to bring the consumer experience back.
+
+### Email configuration
+
+The lead route sends via Gmail SMTP using [nodemailer](https://nodemailer.com/).
+Copy `.env.example` to `.env.local` and set:
+
+- `GMAIL_USER` — the sending Google Workspace address (`hello@qualityperformance.io`)
+- `GMAIL_APP_PASSWORD` — a Gmail App Password for that account (not the login password)
+- `LEAD_INBOX` — where leads land (defaults to `GMAIL_USER`)
+
+If credentials are absent, the composed email is logged instead of sent and the
+form still confirms success, so local dev works without secrets.
 
 ## API Routes
 
-- **`POST /api/decode-vin`** — Decodes a 17-character VIN using the [NHTSA Vehicle API](https://vpic.nhtsa.dot.gov/api/) and returns make, model, year, and other vehicle data.
+- **`POST /api/lead`** — Accepts a dealership lead, validates it, and emails it to `LEAD_INBOX` via Gmail SMTP (reply-to the dealer).
+- **`POST /api/decode-vin`** — Decodes a 17-character VIN using the [NHTSA Vehicle API](https://vpic.nhtsa.dot.gov/api/). Retained but no longer surfaced in the dealer UI.
 
 ## Key Features
 

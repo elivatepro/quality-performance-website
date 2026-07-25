@@ -80,10 +80,6 @@ export default function TermsOfService() {
                   data rates may apply. Consent is not required to submit a form, receive
                   service, complete a transaction, or make a purchase. You may opt out at any
                   time by replying STOP. For assistance, reply HELP or contact us at{" "}
-                  <a href="tel:8605011818" className="text-gold hover:underline">
-                    (860) 501-1818
-                  </a>{" "}
-                  or{" "}
                   <a
                     href="mailto:hello@qualityperformance.io"
                     className="text-gold hover:underline"
@@ -311,7 +307,6 @@ export default function TermsOfService() {
                 <div className="mt-4 rounded-xl border border-white/[0.08] bg-white/[0.04] p-5">
                   <p className="font-semibold text-white">Quality Performance</p>
                   <div className="mt-2 space-y-1 text-sm text-white/60">
-                    <p>Phone: <a href="tel:8605011818" className="text-gold hover:underline">(860) 501-1818</a></p>
                     <p>Email: <a href="mailto:hello@qualityperformance.io" className="text-gold hover:underline">hello@qualityperformance.io</a></p>
                     <p>Website: <a href="https://qualityperformance.io" className="text-gold hover:underline">qualityperformance.io</a></p>
                     <p>Dealer Portal: <a href="https://app.qualityperformance.io" className="text-gold hover:underline">app.qualityperformance.io</a></p>

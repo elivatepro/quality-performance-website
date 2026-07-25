@@ -70,7 +70,7 @@ export default function NotFound() {
             View Services
           </Link>
           <Link
-            href="/contact?type=contact"
+            href="/contact"
             className="inline-flex items-center gap-2 rounded-lg border border-white/[0.12] px-6 py-3 text-base font-medium text-white/70 transition-all hover:border-white/[0.25] hover:text-white"
           >
             Contact Us
@@ -84,11 +84,11 @@ export default function NotFound() {
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-2">
             {[
-              { href: "/protect-your-car", label: "Protect Your Car" },
+              { href: "/services", label: "How We Protect" },
               { href: "/partner-with-us", label: "Partner With Us" },
-              { href: "/technology", label: "Dealer Portal" },
-              { href: "/vin-decoder", label: "VIN Decoder" },
+              { href: "/about", label: "About" },
               { href: "/faq", label: "FAQ" },
+              { href: "/contact", label: "Contact Us" },
             ].map((link) => (
               <Link
                 key={link.href}

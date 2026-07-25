@@ -53,13 +53,13 @@ export default function PartnerWithUs() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-lg bg-gold px-6 py-3.5 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
               >
-                Request a Partnership Quote
+                Partner With Us
               </Link>
               <Link
-                href="/contact?type=demo"
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3.5 text-base font-semibold text-white transition-all hover:border-gold hover:text-gold"
               >
-                Book a Portal Demo
+                Request More Information
               </Link>
             </div>
           </div>
@@ -275,8 +275,8 @@ export default function PartnerWithUs() {
 
       <CTABlock
         headline="Ready to Protect Your Dealership Inventory?"
-        description="Request a quote or schedule a demo of our dealership management portal."
-        buttonText="Request a Quote"
+        description="Tell us about your lot and we'll follow up to set up your partnership."
+        buttonText="Partner With Us"
       />
     </>
   );

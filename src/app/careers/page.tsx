@@ -134,7 +134,7 @@ export default function Careers() {
               </p>
               <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <Link
-                  href="/contact?type=contact"
+                  href="/contact"
                   className="inline-flex items-center rounded-lg bg-gold px-6 py-3 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
                 >
                   Apply Now
