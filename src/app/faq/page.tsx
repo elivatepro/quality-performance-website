@@ -100,9 +100,61 @@ export default function FAQ() {
               className="animate-hero mt-4 text-lg text-white/70"
               style={{ animationDelay: "0.3s" }}
             >
-              Everything you need to know about paint protection film, our
-              services, and how we work with dealerships and car owners.
+              How dealership onboarding works, what we protect, and the answers
+              partners ask most.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Dealership onboarding pathway (Josh sync, QP-162) */}
+      <section className="bg-surface-alt py-20 md:py-24">
+        <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
+          <AnimatedSection>
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-wider text-gold">
+                Getting Started
+              </p>
+              <h2 className="mt-3 text-3xl font-bold text-text-primary md:text-4xl" style={{ letterSpacing: "-0.02em" }}>
+                How dealership onboarding works
+              </h2>
+              <p className="mt-4 text-lg text-text-secondary">
+                Four simple steps from first conversation to a protected lot.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                step: "01",
+                title: "Consult",
+                desc: "We talk through your inventory, volume, and goals, and confirm we serve your area.",
+              },
+              {
+                step: "02",
+                title: "Sign Up",
+                desc: "We set up your dealership account and portal access. Billing starts simple: we invoice you directly.",
+              },
+              {
+                step: "03",
+                title: "Load Inventory",
+                desc: "Your inventory connects to the portal so vehicles are ready for install requests, tracked by VIN.",
+              },
+              {
+                step: "04",
+                title: "Install",
+                desc: "Certified installers come on-site, protect each vehicle, and document every install for your records.",
+              },
+            ].map((item, i) => (
+              <AnimatedSection key={item.step} delay={i * 100}>
+                <div className="flex h-full flex-col rounded-2xl border border-white/[0.08] bg-dark-alt p-6">
+                  <span className="text-[28px] font-bold leading-none text-gold/50">{item.step}</span>
+                  <h3 className="mt-4 text-lg font-bold text-white">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/60">{item.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>

@@ -32,6 +32,17 @@ export const features = {
   platformShowcase: !dealerOnlyMode,
 } as const;
 
+/**
+ * Lifetime installation count shown on the site.
+ *
+ * Josh: "Lifetime, we've done 22,000 units... we could use 20,000 plus
+ * installations." He'd like this LIVE from the QP app eventually. Until that
+ * feed exists (a QPIMS/app dependency), it's a single source of truth here,
+ * overridable without a code change via NEXT_PUBLIC_INSTALL_COUNT so the number
+ * can be bumped as it grows. Swap the value for a fetch when the app exposes one.
+ */
+export const installCount = Number(process.env.NEXT_PUBLIC_INSTALL_COUNT) || 20000;
+
 /** Contact details surfaced publicly. Phone is intentionally omitted for the
  * dealer-only launch — leads come by email so Josh sees them directly. */
 export const contact = {

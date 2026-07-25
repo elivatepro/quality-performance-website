@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { products } from "@/data/products";
 import AnimatedSection from "@/components/AnimatedSection";
-import StatCounter from "@/components/StatCounter";
 import HeroVideo from "@/components/HeroVideo";
+import LiveInstallCounter from "@/components/LiveInstallCounter";
+import RotatingHeadline from "@/components/RotatingHeadline";
 
 import DealerCoverageMap from "@/components/protection-map/DealerCoverageMap";
 import CTABlock from "@/components/CTABlock";
-import { features } from "@/lib/siteConfig";
+import { features, installCount } from "@/lib/siteConfig";
 
 export default function Home() {
   return (
@@ -28,12 +29,15 @@ export default function Home() {
             </span>
           </div>
 
-          <h1
+          <RotatingHeadline
+            phrases={[
+              "Protect What's on Your Lot.",
+              "Protect What You Invest In.",
+              "Protect Every Vehicle You Sell.",
+            ]}
             className="animate-hero text-4xl font-bold leading-[1.1] text-white md:text-5xl lg:text-[64px]"
             style={{ letterSpacing: "-0.03em", animationDelay: "0.15s" }}
-          >
-            Protect What You Invest In.
-          </h1>
+          />
           <p
             className="animate-hero mx-auto mt-6 max-w-[620px] text-base leading-relaxed text-white/65 md:text-lg"
             style={{ animationDelay: "0.35s" }}
@@ -95,12 +99,18 @@ export default function Home() {
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <AnimatedSection>
             <div className="flex flex-col items-center justify-center gap-10 md:flex-row md:gap-0">
+              {/* Live installations counter */}
+              <div className="flex-1 text-center">
+                <LiveInstallCounter end={installCount} />
+                <div className="mt-2 text-[13px] font-medium uppercase tracking-[1.5px] text-text-secondary">
+                  Installations
+                </div>
+              </div>
               {[
-                { value: "20,000+", label: "INSTALLATIONS" },
                 { value: "20+", label: "DEALERSHIPS SERVED" },
                 { value: "4–5", label: "STATES COVERED" },
-              ].map((stat, i) => (
-                <div key={stat.label} className={`flex-1 text-center ${i > 0 ? "md:border-l md:border-border" : ""}`}>
+              ].map((stat) => (
+                <div key={stat.label} className="flex-1 text-center md:border-l md:border-border">
                   <div className="text-[42px] font-bold leading-none text-gold tabular-nums">{stat.value}</div>
                   <div className="mt-2 text-[13px] font-medium uppercase tracking-[1.5px] text-text-secondary">{stat.label}</div>
                 </div>
@@ -334,63 +344,10 @@ export default function Home() {
       </section>
       )}
 
-      {/* ─── 8. STATS ─── */}
-      <section className="overflow-hidden bg-dark">
-        <div className="mx-auto max-w-[1280px]">
-          <div className="grid lg:grid-cols-2">
-            {/* Left — Image */}
-            <AnimatedSection>
-              <div className="relative h-64 sm:h-80 lg:h-full lg:min-h-[520px]">
-                <Image
-                  src="/images/stats-install.png"
-                  alt="Professional PPF installation"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-dark" />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-dark/50" />
-              </div>
-            </AnimatedSection>
+      {/* Section 8 "Our Track Record" removed (Josh sync, QP-158): it repeated
+          the stats already shown in the trust bar above. */}
 
-            {/* Right — Content + Stats */}
-            <div className="flex flex-col justify-center px-6 py-16 sm:px-10 md:py-20 lg:px-14 lg:py-24">
-              <AnimatedSection>
-                <p className="mb-3 text-[13px] font-semibold uppercase tracking-[2px] text-gold">
-                  Our Track Record
-                </p>
-                <h2
-                  className="text-3xl font-bold text-white md:text-4xl"
-                  style={{ letterSpacing: "-0.02em" }}
-                >
-                  Trusted by Dealerships Nationwide
-                </h2>
-                <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/60">
-                  From single vehicles to entire dealer fleets, we deliver consistent quality, on time, across multiple states — backed by data and driven by precision.
-                </p>
-              </AnimatedSection>
-
-              {/* 2x2 Stats Grid */}
-              <AnimatedSection delay={200}>
-                <div className="mt-10 grid grid-cols-2 gap-y-8 gap-x-6 sm:gap-x-10">
-                  {[
-                    { end: 20000, suffix: "+", label: "Installations" },
-                    { end: 20, suffix: "+", label: "Dealerships Served" },
-                    { end: 5, suffix: "", label: "States Covered" },
-                    { end: 7, suffix: "", label: "Protection Products" },
-                  ].map((stat) => (
-                    <div key={stat.label} className="border-l-2 border-gold/30 pl-4 sm:pl-5">
-                      <StatCounter end={stat.end} suffix={stat.suffix} label={stat.label} />
-                    </div>
-                  ))}
-                </div>
-              </AnimatedSection>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* ─── 10. FINAL CTA ─── */}
+      {/* ─── FINAL CTA ─── */}
       <CTABlock />
     </>
   );
