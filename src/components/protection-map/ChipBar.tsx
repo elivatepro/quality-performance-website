@@ -17,8 +17,8 @@ export default function ChipBar({ activeId, onSelect }: ChipBarProps) {
           onClick={() => onSelect(activeId === point.id ? null : point.id)}
           className={`shrink-0 rounded-full border px-4 py-2 text-[12px] font-medium transition-all duration-200 ${
             activeId === point.id
-              ? "border-gold bg-gold/10 text-gold"
-              : "border-border-dark text-text-secondary hover:border-gold/30 hover:text-text-primary"
+              ? "border-blue bg-blue/10 text-blue"
+              : "border-border-dark text-text-secondary hover:border-blue/30 hover:text-text-primary"
           }`}
         >
           {point.shortLabel}

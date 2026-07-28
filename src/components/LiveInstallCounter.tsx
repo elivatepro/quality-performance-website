@@ -11,7 +11,7 @@ import { useEffect, useRef, useState } from "react";
  * siteConfig.installCount; swap in a real app fetch when the QP app exposes one.
  *
  * Honors prefers-reduced-motion (shows the final number immediately) and matches
- * the trust-bar's centered gold style.
+ * the trust-bar's centered blue style.
  */
 export default function LiveInstallCounter({ end }: { end: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -68,10 +68,10 @@ export default function LiveInstallCounter({ end }: { end: number }) {
     <div ref={ref}>
       <div className="flex items-center justify-center gap-2">
         <span className="relative flex h-2 w-2" aria-hidden="true">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold/60" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue/60" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-blue" />
         </span>
-        <span className="text-[42px] font-bold leading-none text-gold tabular-nums">
+        <span className="text-[42px] font-bold leading-none text-blue tabular-nums">
           {count.toLocaleString()}
           <span>+</span>
         </span>

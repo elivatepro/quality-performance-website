@@ -27,13 +27,13 @@ export default function ProtectionMapFull() {
                 onClick={() => setActiveId(activeId === point.id ? null : point.id)}
                 className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-all duration-200 ${
                   activeId === point.id
-                    ? "border-l-2 border-gold bg-gold/[0.06]"
+                    ? "border-l-2 border-blue bg-blue/[0.06]"
                     : "border-l-2 border-transparent hover:bg-white/[0.03]"
                 }`}
               >
                 <span
                   className={`h-2 w-2 shrink-0 rounded-full transition-all duration-200 ${
-                    activeId === point.id ? "bg-gold" : "bg-gold/30"
+                    activeId === point.id ? "bg-blue" : "bg-blue/30"
                   }`}
                 />
                 <span
@@ -66,7 +66,7 @@ export default function ProtectionMapFull() {
           ) : (
             <div className="rounded-xl border border-white/[0.08] bg-dark-tertiary p-10 text-center">
               <svg
-                className="mx-auto mb-4 h-12 w-12 text-gold/25"
+                className="mx-auto mb-4 h-12 w-12 text-blue/25"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -113,13 +113,13 @@ export default function ProtectionMapFull() {
         <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-lg bg-gold px-8 py-3.5 text-sm font-semibold uppercase tracking-[1px] text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
+            className="inline-flex items-center rounded-lg bg-blue px-8 py-3.5 text-sm font-semibold uppercase tracking-[1px] text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
           >
             Get a Quote
           </Link>
           <Link
             href="/partner-with-us"
-            className="inline-flex items-center rounded-lg border-[1.5px] border-gold px-8 py-3.5 text-sm font-semibold uppercase tracking-[1px] text-gold transition-all hover:bg-gold hover:text-dark"
+            className="inline-flex items-center rounded-lg border-[1.5px] border-blue px-8 py-3.5 text-sm font-semibold uppercase tracking-[1px] text-blue transition-all hover:bg-blue hover:text-white"
           >
             Partner With Us
           </Link>

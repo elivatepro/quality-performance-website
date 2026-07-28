@@ -13,7 +13,7 @@ export default function SmsUpdatesPage() {
       <section className="bg-dark pb-12 pt-32 md:pb-16 md:pt-40">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <div className="max-w-4xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-[0.24em] text-gold">
+            <p className="animate-hero text-sm font-semibold uppercase tracking-[0.24em] text-blue">
               Communication Preferences
             </p>
             <h1

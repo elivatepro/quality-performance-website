@@ -12,7 +12,7 @@ interface TeamMember {
 }
 
 const team: TeamMember[] = [
-  { name: "Josh Gomes", role: "Owner", initials: "JG", color: "from-gold/80 to-gold/40", image: "/images/team-josh-gomes.jpeg" },
+  { name: "Josh Gomes", role: "Owner", initials: "JG", color: "from-blue/80 to-blue/40", image: "/images/team-josh-gomes.jpeg" },
   { name: "Boko James", role: "Supervisor", initials: "BJ", color: "from-emerald-500/70 to-emerald-700/40" },
   { name: "Jason Blanco", role: "Supervisor", initials: "JB", color: "from-sky-500/70 to-sky-700/40" },
   { name: "Boko Elivate", role: "Admin", initials: "BE", color: "from-violet-500/70 to-violet-700/40" },

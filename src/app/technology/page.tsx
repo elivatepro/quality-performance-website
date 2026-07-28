@@ -28,7 +28,7 @@ export default function Technology() {
         </div>
         <div className="relative mx-auto w-full max-w-[1280px] px-6 py-32 lg:px-12">
           <div className="max-w-3xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-gold">
+            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
               Dealer Portal
             </p>
             <h1
@@ -49,7 +49,7 @@ export default function Technology() {
             >
               <Link
                 href="/contact?type=demo"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-6 py-3.5 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
               >
                 Request a Demo
               </Link>
@@ -75,7 +75,7 @@ export default function Technology() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <AnimatedSection>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-gold">
+                <p className="text-sm font-semibold uppercase tracking-wider text-blue">
                   The Problem We Solved
                 </p>
                 <h2
@@ -110,7 +110,7 @@ export default function Technology() {
                     key={item.label}
                     className="rounded-xl bg-surface-alt p-6 text-center"
                   >
-                    <div className="text-2xl font-bold text-gold md:text-3xl">
+                    <div className="text-2xl font-bold text-blue md:text-3xl">
                       {item.metric}
                     </div>
                     <div className="mt-2 text-xs font-medium text-text-secondary">
@@ -261,7 +261,7 @@ export default function Technology() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <AnimatedSection>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-gold">
+                <p className="text-sm font-semibold uppercase tracking-wider text-blue">
                   Real-Time Installation Tracking
                 </p>
                 <h2
@@ -278,7 +278,7 @@ export default function Technology() {
                     Your team can view installation history at any time, filter by date range or vehicle, and confirm exactly what was done without picking up the phone.
                   </p>
                 </div>
-                <div className="mt-6 rounded-xl border border-gold/15 bg-gold/[0.04] p-4">
+                <div className="mt-6 rounded-xl border border-blue/15 bg-blue/[0.04] p-4">
                   <p className="text-sm font-medium text-white/80">
                     Complete accountability for every vehicle. No disputed installs, no missing records — just a clean log you can reference anytime.
                   </p>
@@ -373,10 +373,10 @@ export default function Technology() {
             ].map((feature, i) => (
               <AnimatedSection key={feature.title} delay={i * 100}>
                 <div className="h-full rounded-xl bg-dark-alt p-7 transition-all hover:shadow-card">
-                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gold-subtle text-gold">
+                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-subtle text-blue">
                     {feature.icon}
                   </div>
-                  <h3 className="text-lg font-bold text-gold">
+                  <h3 className="text-lg font-bold text-blue">
                     {feature.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-text-secondary">
@@ -444,7 +444,7 @@ export default function Technology() {
                         ].map(([label, value]) => (
                           <div key={label} className="flex items-start justify-between gap-4 py-1">
                             <span className="shrink-0 text-[11px] font-medium text-white/40">{label}</span>
-                            <span className={`text-right text-[11px] ${label === "Install" ? "font-mono text-white/80" : label === "Install Charge" ? "font-semibold text-gold" : "text-white/60"}`}>
+                            <span className={`text-right text-[11px] ${label === "Install" ? "font-mono text-white/80" : label === "Install Charge" ? "font-semibold text-blue" : "text-white/60"}`}>
                               {value}
                             </span>
                           </div>
@@ -459,7 +459,7 @@ export default function Technology() {
 
             <AnimatedSection delay={200}>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-gold">
+                <p className="text-sm font-semibold uppercase tracking-wider text-blue">
                   Billing & Financial Transparency
                 </p>
                 <h2
@@ -525,9 +525,9 @@ export default function Technology() {
               </div>
 
               {/* After */}
-              <div className="rounded-2xl border border-gold/20 bg-gold/[0.04] p-7">
-                <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gold/10">
-                  <svg className="h-5 w-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <div className="rounded-2xl border border-blue/20 bg-blue/[0.04] p-7">
+                <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue/10">
+                  <svg className="h-5 w-5 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
@@ -541,7 +541,7 @@ export default function Technology() {
                     "Your team is proactive — your PPF program runs itself",
                   ].map((item) => (
                     <li key={item} className="flex gap-2 text-sm text-white/80">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/60" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue/60" />
                       {item}
                     </li>
                   ))}
@@ -587,7 +587,7 @@ export default function Technology() {
             ].map((item, i) => (
               <AnimatedSection key={item.step} delay={i * 100}>
                 <div className="relative rounded-xl border border-white/[0.08] bg-white/[0.03] p-7">
-                  <span className="text-4xl font-extrabold text-gold/20">{item.step}</span>
+                  <span className="text-4xl font-extrabold text-blue/20">{item.step}</span>
                   <h3 className="mt-3 text-lg font-bold text-white">
                     {item.title}
                   </h3>
@@ -674,10 +674,10 @@ export default function Technology() {
             ].map((feature, i) => (
               <AnimatedSection key={feature.title} delay={i * 80}>
                 <div className="h-full rounded-xl bg-dark-alt p-7 transition-all hover:shadow-card">
-                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gold-subtle text-gold">
+                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-subtle text-blue">
                     {feature.icon}
                   </div>
-                  <h3 className="text-lg font-bold text-gold">
+                  <h3 className="text-lg font-bold text-blue">
                     {feature.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-text-secondary">
@@ -694,7 +694,7 @@ export default function Technology() {
       <section className="bg-dark py-16 md:py-20">
         <div className="mx-auto max-w-[1280px] px-6 text-center lg:px-12">
           <AnimatedSection>
-            <p className="text-sm font-semibold uppercase tracking-wider text-gold">
+            <p className="text-sm font-semibold uppercase tracking-wider text-blue">
               See It in Action
             </p>
             <h2
@@ -709,7 +709,7 @@ export default function Technology() {
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="/contact?type=demo"
-                className="inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3.5 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-lg bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
               >
                 Request a Demo
               </Link>
@@ -717,7 +717,7 @@ export default function Technology() {
                 href="https://app.qualityperformance.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-base font-semibold text-gold hover:underline"
+                className="inline-flex items-center gap-2 text-base font-semibold text-blue hover:underline"
               >
                 Visit Dealer Portal
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -727,7 +727,7 @@ export default function Technology() {
             </div>
             <p className="mt-6 text-sm text-white/40">
               Have a quick question? Reach us at{" "}
-              <a href="mailto:support@qualityinstallsco.com" className="text-gold hover:underline">
+              <a href="mailto:support@qualityinstallsco.com" className="text-blue hover:underline">
                 support@qualityinstallsco.com
               </a>
             </p>

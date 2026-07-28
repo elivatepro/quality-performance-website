@@ -61,7 +61,7 @@ export default function Reviews() {
       <section className="bg-dark pb-24 pt-32 md:pb-32 md:pt-40">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <div className="max-w-2xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-gold">
+            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
               Reviews
             </p>
             <h1
@@ -97,7 +97,7 @@ export default function Reviews() {
               .map((testimonial, i) => (
                 <AnimatedSection key={testimonial.name} delay={i * 100}>
                   <div className="flex h-full flex-col rounded-xl border border-border bg-surface-alt p-8">
-                    <svg className="mb-4 h-8 w-8 text-gold/40" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="mb-4 h-8 w-8 text-blue/40" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
                     </svg>
                     <p className="flex-1 text-sm leading-relaxed text-text-secondary">
@@ -130,7 +130,7 @@ export default function Reviews() {
               .map((testimonial, i) => (
                 <AnimatedSection key={testimonial.name} delay={i * 100}>
                   <div className="flex h-full flex-col rounded-xl border border-border-dark bg-dark-alt p-8">
-                    <svg className="mb-4 h-8 w-8 text-gold/40" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="mb-4 h-8 w-8 text-blue/40" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
                     </svg>
                     <p className="flex-1 text-sm leading-relaxed text-text-secondary">

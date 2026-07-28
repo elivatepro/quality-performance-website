@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
       <section className="bg-dark pb-12 pt-32 md:pb-16 md:pt-40">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <div className="max-w-3xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-gold">
+            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
               Legal
             </p>
             <h1
@@ -62,7 +62,7 @@ export default function PrivacyPolicy() {
                     ["Communication Records:", "Messages, emails, and inquiries you send to us through forms, email, or other channels."],
                   ].map(([label, text]) => (
                     <li key={label} className="flex gap-2 text-sm leading-relaxed text-white/60">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/50" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue/50" />
                       <span><strong className="text-white/80">{label}</strong> {text}</span>
                     </li>
                   ))}
@@ -95,7 +95,7 @@ export default function PrivacyPolicy() {
                     ["Cookies and Similar Technologies:", "We use cookies to improve site functionality, remember preferences, and analyze traffic patterns. You can manage cookie preferences through your browser settings."],
                   ].map(([label, text]) => (
                     <li key={label} className="flex gap-2 text-sm leading-relaxed text-white/60">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/50" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue/50" />
                       <span><strong className="text-white/80">{label}</strong> {text}</span>
                     </li>
                   ))}
@@ -122,7 +122,7 @@ export default function PrivacyPolicy() {
                     ["Legal Compliance:", "To comply with applicable laws, regulations, and legal processes."],
                   ].map(([label, text]) => (
                     <li key={label} className="flex gap-2 text-sm leading-relaxed text-white/60">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/50" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue/50" />
                       <span><strong className="text-white/80">{label}</strong> {text}</span>
                     </li>
                   ))}
@@ -143,7 +143,7 @@ export default function PrivacyPolicy() {
                     ["Business Transfers:", "In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction."],
                   ].map(([label, text]) => (
                     <li key={label} className="flex gap-2 text-sm leading-relaxed text-white/60">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/50" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue/50" />
                       <span><strong className="text-white/80">{label}</strong> {text}</span>
                     </li>
                   ))}
@@ -163,7 +163,7 @@ export default function PrivacyPolicy() {
                     "Website analytics data is retained in aggregated, non-identifiable form and may be kept indefinitely.",
                   ].map((text) => (
                     <li key={text} className="flex gap-2 text-sm leading-relaxed text-white/60">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/50" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue/50" />
                       <span>{text}</span>
                     </li>
                   ))}
@@ -186,7 +186,7 @@ export default function PrivacyPolicy() {
                     "Regular review of data access logs and security configurations.",
                   ].map((text) => (
                     <li key={text} className="flex gap-2 text-sm leading-relaxed text-white/60">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/50" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue/50" />
                       <span>{text}</span>
                     </li>
                   ))}
@@ -211,7 +211,7 @@ export default function PrivacyPolicy() {
                     ["Cookie Preferences:", "You can disable cookies through your browser settings, though this may limit certain website functionality."],
                   ].map(([label, text]) => (
                     <li key={label} className="flex gap-2 text-sm leading-relaxed text-white/60">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/50" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue/50" />
                       <span><strong className="text-white/80">{label}</strong> {text}</span>
                     </li>
                   ))}
@@ -243,9 +243,9 @@ export default function PrivacyPolicy() {
                 <div className="mt-4 rounded-xl border border-white/[0.08] bg-white/[0.04] p-5">
                   <p className="font-semibold text-white">Quality Performance</p>
                   <div className="mt-2 space-y-1 text-sm text-white/60">
-                    <p>Email: <a href="mailto:hello@qualityperformance.io" className="text-gold hover:underline">hello@qualityperformance.io</a></p>
-                    <p>Website: <a href="https://qualityperformance.io" className="text-gold hover:underline">qualityperformance.io</a></p>
-                    <p>Dealer Portal: <a href="https://app.qualityperformance.io" className="text-gold hover:underline">app.qualityperformance.io</a></p>
+                    <p>Email: <a href="mailto:hello@qualityperformance.io" className="text-blue hover:underline">hello@qualityperformance.io</a></p>
+                    <p>Website: <a href="https://qualityperformance.io" className="text-blue hover:underline">qualityperformance.io</a></p>
+                    <p>Dealer Portal: <a href="https://app.qualityperformance.io" className="text-blue hover:underline">app.qualityperformance.io</a></p>
                   </div>
                 </div>
               </div>
@@ -261,7 +261,7 @@ export default function PrivacyPolicy() {
               {/* Bottom nav */}
               <div className="flex items-center justify-between border-t border-white/[0.08] pt-8">
                 <Link href="/" className="text-sm text-white/50 transition-colors hover:text-white">Back to Home</Link>
-                <Link href="/terms" className="text-sm font-semibold text-gold transition-colors hover:text-gold-hover">Terms of Service &rarr;</Link>
+                <Link href="/terms" className="text-sm font-semibold text-blue transition-colors hover:text-blue-hover">Terms of Service &rarr;</Link>
               </div>
             </div>
           </div>

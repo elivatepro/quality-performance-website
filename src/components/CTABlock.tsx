@@ -42,7 +42,7 @@ export default function CTABlock({
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
               href={buttonHref}
-              className="group inline-flex items-center gap-2 rounded-lg bg-gold px-8 py-4 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
+              className="group inline-flex items-center gap-2 rounded-lg bg-blue px-8 py-4 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
             >
               {buttonText}
               <svg

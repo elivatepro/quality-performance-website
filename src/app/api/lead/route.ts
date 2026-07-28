@@ -84,11 +84,11 @@ function buildText(lead: LeadPayload): string {
 /**
  * Branded HTML part. Email-client-safe: table layout, inline styles, system
  * fonts, no external assets/CSS/JS. Light card on a neutral backdrop for
- * readability, with QP's gold accent and a dark header band.
+ * readability, with QP's blue accent and a dark header band.
  */
 function buildHtml(lead: LeadPayload): string {
-  const gold = "#C9A84C";
-  const dark = "#0B1120";
+  const blue = "#2563EB";
+  const dark = "#0A122B";
   const ink = "#1A2333";
   const muted = "#6B7688";
   const line = "#E6E9EF";
@@ -132,7 +132,7 @@ function buildHtml(lead: LeadPayload): string {
         <!-- Header -->
         <tr>
           <td style="background:${dark};padding:24px 32px;">
-            <div style="font-size:18px;font-weight:800;letter-spacing:.3px;color:#FFFFFF;">QUALITY<span style="color:${gold};">PERFORMANCE</span></div>
+            <div style="font-size:18px;font-weight:800;letter-spacing:.3px;color:#FFFFFF;">QUALITY<span style="color:${blue};">PERFORMANCE</span></div>
             <div style="margin-top:4px;color:#8B97AC;font-size:13px;">New dealership lead</div>
           </td>
         </tr>
@@ -159,13 +159,13 @@ function buildHtml(lead: LeadPayload): string {
         <tr>
           <td style="padding:16px 32px 4px;">
             <div style="color:${muted};font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;">Comments</div>
-            <div style="background:#F7F8FA;border-left:3px solid ${gold};border-radius:0 8px 8px 0;padding:14px 16px;color:${ink};font-size:15px;line-height:1.55;">${commentsHtml}</div>
+            <div style="background:#F7F8FA;border-left:3px solid ${blue};border-radius:0 8px 8px 0;padding:14px 16px;color:${ink};font-size:15px;line-height:1.55;">${commentsHtml}</div>
           </td>
         </tr>
         <!-- Reply CTA -->
         <tr>
           <td style="padding:20px 32px 28px;">
-            <a href="mailto:${esc(lead.email)}?subject=Re:%20Quality%20Performance" style="display:inline-block;background:${gold};color:${dark};font-size:14px;font-weight:700;text-decoration:none;padding:12px 22px;border-radius:8px;">Reply to ${esc(lead.name.split(" ")[0] || "lead")}</a>
+            <a href="mailto:${esc(lead.email)}?subject=Re:%20Quality%20Performance" style="display:inline-block;background:${blue};color:#FFFFFF;font-size:14px;font-weight:700;text-decoration:none;padding:12px 22px;border-radius:8px;">Reply to ${esc(lead.name.split(" ")[0] || "lead")}</a>
           </td>
         </tr>
         <!-- Footer -->
@@ -235,8 +235,8 @@ function buildConfirmationText(lead: LeadPayload): string {
 }
 
 function buildConfirmationHtml(lead: LeadPayload): string {
-  const gold = "#C9A84C";
-  const dark = "#0B1120";
+  const blue = "#2563EB";
+  const dark = "#0A122B";
   const ink = "#1A2333";
   const muted = "#6B7688";
   const line = "#E6E9EF";
@@ -262,7 +262,7 @@ function buildConfirmationHtml(lead: LeadPayload): string {
         <!-- Header -->
         <tr>
           <td style="background:${dark};padding:24px 32px;">
-            <div style="font-size:18px;font-weight:800;letter-spacing:.3px;color:#FFFFFF;">QUALITY<span style="color:${gold};">PERFORMANCE</span></div>
+            <div style="font-size:18px;font-weight:800;letter-spacing:.3px;color:#FFFFFF;">QUALITY<span style="color:${blue};">PERFORMANCE</span></div>
             <div style="margin-top:4px;color:#8B97AC;font-size:13px;">We've received your message</div>
           </td>
         </tr>
@@ -280,7 +280,7 @@ function buildConfirmationHtml(lead: LeadPayload): string {
             ? `<tr>
           <td style="padding:16px 32px 4px;">
             <div style="color:${muted};font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;">Your request</div>
-            <div style="background:#F7F8FA;border-left:3px solid ${gold};border-radius:0 8px 8px 0;padding:14px 16px;color:${ink};font-size:14px;line-height:1.55;">${recap}</div>
+            <div style="background:#F7F8FA;border-left:3px solid ${blue};border-radius:0 8px 8px 0;padding:14px 16px;color:${ink};font-size:14px;line-height:1.55;">${recap}</div>
           </td>
         </tr>`
             : ""

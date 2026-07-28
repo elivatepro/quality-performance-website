@@ -16,7 +16,7 @@ export default function ProtectionMapSection() {
       <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
         {/* Header */}
         <div className="mb-12 text-center">
-          <p className="mb-3 text-[13px] font-semibold uppercase tracking-[2px] text-gold">
+          <p className="mb-3 text-[13px] font-semibold uppercase tracking-[2px] text-blue">
             How We Protect
           </p>
           <h2
@@ -52,7 +52,7 @@ export default function ProtectionMapSection() {
         <div className="mt-10 text-center">
           <Link
             href="/protection-map"
-            className="group inline-flex items-center gap-2 text-base font-semibold text-gold"
+            className="group inline-flex items-center gap-2 text-base font-semibold text-blue"
           >
             Explore Full Protection Map
             <svg

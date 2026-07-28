@@ -96,14 +96,14 @@ export default function VinDecoderPage() {
             <Link
               href="/vin-decoder"
               onClick={(e) => { e.preventDefault(); handleReset(); }}
-              className="group mb-6 inline-flex items-center gap-1.5 text-sm text-white/50 transition-colors hover:text-gold"
+              className="group mb-6 inline-flex items-center gap-1.5 text-sm text-white/50 transition-colors hover:text-blue"
             >
               <svg className="h-4 w-4 transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
               </svg>
               Decode another VIN
             </Link>
-            <p className="text-sm font-semibold uppercase tracking-[2px] text-gold">
+            <p className="text-sm font-semibold uppercase tracking-[2px] text-blue">
               VIN Decoded
             </p>
             <h1
@@ -151,9 +151,9 @@ export default function VinDecoderPage() {
               {/* Sidebar */}
               <div className="space-y-6">
                 {/* Quick summary */}
-                <div className="rounded-2xl border border-gold/15 bg-gold/[0.04] p-6">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10">
-                    <svg className="h-5 w-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <div className="rounded-2xl border border-blue/15 bg-blue/[0.04] p-6">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-blue/10">
+                    <svg className="h-5 w-5 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                     </svg>
                   </div>
@@ -163,7 +163,7 @@ export default function VinDecoderPage() {
                   </p>
                   <Link
                     href="/contact"
-                    className="group mt-4 inline-flex items-center gap-2 rounded-lg bg-gold px-5 py-2.5 text-sm font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
+                    className="group mt-4 inline-flex items-center gap-2 rounded-lg bg-blue px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
                   >
                     Get a Quote
                     <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -186,7 +186,7 @@ export default function VinDecoderPage() {
                           href={service.href}
                           className="group flex items-center gap-2.5 text-sm text-white/60 transition-colors hover:text-white"
                         >
-                          <svg className="h-4 w-4 shrink-0 text-gold/50 transition-colors group-hover:text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <svg className="h-4 w-4 shrink-0 text-blue/50 transition-colors group-hover:text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                           </svg>
                           {service.name}
@@ -196,7 +196,7 @@ export default function VinDecoderPage() {
                     <li>
                       <Link
                         href="/services"
-                        className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-gold transition-colors hover:text-gold-hover"
+                        className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-blue transition-colors hover:text-blue-hover"
                       >
                         View All Services
                         <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -222,7 +222,7 @@ export default function VinDecoderPage() {
       <section className="bg-dark pb-8 pt-32 md:pb-12 md:pt-40">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <div className="max-w-2xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-gold">
+            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
               Free Tool
             </p>
             <h1
@@ -260,7 +260,7 @@ export default function VinDecoderPage() {
                     onChange={(e) => setVin(e.target.value.toUpperCase())}
                     required
                     maxLength={17}
-                    className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 font-mono text-sm tracking-wider text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-gold focus:ring-1 focus:ring-gold"
+                    className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 font-mono text-sm tracking-wider text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-blue focus:ring-1 focus:ring-blue"
                     placeholder="e.g. 1HGCM82633A004352"
                   />
                   <p className="mt-1.5 text-xs text-white/35">
@@ -280,7 +280,7 @@ export default function VinDecoderPage() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       required
-                      className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-gold focus:ring-1 focus:ring-gold"
+                      className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-blue focus:ring-1 focus:ring-blue"
                       placeholder="John Smith"
                     />
                   </div>
@@ -294,7 +294,7 @@ export default function VinDecoderPage() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-gold focus:ring-1 focus:ring-gold"
+                      className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-blue focus:ring-1 focus:ring-blue"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -310,7 +310,7 @@ export default function VinDecoderPage() {
                     id="phone"
                     value={phone}
                     onChange={(e) => setPhone(formatPhoneNumber(e.target.value))}
-                    className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-gold focus:ring-1 focus:ring-gold"
+                    className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-blue focus:ring-1 focus:ring-blue"
                     placeholder="(555) 123-4567"
                   />
                 </div>
@@ -331,7 +331,7 @@ export default function VinDecoderPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full rounded-lg bg-gold px-6 py-3.5 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed sm:w-auto"
+                  className="w-full rounded-lg bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed sm:w-auto"
                 >
                   {loading ? (
                     <span className="inline-flex items-center gap-2">
@@ -366,7 +366,7 @@ export default function VinDecoderPage() {
                     "Insurance card or policy",
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-2.5">
-                      <svg className="mt-0.5 h-4 w-4 shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="mt-0.5 h-4 w-4 shrink-0 text-blue" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       <span className="text-sm text-white/55">{item}</span>
@@ -384,7 +384,7 @@ export default function VinDecoderPage() {
                       "Manufacturing info",
                     ].map((item) => (
                       <li key={item} className="flex items-center gap-2 text-sm text-white/55">
-                        <span className="h-1 w-1 rounded-full bg-gold/60" />
+                        <span className="h-1 w-1 rounded-full bg-blue/60" />
                         {item}
                       </li>
                     ))}

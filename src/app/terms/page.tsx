@@ -14,7 +14,7 @@ export default function TermsOfService() {
       <section className="bg-dark pb-12 pt-32 md:pb-16 md:pt-40">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <div className="max-w-3xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-gold">
+            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
               Legal
             </p>
             <h1
@@ -59,7 +59,7 @@ export default function TermsOfService() {
                     "A marketing website providing information about our services and enabling prospective clients to request partnerships or quotes.",
                   ].map((text) => (
                     <li key={text} className="flex gap-2 text-sm leading-relaxed text-white/60">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/50" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue/50" />
                       <span>{text}</span>
                     </li>
                   ))}
@@ -82,7 +82,7 @@ export default function TermsOfService() {
                   time by replying STOP. For assistance, reply HELP or contact us at{" "}
                   <a
                     href="mailto:hello@qualityperformance.io"
-                    className="text-gold hover:underline"
+                    className="text-blue hover:underline"
                   >
                     hello@qualityperformance.io
                   </a>
@@ -165,7 +165,7 @@ export default function TermsOfService() {
                     "Submit false, misleading, or fraudulent installation records or billing information.",
                   ].map((text) => (
                     <li key={text} className="flex gap-2 text-sm leading-relaxed text-white/60">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/50" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue/50" />
                       <span>{text}</span>
                     </li>
                   ))}
@@ -214,7 +214,7 @@ export default function TermsOfService() {
                     "We are not liable for vehicle damage caused by factors unrelated to our installation workmanship, including pre-existing paint conditions, environmental exposure, or improper aftercare.",
                   ].map((text) => (
                     <li key={text} className="flex gap-2 text-sm leading-relaxed text-white/60">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/50" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue/50" />
                       <span>{text}</span>
                     </li>
                   ))}
@@ -264,7 +264,7 @@ export default function TermsOfService() {
                     "Any outstanding invoices remain due and payable.",
                   ].map((text) => (
                     <li key={text} className="flex gap-2 text-sm leading-relaxed text-white/60">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/50" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue/50" />
                       <span>{text}</span>
                     </li>
                   ))}
@@ -307,16 +307,16 @@ export default function TermsOfService() {
                 <div className="mt-4 rounded-xl border border-white/[0.08] bg-white/[0.04] p-5">
                   <p className="font-semibold text-white">Quality Performance</p>
                   <div className="mt-2 space-y-1 text-sm text-white/60">
-                    <p>Email: <a href="mailto:hello@qualityperformance.io" className="text-gold hover:underline">hello@qualityperformance.io</a></p>
-                    <p>Website: <a href="https://qualityperformance.io" className="text-gold hover:underline">qualityperformance.io</a></p>
-                    <p>Dealer Portal: <a href="https://app.qualityperformance.io" className="text-gold hover:underline">app.qualityperformance.io</a></p>
+                    <p>Email: <a href="mailto:hello@qualityperformance.io" className="text-blue hover:underline">hello@qualityperformance.io</a></p>
+                    <p>Website: <a href="https://qualityperformance.io" className="text-blue hover:underline">qualityperformance.io</a></p>
+                    <p>Dealer Portal: <a href="https://app.qualityperformance.io" className="text-blue hover:underline">app.qualityperformance.io</a></p>
                   </div>
                 </div>
               </div>
 
               {/* Bottom nav */}
               <div className="flex items-center justify-between border-t border-white/[0.08] pt-8">
-                <Link href="/privacy" className="text-sm font-semibold text-gold transition-colors hover:text-gold-hover">&larr; Privacy Policy</Link>
+                <Link href="/privacy" className="text-sm font-semibold text-blue transition-colors hover:text-blue-hover">&larr; Privacy Policy</Link>
                 <Link href="/" className="text-sm text-white/50 transition-colors hover:text-white">Back to Home</Link>
               </div>
             </div>

@@ -29,7 +29,7 @@ export default function ProtectYourCar() {
         </div>
         <div className="relative mx-auto w-full max-w-[1280px] px-6 py-32 lg:px-12">
           <div className="max-w-2xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-gold">
+            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
               Protect Your Car
             </p>
             <h1
@@ -52,7 +52,7 @@ export default function ProtectYourCar() {
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-gold px-6 py-3.5 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
+                className="inline-flex items-center justify-center rounded-lg bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
               >
                 Get a Quote for Your Vehicle
               </Link>
@@ -67,7 +67,7 @@ export default function ProtectYourCar() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <AnimatedSection>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-gold">
+                <p className="text-sm font-semibold uppercase tracking-wider text-blue">
                   Understanding PPF
                 </p>
                 <h2
@@ -137,7 +137,7 @@ export default function ProtectYourCar() {
               <AnimatedSection key={product.slug} delay={i * 80}>
                 <Link
                   href={`/services/${product.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-dark-tertiary transition-all duration-300 hover:border-gold/30 hover:-translate-y-1"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-dark-tertiary transition-all duration-300 hover:border-blue/30 hover:-translate-y-1"
                 >
                   <div className="relative h-44 bg-dark-alt">
                     <Image src={product.heroImage} alt={product.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -145,7 +145,7 @@ export default function ProtectYourCar() {
                   <div className="flex flex-1 flex-col p-5">
                     <h3 className="text-lg font-bold text-white">{product.name}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-white/60">{product.tagline}</p>
-                    <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-gold">
+                    <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-blue">
                       Learn More
                       <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />

@@ -87,7 +87,7 @@ export default function FAQ() {
       <section className="bg-dark pb-24 pt-32 md:pb-32 md:pt-40">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <div className="max-w-2xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-gold">
+            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
               FAQ
             </p>
             <h1
@@ -112,7 +112,7 @@ export default function FAQ() {
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <AnimatedSection>
             <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-wider text-gold">
+              <p className="text-sm font-semibold uppercase tracking-wider text-blue">
                 Getting Started
               </p>
               <h2 className="mt-3 text-3xl font-bold text-text-primary md:text-4xl" style={{ letterSpacing: "-0.02em" }}>
@@ -149,7 +149,7 @@ export default function FAQ() {
             ].map((item, i) => (
               <AnimatedSection key={item.step} delay={i * 100}>
                 <div className="flex h-full flex-col rounded-2xl border border-white/[0.08] bg-dark-alt p-6">
-                  <span className="text-[28px] font-bold leading-none text-gold/50">{item.step}</span>
+                  <span className="text-[28px] font-bold leading-none text-blue/50">{item.step}</span>
                   <h3 className="mt-4 text-lg font-bold text-white">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-white/60">{item.desc}</p>
                 </div>
@@ -199,13 +199,13 @@ export default function FAQ() {
               <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center rounded-lg bg-gold px-6 py-3 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
+                  className="inline-flex items-center rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
                 >
                   Contact Us
                 </Link>
                 <a
                   href="mailto:hello@qualityperformance.io"
-                  className="text-sm font-semibold text-gold hover:underline"
+                  className="text-sm font-semibold text-blue hover:underline"
                 >
                   Or email hello@qualityperformance.io
                 </a>

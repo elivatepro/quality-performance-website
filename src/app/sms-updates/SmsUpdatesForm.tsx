@@ -33,7 +33,7 @@ const audienceLabels: Record<Exclude<Audience, "">, string> = {
 };
 
 const fieldClass =
-  "mt-2 w-full rounded-xl border border-white/[0.1] bg-white/[0.03] px-4 py-3.5 text-sm text-white placeholder:text-white/30 outline-none transition-colors focus:border-gold focus:ring-1 focus:ring-gold";
+  "mt-2 w-full rounded-xl border border-white/[0.1] bg-white/[0.03] px-4 py-3.5 text-sm text-white placeholder:text-white/30 outline-none transition-colors focus:border-blue focus:ring-1 focus:ring-blue";
 
 export default function SmsUpdatesForm() {
   const [form, setForm] = useState<FormState>(initialForm);
@@ -97,10 +97,10 @@ export default function SmsUpdatesForm() {
       <section className="bg-dark pb-20 md:pb-28">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <div className="mx-auto max-w-3xl overflow-hidden rounded-[28px] border border-white/[0.08] bg-[#10192B] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
-            <div className="border-b border-white/[0.08] bg-gradient-to-r from-gold/10 via-white/[0.04] to-transparent px-8 py-8 md:px-10">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/30 bg-gold/10">
+            <div className="border-b border-white/[0.08] bg-gradient-to-r from-blue/10 via-white/[0.04] to-transparent px-8 py-8 md:px-10">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-blue/30 bg-blue/10">
                 <svg
-                  className="h-7 w-7 text-gold"
+                  className="h-7 w-7 text-blue"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -113,7 +113,7 @@ export default function SmsUpdatesForm() {
                   />
                 </svg>
               </div>
-              <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-gold/80">
+              <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-blue/80">
                 Request Received
               </p>
               <h1
@@ -174,13 +174,13 @@ export default function SmsUpdatesForm() {
                 <div className="mt-5 space-y-2 text-sm">
                   <a
                     href="tel:8605011818"
-                    className="block font-semibold text-gold transition-colors hover:text-gold-hover"
+                    className="block font-semibold text-blue transition-colors hover:text-blue-hover"
                   >
                     (860) 501-1818
                   </a>
                   <a
                     href="mailto:hello@qualityperformance.io"
-                    className="block font-semibold text-gold transition-colors hover:text-gold-hover"
+                    className="block font-semibold text-blue transition-colors hover:text-blue-hover"
                   >
                     hello@qualityperformance.io
                   </a>
@@ -188,7 +188,7 @@ export default function SmsUpdatesForm() {
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href="/"
-                    className="inline-flex items-center justify-center rounded-xl bg-gold px-5 py-3 text-sm font-semibold text-dark transition-all hover:bg-gold-hover"
+                    className="inline-flex items-center justify-center rounded-xl bg-blue px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-blue-hover"
                   >
                     Back to Home
                   </Link>
@@ -214,7 +214,7 @@ export default function SmsUpdatesForm() {
           <div className="space-y-6">
             <div className="overflow-hidden rounded-[28px] border border-white/[0.08] bg-[#10192B] shadow-[0_24px_80px_rgba(0,0,0,0.24)]">
               <div className="border-b border-white/[0.08] px-7 py-6 md:px-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold/80">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue/80">
                   Program Summary
                 </p>
                 <h2
@@ -261,7 +261,7 @@ export default function SmsUpdatesForm() {
             </div>
 
             <div className="rounded-[28px] border border-white/[0.08] bg-white/[0.03] p-6 md:p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold/75">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue/75">
                 Before You Submit
               </p>
               <ul className="mt-5 space-y-3">
@@ -271,7 +271,7 @@ export default function SmsUpdatesForm() {
                   "Checking the box only applies to service-related messages connected to active appointments, installations, or dealership coordination.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-white/65">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -281,7 +281,7 @@ export default function SmsUpdatesForm() {
 
           <div className="overflow-hidden rounded-[28px] border border-white/[0.08] bg-[#0F1728] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
             <div className="border-b border-white/[0.08] px-7 py-6 md:px-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold/80">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue/80">
                 SMS Enrollment Form
               </p>
               <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/62">
@@ -424,7 +424,7 @@ export default function SmsUpdatesForm() {
                     name="consent"
                     checked={form.consent}
                     onChange={handleConsentChange}
-                    className="mt-1 h-4 w-4 rounded border-white/20 bg-transparent text-gold focus:ring-gold"
+                    className="mt-1 h-4 w-4 rounded border-white/20 bg-transparent text-blue focus:ring-blue"
                   />
                   <span className="text-sm leading-relaxed text-white/78">
                     Optional: I agree to receive automated text messages from Quality
@@ -435,11 +435,11 @@ export default function SmsUpdatesForm() {
 
                 <p className="mt-4 text-xs leading-relaxed text-white/45">
                   See our{" "}
-                  <Link href="/terms#sms-communications" className="text-gold hover:underline">
+                  <Link href="/terms#sms-communications" className="text-blue hover:underline">
                     Terms of Service
                   </Link>{" "}
                   and{" "}
-                  <Link href="/privacy#text-messages" className="text-gold hover:underline">
+                  <Link href="/privacy#text-messages" className="text-blue hover:underline">
                     Privacy Policy
                   </Link>{" "}
                   for additional details about SMS communications and data handling.
@@ -455,7 +455,7 @@ export default function SmsUpdatesForm() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="mt-7 inline-flex w-full items-center justify-center rounded-xl bg-gold px-5 py-3.5 text-sm font-semibold text-dark transition-all hover:bg-gold-hover disabled:cursor-not-allowed disabled:opacity-70"
+                className="mt-7 inline-flex w-full items-center justify-center rounded-xl bg-blue px-5 py-3.5 text-sm font-semibold text-white transition-all hover:bg-blue-hover disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {submitting ? "Submitting..." : "Submit Communication Request"}
               </button>

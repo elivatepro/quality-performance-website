@@ -40,7 +40,7 @@ export default function Careers() {
       <section className="bg-dark pb-24 pt-32 md:pb-32 md:pt-40">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <div className="max-w-2xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-gold">
+            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
               Careers
             </p>
             <h1
@@ -135,13 +135,13 @@ export default function Careers() {
               <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center rounded-lg bg-gold px-6 py-3 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
+                  className="inline-flex items-center rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
                 >
                   Apply Now
                 </Link>
                 <a
                   href="mailto:hello@qualityperformance.io"
-                  className="text-sm font-semibold text-gold hover:underline"
+                  className="text-sm font-semibold text-blue hover:underline"
                 >
                   Or email hello@qualityperformance.io
                 </a>

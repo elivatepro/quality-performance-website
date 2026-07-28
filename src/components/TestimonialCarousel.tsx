@@ -93,7 +93,7 @@ export default function TestimonialCarousel() {
               <span
                 className={`absolute bottom-0 left-0 right-0 h-[2px] transition-all duration-300 ${
                   i === activeIndex
-                    ? "scale-x-100 bg-gold"
+                    ? "scale-x-100 bg-blue"
                     : "scale-x-0 bg-transparent"
                 }`}
               />
@@ -130,7 +130,7 @@ export default function TestimonialCarousel() {
                   <div className="flex flex-col justify-center p-8 sm:p-10 md:p-12">
                     {/* Quote mark */}
                     <svg
-                      className="mb-4 h-8 w-8 text-gold/30"
+                      className="mb-4 h-8 w-8 text-blue/30"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -158,7 +158,7 @@ export default function TestimonialCarousel() {
         <div className="mt-8 flex items-center justify-center gap-4">
           <button
             onClick={prev}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.12] text-white/50 transition-all duration-200 hover:border-gold hover:text-gold"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.12] text-white/50 transition-all duration-200 hover:border-blue hover:text-blue"
             aria-label="Previous testimonial"
           >
             <svg
@@ -177,7 +177,7 @@ export default function TestimonialCarousel() {
           </button>
           <button
             onClick={next}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.12] text-white/50 transition-all duration-200 hover:border-gold hover:text-gold"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.12] text-white/50 transition-all duration-200 hover:border-blue hover:text-blue"
             aria-label="Next testimonial"
           >
             <svg

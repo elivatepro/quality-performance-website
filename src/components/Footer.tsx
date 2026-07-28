@@ -27,7 +27,7 @@ export default function Footer() {
                 className="h-9 w-9"
               />
               <span className="text-lg font-bold tracking-tight text-white">
-                QUALITY<span className="text-gold">PERFORMANCE</span>
+                QUALITY<span className="text-blue">PERFORMANCE</span>
               </span>
             </div>
             <p className="mt-3 text-sm leading-relaxed text-white/50">
@@ -40,7 +40,7 @@ export default function Footer() {
               href={contact.dealerPortalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-1.5 rounded-lg border border-gold px-4 py-2 text-[12px] font-semibold tracking-[0.3px] text-gold transition-all duration-200 hover:bg-gold hover:text-dark"
+              className="mt-6 inline-flex items-center gap-1.5 rounded-lg border border-blue px-4 py-2 text-[12px] font-semibold tracking-[0.3px] text-blue transition-all duration-200 hover:bg-blue hover:text-white"
             >
               Existing Customer? Dealer Portal
               <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -82,14 +82,14 @@ export default function Footer() {
             <div className="space-y-2.5">
               <a
                 href={`mailto:${contact.email}`}
-                className="block text-[13px] text-gold transition-colors duration-200 hover:text-gold-hover"
+                className="block text-[13px] text-blue transition-colors duration-200 hover:text-blue-hover"
               >
                 {contact.email}
               </a>
               {contact.showPhone && (
                 <a
                   href={`tel:${contact.phone.replace(/[^0-9]/g, "")}`}
-                  className="block text-[13px] text-gold transition-colors duration-200 hover:text-gold-hover"
+                  className="block text-[13px] text-blue transition-colors duration-200 hover:text-blue-hover"
                 >
                   {contact.phone}
                 </a>
@@ -97,7 +97,7 @@ export default function Footer() {
               <p className="text-[13px] text-white/50">{contact.location}</p>
               <Link
                 href="/contact"
-                className="mt-3 inline-flex items-center rounded-lg border-[1.5px] border-gold px-4 py-2 text-[12px] font-semibold tracking-[0.3px] text-gold transition-all duration-200 hover:bg-gold hover:text-dark"
+                className="mt-3 inline-flex items-center rounded-lg border-[1.5px] border-blue px-4 py-2 text-[12px] font-semibold tracking-[0.3px] text-blue transition-all duration-200 hover:bg-blue hover:text-white"
               >
                 Partner With Us
               </Link>

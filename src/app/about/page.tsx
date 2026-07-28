@@ -27,7 +27,7 @@ export default function About() {
         </div>
         <div className="relative mx-auto w-full max-w-[1280px] px-6 py-28 lg:px-12">
           <div className="max-w-2xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-gold">
+            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
               About Us
             </p>
             <h1
@@ -53,11 +53,11 @@ export default function About() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <AnimatedSection>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-gold">
+                <p className="text-sm font-semibold uppercase tracking-wider text-blue">
                   Our Story
                 </p>
                 <h2
-                  className="mt-3 text-3xl font-bold text-gold md:text-4xl"
+                  className="mt-3 text-3xl font-bold text-blue md:text-4xl"
                   style={{ letterSpacing: "-0.02em" }}
                 >
                   20+ years in the car business
@@ -143,10 +143,10 @@ export default function About() {
             ].map((value, i) => (
               <AnimatedSection key={value.title} delay={i * 100}>
                 <div className="h-full rounded-xl bg-dark-alt p-8">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gold-subtle text-gold">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-subtle text-blue">
                     {value.icon}
                   </div>
-                  <h3 className="text-lg font-bold text-gold">{value.title}</h3>
+                  <h3 className="text-lg font-bold text-blue">{value.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-text-secondary">
                     {value.description}
                   </p>

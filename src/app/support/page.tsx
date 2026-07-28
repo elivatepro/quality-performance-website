@@ -35,7 +35,7 @@ const faqs = [
         The Quality Performance app requires an active dealership account. If your credentials
         aren&apos;t working, confirm you&apos;re using the email tied to your dealership profile.
         If you&apos;re still locked out, email{" "}
-        <a href="mailto:support@qualityinstallsco.com" className="text-gold transition-colors hover:text-gold-hover">
+        <a href="mailto:support@qualityinstallsco.com" className="text-blue transition-colors hover:text-blue-hover">
           support@qualityinstallsco.com
         </a>{" "}
         and we&apos;ll reset your access.
@@ -47,7 +47,7 @@ const faqs = [
     answer: (
       <>
         We onboard new dealerships on a rolling basis. Reach out to{" "}
-        <a href="mailto:hello@qualityperformance.io" className="text-gold transition-colors hover:text-gold-hover">
+        <a href="mailto:hello@qualityperformance.io" className="text-blue transition-colors hover:text-blue-hover">
           hello@qualityperformance.io
         </a>{" "}
         with your dealership name, location, and a brief overview of your current PPF needs.
@@ -65,7 +65,7 @@ const faqs = [
     answer: (
       <>
         Email{" "}
-        <a href="mailto:support@qualityinstallsco.com" className="text-gold transition-colors hover:text-gold-hover">
+        <a href="mailto:support@qualityinstallsco.com" className="text-blue transition-colors hover:text-blue-hover">
           support@qualityinstallsco.com
         </a>{" "}
         with the install ID, expected amount, and the amount shown in the app. Our billing team
@@ -86,7 +86,7 @@ const faqs = [
         pre-delivery installation and individual vehicle owner protection. Learn more on our{" "}
         <a
           href="https://qualityperformance.io"
-          className="text-gold transition-colors hover:text-gold-hover"
+          className="text-blue transition-colors hover:text-blue-hover"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -101,7 +101,7 @@ const faqs = [
     answer: (
       <>
         Email{" "}
-        <a href="mailto:support@qualityinstallsco.com" className="text-gold transition-colors hover:text-gold-hover">
+        <a href="mailto:support@qualityinstallsco.com" className="text-blue transition-colors hover:text-blue-hover">
           support@qualityinstallsco.com
         </a>{" "}
         with a short description, the steps to reproduce, and a screenshot if possible. Feature
@@ -113,8 +113,8 @@ const faqs = [
     question: "Where can I find your privacy policy and terms?",
     answer: (
       <>
-        Our <Link href="/privacy" className="text-gold transition-colors hover:text-gold-hover">Privacy Policy</Link>{" "}
-        and <Link href="/terms" className="text-gold transition-colors hover:text-gold-hover">Terms of Service</Link>{" "}
+        Our <Link href="/privacy" className="text-blue transition-colors hover:text-blue-hover">Privacy Policy</Link>{" "}
+        and <Link href="/terms" className="text-blue transition-colors hover:text-blue-hover">Terms of Service</Link>{" "}
         are available on our main website.
       </>
     ),
@@ -124,9 +124,9 @@ const faqs = [
 export default function SupportPage() {
   return (
     <>
-      <section className="border-b border-gold/20 bg-dark pb-16 pt-32 md:pb-20 md:pt-40">
+      <section className="border-b border-blue/20 bg-dark pb-16 pt-32 md:pb-20 md:pt-40">
         <div className="mx-auto max-w-[860px] px-6 text-center lg:px-8">
-          <p className="text-[13px] font-semibold uppercase tracking-[2px] text-gold">
+          <p className="text-[13px] font-semibold uppercase tracking-[2px] text-blue">
             Support Center
           </p>
           <h1
@@ -152,12 +152,12 @@ export default function SupportPage() {
             {contactCards.map((card) => (
               <div
                 key={card.label}
-                className="rounded-xl border border-gold/15 bg-white/[0.03] p-6 transition-transform duration-200 hover:-translate-y-0.5 hover:border-gold/40"
+                className="rounded-xl border border-blue/15 bg-white/[0.03] p-6 transition-transform duration-200 hover:-translate-y-0.5 hover:border-blue/40"
               >
                 <p className="text-[13px] uppercase tracking-[1px] text-white/55">{card.label}</p>
                 <div className="mt-2 text-[17px] font-medium text-white">
                   {card.href ? (
-                    <a href={card.href} className="transition-colors hover:text-gold">
+                    <a href={card.href} className="transition-colors hover:text-blue">
                       {card.value}
                     </a>
                   ) : (
@@ -169,8 +169,8 @@ export default function SupportPage() {
             ))}
           </div>
 
-          <div className="mt-6 rounded-r-md rounded-l-sm border-l-3 border-gold bg-gold/8 px-5 py-4 text-[15px] text-white/90">
-            <strong className="text-gold">Need a faster response?</strong> Include your dealership
+          <div className="mt-6 rounded-r-md rounded-l-sm border-l-3 border-blue bg-blue/8 px-5 py-4 text-[15px] text-white/90">
+            <strong className="text-blue">Need a faster response?</strong> Include your dealership
             name and stock number (if applicable) in your email so we can route your request to the
             right team immediately.
           </div>
@@ -188,7 +188,7 @@ export default function SupportPage() {
               <details key={faq.question} className="group border-b border-white/6 py-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-1 text-left text-[17px] font-semibold text-white [&::-webkit-details-marker]:hidden">
                   <span>{faq.question}</span>
-                  <span className="shrink-0 text-3xl font-light leading-none text-gold transition-transform duration-200 group-open:rotate-45">
+                  <span className="shrink-0 text-3xl font-light leading-none text-blue transition-transform duration-200 group-open:rotate-45">
                     +
                   </span>
                 </summary>
@@ -204,15 +204,15 @@ export default function SupportPage() {
       <section className="bg-dark py-12 md:py-14">
         <div className="mx-auto max-w-[860px] px-6 text-center lg:px-8">
           <div className="text-sm text-white/45">
-            <Link href="/" className="transition-colors hover:text-gold">
+            <Link href="/" className="transition-colors hover:text-blue">
               Home
             </Link>{" "}
             ·{" "}
-            <Link href="/privacy" className="transition-colors hover:text-gold">
+            <Link href="/privacy" className="transition-colors hover:text-blue">
               Privacy
             </Link>{" "}
             ·{" "}
-            <Link href="/terms" className="transition-colors hover:text-gold">
+            <Link href="/terms" className="transition-colors hover:text-blue">
               Terms
             </Link>
           </div>

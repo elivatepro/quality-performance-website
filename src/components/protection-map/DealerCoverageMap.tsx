@@ -70,7 +70,7 @@ export default function DealerCoverageMap() {
               {points.map((point) => (
                 <span
                   key={point.n}
-                  className="absolute flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gold text-[14px] font-bold text-dark ring-2 ring-dark/70 shadow-[0_0_0_4px_rgba(201,168,76,0.25),0_3px_10px_rgba(0,0,0,0.5)]"
+                  className="absolute flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-blue text-[14px] font-bold text-white ring-2 ring-dark/70 shadow-[0_0_0_4px_rgba(37,99,235,0.25),0_3px_10px_rgba(0,0,0,0.5)]"
                   style={{ left: `${point.x}%`, top: `${point.y}%` }}
                   aria-hidden="true"
                 >
@@ -84,7 +84,7 @@ export default function DealerCoverageMap() {
           <ol className="space-y-4">
             {points.map((point) => (
               <li key={point.n} className="flex gap-4">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold text-[13px] font-bold text-dark">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-[13px] font-bold text-white">
                   {point.n}
                 </span>
                 <div>

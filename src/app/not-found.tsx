@@ -26,7 +26,7 @@ export default function NotFound() {
         </div>
 
         {/* 404 */}
-        <p className="text-8xl font-extrabold tracking-tight text-gold/20 md:text-9xl">
+        <p className="text-8xl font-extrabold tracking-tight text-blue/20 md:text-9xl">
           404
         </p>
 
@@ -46,7 +46,7 @@ export default function NotFound() {
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
           >
             <svg
               className="h-4 w-4"
@@ -93,7 +93,7 @@ export default function NotFound() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs text-gold/70 transition-colors hover:text-gold hover:underline"
+                className="text-xs text-blue/70 transition-colors hover:text-blue hover:underline"
               >
                 {link.label}
               </Link>

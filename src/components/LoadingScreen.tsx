@@ -7,7 +7,7 @@ export default function LoadingScreen() {
         {/* Pulsing logo with glow ring */}
         <div className="relative">
           {/* Outer glow ring */}
-          <div className="absolute -inset-4 rounded-full bg-gold/10 blur-xl animate-logo-pulse" />
+          <div className="absolute -inset-4 rounded-full bg-blue/10 blur-xl animate-logo-pulse" />
           {/* Shimmer ring */}
           <div className="absolute -inset-2 rounded-full animate-logo-shimmer" />
           {/* Logo */}
@@ -17,7 +17,7 @@ export default function LoadingScreen() {
               alt="Loading..."
               width={64}
               height={64}
-              className="h-16 w-16 drop-shadow-[0_0_20px_rgba(201,168,76,0.3)]"
+              className="h-16 w-16 drop-shadow-[0_0_20px_rgba(37,99,235,0.3)]"
               priority
             />
           </div>
@@ -25,7 +25,7 @@ export default function LoadingScreen() {
 
         {/* Loading bar */}
         <div className="h-[2px] w-24 overflow-hidden rounded-full bg-white/[0.08]">
-          <div className="h-full w-full animate-logo-shimmer rounded-full bg-gradient-to-r from-transparent via-gold/60 to-transparent" style={{ backgroundSize: "200% 100%" }} />
+          <div className="h-full w-full animate-logo-shimmer rounded-full bg-gradient-to-r from-transparent via-blue/60 to-transparent" style={{ backgroundSize: "200% 100%" }} />
         </div>
       </div>
     </div>

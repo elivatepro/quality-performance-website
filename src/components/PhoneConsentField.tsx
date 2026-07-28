@@ -37,7 +37,7 @@ export default function PhoneConsentField({
           type="checkbox"
           checked={checked}
           onChange={onChange}
-          className="mt-1 h-4 w-4 rounded border-white/20 bg-transparent text-gold focus:ring-gold"
+          className="mt-1 h-4 w-4 rounded border-white/20 bg-transparent text-blue focus:ring-blue"
         />
         <span className="text-sm leading-relaxed text-white/78">
           Optional: I agree to receive automated text messages from Quality
@@ -46,11 +46,11 @@ export default function PhoneConsentField({
       </label>
       <p className="mt-3 text-xs leading-relaxed text-white/42">
         Review our{" "}
-        <Link href="/terms#sms-communications" className="text-gold hover:underline">
+        <Link href="/terms#sms-communications" className="text-blue hover:underline">
           Terms of Service
         </Link>{" "}
         and{" "}
-        <Link href="/privacy#text-messages" className="text-gold hover:underline">
+        <Link href="/privacy#text-messages" className="text-blue hover:underline">
           Privacy Policy
         </Link>{" "}
         for additional details about phone and text communications.

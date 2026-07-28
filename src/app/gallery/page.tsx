@@ -39,7 +39,7 @@ export default function Gallery() {
         </div>
         <div className="relative mx-auto w-full max-w-[1280px] px-6 py-32 lg:px-12">
           <div className="max-w-2xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-gold">
+            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
               Our Work
             </p>
             <h1

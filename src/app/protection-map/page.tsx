@@ -15,7 +15,7 @@ export default function ProtectionMapPage() {
       <section className="bg-dark pb-16 pt-32 md:pb-20 md:pt-40">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <div className="max-w-2xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-gold">
+            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
               Interactive Protection Map
             </p>
             <h1

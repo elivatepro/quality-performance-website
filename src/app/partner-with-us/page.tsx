@@ -28,7 +28,7 @@ export default function PartnerWithUs() {
         </div>
         <div className="relative mx-auto w-full max-w-[1280px] px-6 py-32 lg:px-12">
           <div className="max-w-2xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-gold">
+            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
               Partner With Us
             </p>
             <h1
@@ -51,13 +51,13 @@ export default function PartnerWithUs() {
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-gold px-6 py-3.5 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
+                className="inline-flex items-center justify-center rounded-lg bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
               >
                 Partner With Us
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3.5 text-base font-semibold text-white transition-all hover:border-gold hover:text-gold"
+                className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3.5 text-base font-semibold text-white transition-all hover:border-blue hover:text-blue"
               >
                 Request More Information
               </Link>
@@ -112,7 +112,7 @@ export default function PartnerWithUs() {
             ].map((benefit, i) => (
               <AnimatedSection key={benefit.title} delay={i * 100}>
                 <div className="rounded-xl bg-surface-alt p-8">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gold-subtle text-gold">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-subtle text-blue">
                     {benefit.icon}
                   </div>
                   <h3 className="text-lg font-bold text-text-primary">
@@ -134,7 +134,7 @@ export default function PartnerWithUs() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <AnimatedSection>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-gold">
+                <p className="text-sm font-semibold uppercase tracking-wider text-blue">
                   Dealership Portal
                 </p>
                 <h2
@@ -157,7 +157,7 @@ export default function PartnerWithUs() {
                     "Quality assurance workflow with admin review",
                   ].map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-text-primary">
-                      <svg className="mt-0.5 h-5 w-5 shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="mt-0.5 h-5 w-5 shrink-0 text-blue" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       <span className="text-base">{feature}</span>
@@ -180,7 +180,7 @@ export default function PartnerWithUs() {
                 <div className="rounded-lg bg-dark p-6">
                   <div className="mb-4 flex items-center justify-between">
                     <div className="text-sm font-semibold text-white">Install Dashboard</div>
-                    <div className="rounded bg-gold/20 px-2 py-1 text-xs text-gold">Live</div>
+                    <div className="rounded bg-blue/20 px-2 py-1 text-xs text-blue">Live</div>
                   </div>
                   <div className="grid grid-cols-3 gap-3">
                     {[
@@ -198,7 +198,7 @@ export default function PartnerWithUs() {
                     {[
                       { vin: "···4521", status: "In Progress", color: "text-yellow-400" },
                       { vin: "···8903", status: "Completed", color: "text-green-400" },
-                      { vin: "···2217", status: "Scheduled", color: "text-gold" },
+                      { vin: "···2217", status: "Scheduled", color: "text-blue" },
                     ].map((install) => (
                       <div key={install.vin} className="flex items-center justify-between rounded-lg bg-dark-alt px-3 py-2">
                         <span className="text-xs text-white/60">VIN {install.vin}</span>
@@ -261,7 +261,7 @@ export default function PartnerWithUs() {
             ].map((item, i) => (
               <AnimatedSection key={item.step} delay={i * 100}>
                 <div className="text-center">
-                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gold text-lg font-bold text-dark">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue text-lg font-bold text-white">
                     {item.step}
                   </div>
                   <h3 className="text-lg font-bold text-text-primary">{item.title}</h3>

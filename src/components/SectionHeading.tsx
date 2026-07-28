@@ -9,7 +9,7 @@ export default function SectionHeading({ label, title, description, centered = t
   return (
     <div className={`mb-12 ${centered ? "text-center" : ""}`}>
       {label && (
-        <p className="mb-3 text-[13px] font-semibold uppercase tracking-[2px] text-gold">{label}</p>
+        <p className="mb-3 text-[13px] font-semibold uppercase tracking-[2px] text-blue">{label}</p>
       )}
       <h2 className="text-3xl font-bold tracking-tight text-text-primary md:text-4xl" style={{ letterSpacing: "-0.02em" }}>{title}</h2>
       {description && (

@@ -97,8 +97,8 @@ export default function Navbar() {
         <nav
           className={`mx-4 flex items-center justify-between rounded-2xl border px-4 py-3 transition-all duration-[350ms] ease-out sm:mx-6 lg:mx-auto lg:max-w-[1240px] lg:px-8 lg:py-3.5 ${
             scrolled
-              ? "border-white/[0.12] bg-[#0B1120]/97 shadow-[0_4px_24px_rgba(0,0,0,0.25)] backdrop-blur-xl"
-              : "border-white/[0.08] bg-[#0B1120]/92 backdrop-blur-xl"
+              ? "border-white/[0.12] bg-[#0A122B]/97 shadow-[0_4px_24px_rgba(0,0,0,0.25)] backdrop-blur-xl"
+              : "border-white/[0.08] bg-[#0A122B]/92 backdrop-blur-xl"
           }`}
         >
           {/* Logo */}
@@ -111,7 +111,7 @@ export default function Navbar() {
               className="h-7 w-7 sm:h-8 sm:w-8"
             />
             <span className="text-[13px] font-bold tracking-wide text-white sm:text-[15px] lg:text-lg lg:tracking-tight">
-              QUALITY<span className="text-gold">PERFORMANCE</span>
+              QUALITY<span className="text-blue">PERFORMANCE</span>
             </span>
           </Link>
 
@@ -128,7 +128,7 @@ export default function Navbar() {
                   <button
                     className={`flex items-center gap-1 text-[14px] font-medium tracking-[0.3px] transition-colors duration-200 ${
                       isActive(link.href)
-                        ? "font-semibold text-gold"
+                        ? "font-semibold text-blue"
                         : "text-white/65 hover:text-white/90"
                     }`}
                     aria-expanded={servicesOpen}
@@ -153,15 +153,15 @@ export default function Navbar() {
                         : "pointer-events-none -translate-y-2 opacity-0"
                     }`}
                   >
-                    <div className="w-[680px] rounded-2xl border border-white/[0.1] bg-[#0B1120]/98 p-5 shadow-[0_12px_48px_rgba(0,0,0,0.4)] backdrop-blur-xl">
+                    <div className="w-[680px] rounded-2xl border border-white/[0.1] bg-[#0A122B]/98 p-5 shadow-[0_12px_48px_rgba(0,0,0,0.4)] backdrop-blur-xl">
                       {/* Header */}
                       <div className="mb-4 flex items-center justify-between px-1">
-                        <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-gold/70">
+                        <span className="text-[11px] font-semibold uppercase tracking-[1.5px] text-blue/70">
                           Protection Points
                         </span>
                         <Link
                           href="/services"
-                          className="group flex items-center gap-1 text-[12px] font-semibold text-gold transition-colors hover:text-gold/80"
+                          className="group flex items-center gap-1 text-[12px] font-semibold text-blue transition-colors hover:text-blue/80"
                         >
                           View All
                           <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -175,7 +175,7 @@ export default function Navbar() {
                           <Link
                             key={product.slug}
                             href={`/services/${product.slug}`}
-                            className="group flex items-center gap-3.5 rounded-xl border border-transparent p-2.5 transition-all duration-200 hover:border-gold/15 hover:bg-white/[0.04]"
+                            className="group flex items-center gap-3.5 rounded-xl border border-transparent p-2.5 transition-all duration-200 hover:border-blue/15 hover:bg-white/[0.04]"
                           >
                             <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg border border-white/[0.08] bg-dark-alt">
                               <Image
@@ -205,7 +205,7 @@ export default function Navbar() {
                   href={link.href}
                   className={`text-[14px] tracking-[0.3px] transition-colors duration-200 ${
                     isActive(link.href)
-                      ? "font-semibold text-gold"
+                      ? "font-semibold text-blue"
                       : "font-medium text-white/65 hover:text-white/90"
                   }`}
                 >
@@ -230,7 +230,7 @@ export default function Navbar() {
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-lg border-[1.5px] border-gold px-5 py-2 text-[13px] font-semibold tracking-[0.3px] text-gold transition-all duration-200 hover:bg-gold hover:text-dark"
+              className="inline-flex items-center rounded-lg border-[1.5px] border-blue px-5 py-2 text-[13px] font-semibold tracking-[0.3px] text-blue transition-all duration-200 hover:bg-blue hover:text-white"
             >
               Partner With Us
             </Link>
@@ -255,7 +255,7 @@ export default function Navbar() {
       {/* Mobile Menu — Full-Screen Overlay (outside header so translate doesn't affect it) */}
       <div
         id="mobile-menu"
-        className={`fixed inset-0 z-[60] bg-[#0B1120] transition-opacity duration-300 ease-out lg:hidden ${
+        className={`fixed inset-0 z-[60] bg-[#0A122B] transition-opacity duration-300 ease-out lg:hidden ${
           mobileOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
@@ -270,7 +270,7 @@ export default function Navbar() {
                 className="h-7 w-7 sm:h-8 sm:w-8"
               />
               <span className="text-[13px] font-bold tracking-wide text-white sm:text-[15px]">
-                QUALITY<span className="text-gold">PERFORMANCE</span>
+                QUALITY<span className="text-blue">PERFORMANCE</span>
               </span>
             </Link>
             <button
@@ -304,11 +304,11 @@ export default function Navbar() {
                           }}
                         >
                           {isActive(link.href) && (
-                            <span className="h-3 w-3 shrink-0 rounded-[2px] bg-gold" />
+                            <span className="h-3 w-3 shrink-0 rounded-[2px] bg-blue" />
                           )}
                           <span
                             className={`text-[28px] font-bold leading-tight sm:text-[32px] ${
-                              isActive(link.href) ? "text-gold" : "text-white/90"
+                              isActive(link.href) ? "text-blue" : "text-white/90"
                             }`}
                             style={{ letterSpacing: "-0.02em" }}
                           >
@@ -335,7 +335,7 @@ export default function Navbar() {
                             <Link
                               href="/services"
                               onClick={() => setMobileOpen(false)}
-                              className="block py-1.5 text-[15px] font-medium text-gold"
+                              className="block py-1.5 text-[15px] font-medium text-blue"
                             >
                               View All Services →
                             </Link>
@@ -354,11 +354,11 @@ export default function Navbar() {
                         }}
                       >
                         {isActive(link.href) && (
-                          <span className="h-3 w-3 shrink-0 rounded-[2px] bg-gold" />
+                          <span className="h-3 w-3 shrink-0 rounded-[2px] bg-blue" />
                         )}
                         <span
                           className={`text-[28px] font-bold leading-tight sm:text-[32px] ${
-                            isActive(link.href) ? "text-gold" : "text-white/90"
+                            isActive(link.href) ? "text-blue" : "text-white/90"
                           }`}
                           style={{ letterSpacing: "-0.02em" }}
                         >

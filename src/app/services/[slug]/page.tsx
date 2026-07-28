@@ -72,7 +72,7 @@ export default async function ProductPage({ params }: PageProps) {
             <div className="animate-hero mt-8" style={{ animationDelay: "0.3s" }}>
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-lg bg-gold px-6 py-3.5 text-base font-semibold text-dark transition-all hover:bg-gold-hover hover:scale-[1.02]"
+                className="inline-flex items-center rounded-lg bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
               >
                 Partner With Us
               </Link>
@@ -87,11 +87,11 @@ export default async function ProductPage({ params }: PageProps) {
           <div className="grid items-start gap-12 lg:grid-cols-2">
             <AnimatedSection>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-gold">
+                <p className="text-sm font-semibold uppercase tracking-wider text-blue">
                   What It Protects
                 </p>
                 <h2
-                  className="mt-3 text-3xl font-bold text-gold md:text-4xl"
+                  className="mt-3 text-3xl font-bold text-blue md:text-4xl"
                   style={{ letterSpacing: "-0.02em" }}
                 >
                   Coverage Areas
@@ -99,10 +99,10 @@ export default async function ProductPage({ params }: PageProps) {
                 <ul className="mt-6 space-y-3">
                   {product.protectionAreas.map((area) => (
                     <li key={area} className="flex items-start gap-3">
-                      <svg className="mt-0.5 h-5 w-5 shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="mt-0.5 h-5 w-5 shrink-0 text-blue" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
-                      <span className="text-base text-gold">{area}</span>
+                      <span className="text-base text-blue">{area}</span>
                     </li>
                   ))}
                 </ul>
@@ -129,11 +129,11 @@ export default async function ProductPage({ params }: PageProps) {
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <AnimatedSection>
             <div className="mx-auto max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-wider text-gold">
+              <p className="text-sm font-semibold uppercase tracking-wider text-blue">
                 Why It Matters
               </p>
               <h2
-                className="mt-3 text-3xl font-bold text-gold md:text-4xl"
+                className="mt-3 text-3xl font-bold text-blue md:text-4xl"
                 style={{ letterSpacing: "-0.02em" }}
               >
                 Protection That Pays for Itself
@@ -148,14 +148,14 @@ export default async function ProductPage({ params }: PageProps) {
 
           <AnimatedSection delay={100}>
             <div className="mx-auto mt-12 max-w-3xl">
-              <h3 className="mb-4 text-lg font-bold text-gold">Key Benefits</h3>
+              <h3 className="mb-4 text-lg font-bold text-blue">Key Benefits</h3>
               <div className="grid gap-3 sm:grid-cols-2">
                 {product.benefits.map((benefit) => (
                   <div key={benefit} className="flex items-start gap-3 rounded-lg bg-dark-alt p-4">
-                    <svg className="mt-0.5 h-5 w-5 shrink-0 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="mt-0.5 h-5 w-5 shrink-0 text-blue" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm text-gold">{benefit}</span>
+                    <span className="text-sm text-blue">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -169,11 +169,11 @@ export default async function ProductPage({ params }: PageProps) {
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <AnimatedSection>
             <div className="mx-auto max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-wider text-gold">
+              <p className="text-sm font-semibold uppercase tracking-wider text-blue">
                 Specifications
               </p>
               <h2
-                className="mt-3 text-3xl font-bold text-gold"
+                className="mt-3 text-3xl font-bold text-blue"
                 style={{ letterSpacing: "-0.02em" }}
               >
                 Technical Details
@@ -182,7 +182,7 @@ export default async function ProductPage({ params }: PageProps) {
                 {Object.entries(product.specs).map(([key, value]) => (
                   <div key={key} className="flex items-center justify-between py-4">
                     <span className="text-sm font-medium text-text-secondary">{key}</span>
-                    <span className="text-sm font-semibold text-gold">{value}</span>
+                    <span className="text-sm font-semibold text-blue">{value}</span>
                   </div>
                 ))}
               </div>
@@ -207,7 +207,7 @@ export default async function ProductPage({ params }: PageProps) {
 
           <div className="relative mx-auto max-w-[1280px] px-6 lg:px-12">
             <AnimatedSection>
-              <p className="text-sm font-semibold uppercase tracking-wider text-gold">
+              <p className="text-sm font-semibold uppercase tracking-wider text-blue">
                 Often Paired With
               </p>
               <h2
@@ -223,7 +223,7 @@ export default async function ProductPage({ params }: PageProps) {
                 <AnimatedSection key={rel.slug} delay={i * 100}>
                   <Link
                     href={`/services/${rel.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.1] bg-white/[0.06] backdrop-blur-sm transition-all duration-300 hover:border-gold/30 hover:-translate-y-1"
+                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.1] bg-white/[0.06] backdrop-blur-sm transition-all duration-300 hover:border-blue/30 hover:-translate-y-1"
                   >
                     {/* Product image */}
                     <div className="relative h-44 bg-dark-alt">
@@ -240,7 +240,7 @@ export default async function ProductPage({ params }: PageProps) {
                         {rel.name}
                       </h3>
                       <p className="mt-2 text-sm leading-relaxed text-white/60">{rel.tagline}</p>
-                      <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-gold">
+                      <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-blue">
                         Learn More
                         <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
