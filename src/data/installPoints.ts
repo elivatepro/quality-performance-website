@@ -37,7 +37,7 @@ export const installPoints: InstallPoint[] = [
       "Covers the leading 18-24 inches of your hood, the strike zone for rock chips, road debris, and bug impacts.",
     detail:
       "The front portion of your hood absorbs the most highway abuse. Partial hood coverage protects this high-impact zone without full-hood cost.",
-    image: "/images/install-point-partial-hood.png",
+    image: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/Partial%20Hood%20Image.png",
     tags: ["Self-Healing", "5-Year Warranty", "Made in USA"],
   },
   {
@@ -65,7 +65,7 @@ export const installPoints: InstallPoint[] = [
       "Reduces fingerprints and glare while guarding your infotainment display against scratches and smudges.",
     detail:
       "Ultra-clear film applied directly to the touchscreen surface. Anti-glare properties maintain visibility while preventing micro-scratches from daily tapping.",
-    image: "/images/install-point-nav-screen.png",
+    image: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/Screen%20Protection%20Image.png",
     tags: ["Anti-Glare", "Fingerprint Resistant"],
   },
   {
@@ -79,7 +79,7 @@ export const installPoints: InstallPoint[] = [
       "Protects against chipping from door swings, parking lot bumps, and accidental contact. One of the most common damage points on any vehicle.",
     detail:
       "Self-healing PPF wraps the leading edge of each door, the thin strip most vulnerable to chips every time the door opens.",
-    image: "/images/install-point-door-edges.png",
+    image: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/door%20edges%20image.png",
     tags: ["Self-Healing", "5-Year Warranty", "Made in USA"],
   },
   {
@@ -93,7 +93,7 @@ export const installPoints: InstallPoint[] = [
       "Shields door handle cavities from scratches caused by keys, rings, nails, and daily use.",
     detail:
       "Precision-cut film sits inside the recessed area behind each door handle, absorbing micro-abrasions from fingernails and jewelry.",
-    image: "/images/install-point-door-cups.png",
+    image: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/Door%20Cup%20Image.png",
     tags: ["Self-Healing", "5-Year Warranty", "Made in USA"],
   },
   {
@@ -121,7 +121,7 @@ export const installPoints: InstallPoint[] = [
       "Protects the top surface of your rear bumper from scratches caused by loading and unloading cargo.",
     detail:
       "Every time you slide luggage, groceries, or gear across your bumper lip, you risk paint damage. This film takes the abuse instead.",
-    image: "/images/install-point-rear-bumper.png",
+    image: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/Rear%20Bumper%20Image.png",
     tags: ["Self-Healing", "5-Year Warranty", "Made in USA"],
   },
 ];

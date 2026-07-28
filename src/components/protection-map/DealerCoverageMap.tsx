@@ -1,52 +1,33 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { installPoints } from "@/data/installPoints";
 import { dealerInstallPointSlugs } from "@/lib/siteConfig";
 
 /**
- * DealerCoverageMap (Josh sync, QP-157).
+ * DealerCoverageMap (Josh sync, QP-157; redesigned per Boko's feedback).
  *
- * A single, always-visible labeled car diagram, the "one graphic that makes it
- * very clear what's being covered" Josh asked for, in place of the tap-to-explore
- * interactive map. Shows exactly the five dealer install points (headlights and
- * side mirrors are excluded via dealerInstallPointSlugs). Numbered markers on the
- * car correspond to a plain-language list, so a dealer grasps the coverage at a
- * glance without clicking.
+ * The five dealer install points as an interactive photo-swap: selecting a
+ * point shows its real install close-up instead of abstract markers on a car
+ * diagram. All five images stay mounted and crossfade, so switching is
+ * instant. Hover, focus, and tap all drive the selection.
  */
-
-// Marker positions tuned to public/images/vehicle-protection-map.png, a
-// left-facing dark sedan (front at left, rear at right). Percentages are of the
-// image box. Kept here (not in the generic installPoints hotspot data) so the
-// five dealer markers land precisely on this specific photo.
-const markerPositions: Record<string, { x: number; y: number }> = {
-  "partial-hood-shield": { x: 16, y: 47 }, // front hood, above the wheel
-  "door-edge-guards": { x: 41, y: 44 }, // leading edge of front door
-  "door-cup-guards": { x: 51, y: 41 }, // door handle area
-  "screen-protection": { x: 47, y: 37 }, // interior, through the cabin glass
-  "rear-bumper-guard": { x: 88, y: 45 }, // rear bumper, right side
-};
 
 const points = dealerInstallPointSlugs
   .map((slug) => installPoints.find((p) => p.slug === slug))
-  .filter((p): p is NonNullable<typeof p> => Boolean(p))
-  .map((p, i) => ({
-    n: i + 1,
-    label: p.label,
-    description: p.description,
-    x: markerPositions[p.slug as string]?.x ?? p.x,
-    y: markerPositions[p.slug as string]?.y ?? p.y,
-  }));
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
 export default function DealerCoverageMap() {
+  const [active, setActive] = useState(0);
+  const current = points[active];
+
   return (
-    <section className="bg-surface-alt py-20 md:py-28">
+    <section className="bg-surface-alt py-24 md:py-32">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
-        <div className="mb-12 max-w-2xl">
-          <h2
-            className="text-3xl font-bold text-text-primary md:text-4xl"
-            style={{ letterSpacing: "-0.02em" }}
-          >
+        <div className="mb-14 max-w-2xl">
+          <h2 className="type-display text-[32px] text-text-primary md:text-[42px]">
             Five points. Total protection.
           </h2>
           <p className="mt-4 text-lg text-text-secondary">
@@ -55,45 +36,85 @@ export default function DealerCoverageMap() {
           </p>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-center">
-          {/* Car diagram with always-visible numbered markers */}
-          <div className="relative overflow-hidden rounded-2xl border border-white/[0.06] bg-dark-tertiary">
-            <Image
-              src="/images/vehicle-protection-map.png"
-              alt="Vehicle showing the five paint protection film install points"
-              width={1200}
-              height={675}
-              className="block w-full"
-              priority
-            />
-            <div className="pointer-events-none absolute inset-0">
-              {points.map((point) => (
-                <span
-                  key={point.n}
-                  className="absolute flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-blue text-[14px] font-bold text-white ring-2 ring-dark/70 shadow-[0_0_0_4px_rgba(37,99,235,0.25),0_3px_10px_rgba(0,0,0,0.5)]"
-                  style={{ left: `${point.x}%`, top: `${point.y}%` }}
-                  aria-hidden="true"
+        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-stretch">
+          {/* Active point, in close-up */}
+          <div className="relative min-h-[320px] overflow-hidden rounded-2xl bg-dark-deep md:min-h-[440px]">
+            {points.map((point, i) => (
+              <Image
+                key={point.id}
+                src={point.image}
+                alt={point.label}
+                fill
+                className={`object-cover transition-opacity duration-500 ease-out ${
+                  i === active ? "opacity-100" : "opacity-0"
+                }`}
+                priority={i === 0}
+              />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/85 via-transparent to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-4 p-7">
+              <div className="max-w-md">
+                <h3 className="type-display text-[24px] text-white md:text-[28px]">
+                  {current.label}
+                </h3>
+                <p className="mt-2 text-[14px] leading-relaxed text-white/75">
+                  {current.detail}
+                </p>
+              </div>
+              {current.slug && (
+                <Link
+                  href={`/services/${current.slug}`}
+                  className="group inline-flex shrink-0 items-center gap-2 text-[14px] font-semibold text-blue-bright transition-colors hover:text-white"
                 >
-                  {point.n}
-                </span>
-              ))}
+                  Install details
+                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              )}
             </div>
           </div>
 
-          {/* Plain-language legend */}
-          <ol className="space-y-4">
-            {points.map((point) => (
-              <li key={point.n} className="flex gap-4">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-[13px] font-bold text-white">
-                  {point.n}
-                </span>
-                <div>
-                  <h3 className="text-[15px] font-semibold text-white">{point.label}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-white/55">{point.description}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+          {/* Point selector */}
+          <div className="flex flex-col divide-y divide-border border-y border-border" role="tablist" aria-label="Install points">
+            {points.map((point, i) => {
+              const isActive = i === active;
+              return (
+                <button
+                  key={point.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setActive(i)}
+                  onMouseEnter={() => setActive(i)}
+                  onFocus={() => setActive(i)}
+                  className={`group flex flex-1 items-center gap-4 px-5 py-5 text-left transition-colors duration-200 ${
+                    isActive ? "bg-dark-tertiary/70" : "hover:bg-dark-tertiary/40"
+                  }`}
+                >
+                  <span className="min-w-0 flex-1">
+                    <span className={`block text-[16px] font-bold transition-colors ${isActive ? "text-blue-bright" : "text-text-primary"}`}>
+                      {point.label}
+                    </span>
+                    <span className="mt-0.5 block text-[13px] leading-snug text-text-secondary">
+                      {point.description}
+                    </span>
+                  </span>
+                  <svg
+                    className={`h-4 w-4 shrink-0 transition-all duration-200 ${
+                      isActive ? "translate-x-0 text-blue-bright opacity-100" : "-translate-x-1 text-text-tertiary opacity-0"
+                    }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

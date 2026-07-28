@@ -2,10 +2,10 @@
 
 @theme inline {
   /* ─── Midnight Blue Palette ─── */
-  --color-blue: #2563EB;
-  --color-blue-hover: #3B82F6;
+  --color-blue: #3B82F6;
+  --color-blue-hover: #4E8DF8;
   --color-blue-bright: #60A5FA;
-  --color-blue-subtle: rgba(37, 99, 235, 0.15);
+  --color-blue-subtle: rgba(59, 130, 246, 0.15);
 
   --color-dark: #0A122B;
   --color-dark-deep: #060B1D;
@@ -27,7 +27,8 @@
   --color-success: #10B981;
   --color-error: #EF4444;
 
-  --font-sans: var(--font-archivo);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-inter-tight);
 
   --shadow-card: 0 1px 3px rgba(3,10,34,0.45), 0 4px 12px rgba(3,10,34,0.3);
   --shadow-elevated: 0 4px 16px rgba(3,10,34,0.55), 0 12px 40px rgba(3,10,34,0.4);
@@ -44,26 +45,25 @@ body {
 }
 
 /* ─── Type voice ───
-   Display headlines use Archivo's width axis for an engineered,
-   automotive-signage presence. Body stays at normal width. */
+   Body is Inter; display headlines are Inter Tight at heavy weights so
+   they carry real presence without leaving the family. */
 .type-display {
-  font-stretch: 112%;
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   line-height: 1.04;
   text-wrap: balance;
 }
 
 .type-display-wide {
-  font-stretch: 125%;
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
   font-weight: 800;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.035em;
   line-height: 1;
   text-wrap: balance;
 }
 
 .type-label {
-  font-stretch: 118%;
   font-weight: 600;
   font-size: 12px;
   letter-spacing: 0.14em;
@@ -71,7 +71,8 @@ body {
 }
 
 .type-num {
-  font-stretch: 118%;
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+  font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
 

@@ -110,7 +110,7 @@ export default function Navbar() {
               height={32}
               className="h-7 w-7 sm:h-8 sm:w-8"
             />
-            <span className="[font-stretch:118%] text-[13px] font-bold tracking-wide text-white sm:text-[15px] lg:text-lg lg:tracking-tight">
+            <span className="text-[13px] font-bold tracking-wide text-white sm:text-[15px] lg:text-lg lg:tracking-tight">
               QUALITY<span className="text-blue">PERFORMANCE</span>
             </span>
           </Link>
@@ -269,7 +269,7 @@ export default function Navbar() {
                 height={32}
                 className="h-7 w-7 sm:h-8 sm:w-8"
               />
-              <span className="[font-stretch:118%] text-[13px] font-bold tracking-wide text-white sm:text-[15px]">
+              <span className="text-[13px] font-bold tracking-wide text-white sm:text-[15px]">
                 QUALITY<span className="text-blue">PERFORMANCE</span>
               </span>
             </Link>

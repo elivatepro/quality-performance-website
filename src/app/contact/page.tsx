@@ -38,9 +38,9 @@ export default function Contact() {
   const [dealership, setDealership] = useState("");
   const [directLine, setDirectLine] = useState("");
   const [interests, setInterests] = useState<string[]>([]);
-  const [wantsCall, setWantsCall] = useState(false);
+  const [wantsCall, setWantsCall] = useState(true);
   const [bestTime, setBestTime] = useState("");
-  const [contactPreference, setContactPreference] = useState<"call" | "text" | "">("");
+  const [contactPreference, setContactPreference] = useState<"call" | "text" | "">("call");
   const [comments, setComments] = useState("");
 
   const [submitting, setSubmitting] = useState(false);

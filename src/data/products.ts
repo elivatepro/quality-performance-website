@@ -20,7 +20,7 @@ export const products: ProductData[] = [
     slug: "door-edge-guards",
     name: "Door Edge Guards",
     tagline: "Invisible protection where doors meet the world.",
-    heroImage: "/images/install-point-door-edges.png",
+    heroImage: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/door%20edges%20image.png",
     description:
       "Door edges are one of the most vulnerable areas on any vehicle. Every time a door opens, in a parking lot, a garage, or at a fuel pump, the edge is exposed to chips, dings, and paint damage. Our door edge PPF creates an invisible barrier that absorbs impact and prevents costly paint repairs.\n\nThe film conforms precisely to the contour of each door edge, providing seamless coverage that's virtually undetectable. Self-healing technology means minor scratches disappear with heat, keeping your edges looking factory-fresh for years.",
     protectionAreas: [
@@ -54,7 +54,7 @@ export const products: ProductData[] = [
     slug: "door-cup-guards",
     name: "Door Cup Guards",
     tagline: "Shield the spots your fingernails can't avoid.",
-    heroImage: "/images/install-point-door-cups.png",
+    heroImage: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/Door%20Cup%20Image.png",
     description:
       "The door handle cup area takes constant abuse, fingernails, rings, keys, and daily grabs leave scratches that accumulate over time. These fine scratches catch light and become increasingly visible, especially on darker paint colors.\n\nOur door cup PPF provides a precision-cut shield that fits perfectly into each door handle recess. The optically clear film is virtually invisible but incredibly effective at preventing the micro-scratches that devalue your vehicle's appearance.",
     protectionAreas: [
@@ -122,7 +122,7 @@ export const products: ProductData[] = [
     slug: "screen-protection",
     name: "Screen Protection",
     tagline: "Crystal clarity meets uncompromising protection.",
-    heroImage: "/images/install-point-nav-screen.png",
+    heroImage: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/Screen%20Protection%20Image.png",
     description:
       "Modern vehicles feature large touchscreen displays that are central to the driving experience. These screens are susceptible to fingerprint smudges, micro-scratches from daily use, and glare that reduces visibility.\n\nOur screen protection film provides an ultra-clear protective layer that maintains full touch sensitivity while reducing glare and preventing scratches. The film's oleophobic coating resists fingerprints, keeping your screen cleaner longer between wipes.",
     protectionAreas: [
@@ -156,7 +156,7 @@ export const products: ProductData[] = [
     slug: "rear-bumper-guard",
     name: "Rear Bumper Guard",
     tagline: "Defend against the damage you can't see coming.",
-    heroImage: "/images/install-point-rear-bumper.png",
+    heroImage: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/Rear%20Bumper%20Image.png",
     description:
       "The rear bumper takes punishment from every direction, shopping carts, parking lot mishaps, cargo loading, and road debris kicked up from the road surface. The top edge of the bumper is especially vulnerable during trunk loading and unloading.\n\nOur rear bumper guard PPF covers the most damage-prone areas of the rear bumper with a thick, durable film that absorbs impacts, prevents scratches, and maintains your vehicle's clean rear profile. The self-healing surface means minor scuffs disappear on their own.",
     protectionAreas: [
@@ -190,7 +190,7 @@ export const products: ProductData[] = [
     slug: "partial-hood-shield",
     name: "Partial Hood Shield",
     tagline: "Frontline defense against road debris.",
-    heroImage: "/images/install-point-partial-hood.png",
+    heroImage: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/Partial%20Hood%20Image.png",
     description:
       "The leading edge and first third of the hood take the brunt of highway driving, rock chips, bug impacts, sand abrasion, and road debris all target this high-impact zone. Once the paint chips, it exposes bare metal to moisture and accelerates corrosion.\n\nOur partial hood PPF covers the most vulnerable forward section of the hood with a thick, impact-resistant film. This targeted coverage protects where damage is most likely while keeping costs manageable. The seamless edge is virtually invisible, maintaining your vehicle's clean hood line.",
     protectionAreas: [

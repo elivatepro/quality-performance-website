@@ -87,7 +87,7 @@ function buildText(lead: LeadPayload): string {
  * readability, with QP's blue accent and a dark header band.
  */
 function buildHtml(lead: LeadPayload): string {
-  const blue = "#2563EB";
+  const blue = "#3B82F6";
   const dark = "#0A122B";
   const ink = "#1A2333";
   const muted = "#6B7688";
@@ -235,7 +235,7 @@ function buildConfirmationText(lead: LeadPayload): string {
 }
 
 function buildConfirmationHtml(lead: LeadPayload): string {
-  const blue = "#2563EB";
+  const blue = "#3B82F6";
   const dark = "#0A122B";
   const ink = "#1A2333";
   const muted = "#6B7688";

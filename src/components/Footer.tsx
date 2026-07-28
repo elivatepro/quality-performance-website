@@ -26,7 +26,7 @@ export default function Footer() {
                 height={36}
                 className="h-9 w-9"
               />
-              <span className="[font-stretch:118%] text-lg font-bold tracking-tight text-white">
+              <span className="text-lg font-bold tracking-tight text-white">
                 QUALITY<span className="text-blue">PERFORMANCE</span>
               </span>
             </div>
