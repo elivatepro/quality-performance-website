@@ -127,24 +127,26 @@ export default function Home() {
                 height={675}
                 className="h-full min-h-[380px] w-full object-cover lg:min-h-[480px]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-deep via-transparent to-transparent" />
+              {/* Scrim: strong enough at the base that white stats stay legible
+                  over bright daylight photography, fading out by mid-frame. */}
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-deep via-dark-deep/85 via-[28%] to-transparent" />
               {/* Numbers live on the photo: evidence, not a stat dashboard */}
               <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-end gap-x-8 gap-y-4 p-7">
                 <div>
                   <LiveInstallCounter end={installCount} centered={false} />
-                  <div className="mt-1.5 text-[12px] font-medium text-white/60">
+                  <div className="mt-2 text-[12px] font-medium text-white/75">
                     Installations
                   </div>
                 </div>
                 <div className="border-l border-white/15 pl-8">
                   <div className="type-num text-[34px] font-bold leading-none text-white">20+</div>
-                  <div className="mt-1.5 text-[12px] font-medium text-white/60">
+                  <div className="mt-2 text-[12px] font-medium text-white/75">
                     Dealership partners
                   </div>
                 </div>
                 <div className="border-l border-white/15 pl-8">
                   <div className="type-num text-[34px] font-bold leading-none text-white">4-5</div>
-                  <div className="mt-1.5 text-[12px] font-medium text-white/60">
+                  <div className="mt-2 text-[12px] font-medium text-white/75">
                     States covered
                   </div>
                 </div>

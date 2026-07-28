@@ -72,12 +72,14 @@ export default function LiveInstallCounter({
 
   return (
     <div ref={ref}>
-      <div className={`flex items-center gap-2 ${centered ? "justify-center" : ""}`}>
-        <span className="relative flex h-2 w-2" aria-hidden="true">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue/60" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-blue" />
+      <div className={`flex items-baseline gap-2.5 ${centered ? "justify-center" : ""}`}>
+        {/* Live dot sits on its own so the number reads as plain white text,
+            legible over bright photography rather than tinted into it. */}
+        <span className="relative flex h-2 w-2 translate-y-[-6px]" aria-hidden="true">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-bright/70" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-bright shadow-[0_0_8px_rgba(96,165,250,0.9)]" />
         </span>
-        <span className="type-num text-[34px] font-bold leading-none text-blue-bright">
+        <span className="type-num text-[34px] font-bold leading-none text-white">
           {count.toLocaleString()}
           <span>+</span>
         </span>
