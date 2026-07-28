@@ -88,7 +88,7 @@ export default function TeamCarousel() {
       {/* Cards */}
       <div
         ref={scrollRef}
-        className="flex gap-6 overflow-x-auto pb-4"
+        className="scrollbar-subtle flex gap-6 overflow-x-auto pb-4"
         style={{ scrollbarWidth: "none" }}
       >
         {team.map((member, i) => (

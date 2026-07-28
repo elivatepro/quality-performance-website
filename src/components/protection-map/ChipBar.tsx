@@ -8,7 +8,7 @@ interface ChipBarProps {
 export default function ChipBar({ activeId, onSelect }: ChipBarProps) {
   return (
     <div
-      className="flex gap-2 overflow-x-auto py-1"
+      className="scrollbar-subtle flex gap-2 overflow-x-auto py-1"
       style={{ scrollbarWidth: "none" }}
     >
       {installPoints.map((point) => (

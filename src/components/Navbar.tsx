@@ -286,7 +286,7 @@ export default function Navbar() {
           </div>
 
           {/* Menu Content */}
-          <div className="flex h-[calc(100%-60px)] flex-col overflow-y-auto px-7 pb-10 pt-10">
+          <div className="scrollbar-subtle flex h-[calc(100%-60px)] flex-col overflow-y-auto px-7 pb-10 pt-10">
             {/* Nav Links, Large display style */}
             <nav className="flex-1">
               <div className="space-y-1">
