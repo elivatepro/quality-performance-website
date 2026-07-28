@@ -20,7 +20,7 @@ const testimonials = [
     role: "Car Owner",
     company: "2024 BMW X5",
     quote:
-      "I was skeptical about PPF until I saw the results on my X5. Six months later, my car still looks showroom-new. The self-healing film is genuinely incredible — a shopping cart scratch vanished in the sun.",
+      "I was skeptical about PPF until I saw the results on my X5. Six months later, my car still looks showroom-new. The self-healing film is genuinely incredible, a shopping cart scratch vanished in the sun.",
     image:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
   },

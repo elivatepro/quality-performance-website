@@ -9,9 +9,9 @@ import { contact } from "@/lib/siteConfig";
  * Gmail SMTP, sending as hello@qualityperformance.io with reply-to the dealer.
  *
  * Configured entirely through environment variables (see .env.example):
- *   GMAIL_USER          — the sending Gmail/Workspace address
- *   GMAIL_APP_PASSWORD  — a Gmail App Password (not the account password)
- *   LEAD_INBOX          — where leads are delivered (defaults to contact.leadInbox)
+ *   GMAIL_USER         , the sending Gmail/Workspace address
+ *   GMAIL_APP_PASSWORD , a Gmail App Password (not the account password)
+ *   LEAD_INBOX         , where leads are delivered (defaults to contact.leadInbox)
  *
  * If SMTP credentials are absent (e.g. local dev without secrets), the composed
  * email is logged instead of sent and the form still confirms success, so the
@@ -68,10 +68,10 @@ function buildText(lead: LeadPayload): string {
     `Name:          ${lead.name}`,
     `Email:         ${lead.email}`,
     `Dealership:    ${lead.dealership}`,
-    `Direct line:   ${lead.directLine || "—"}`,
-    lead.interests.length ? `Interested in: ${lead.interests.join(", ")}` : `Interested in: —`,
+    `Direct line:   ${lead.directLine || "-"}`,
+    lead.interests.length ? `Interested in: ${lead.interests.join(", ")}` : `Interested in: -`,
     `Wants a call:  ${lead.wantsCall ? "Yes" : "No"}`,
-    lead.wantsCall ? `Best time:     ${lead.bestTime || "—"}` : ``,
+    lead.wantsCall ? `Best time:     ${lead.bestTime || "-"}` : ``,
     lead.contactPreference ? `Prefers:       ${lead.contactPreference}` : ``,
     ``,
     `Comments:`,
@@ -189,7 +189,7 @@ function buildEmail(lead: LeadPayload) {
     from: `Quality Performance Website <${from}>`,
     to,
     replyTo: lead.email,
-    subject: `New dealer lead — ${lead.dealership}`,
+    subject: `New dealer lead: ${lead.dealership}`,
     text: buildText(lead),
     html: buildHtml(lead),
   };
@@ -200,7 +200,7 @@ async function sendLeadEmail(lead: LeadPayload): Promise<void> {
   const tx = getTransporter();
 
   if (!tx) {
-    // No SMTP credentials configured — log so the submission is never lost,
+    // No SMTP credentials configured, log so the submission is never lost,
     // and let the visitor still see success. Surfaces GMAIL_USER/APP_PASSWORD
     // missing in local/dev environments.
     console.info("[lead] SMTP not configured; composed email", email);
@@ -228,7 +228,7 @@ function buildConfirmationText(lead: LeadPayload): string {
     `If you need us in the meantime, just reply to this email or reach us at`,
     `${contact.email}.`,
     ``,
-    `— Quality Performance`,
+    `- Quality Performance`,
   ]
     .filter((l) => l !== "")
     .join("\n");
@@ -313,14 +313,14 @@ function buildConfirmationEmail(lead: LeadPayload) {
     to: lead.email,
     // Replies from the visitor should reach the team inbox, not the raw sender.
     replyTo: contact.email,
-    subject: "We've received your message — Quality Performance",
+    subject: "We've received your message | Quality Performance",
     text: buildConfirmationText(lead),
     html: buildConfirmationHtml(lead),
   };
 }
 
 /**
- * Best-effort confirmation to the visitor. Never throws into the request flow —
+ * Best-effort confirmation to the visitor. Never throws into the request flow -
  * the internal lead notification is the source of truth; a failed confirmation
  * must not turn a captured lead into an error for the visitor.
  */
@@ -387,7 +387,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Confirmation to the visitor — best-effort, must not fail the request once
+  // Confirmation to the visitor, best-effort, must not fail the request once
   // the internal lead has been captured above.
   await sendConfirmationEmail(lead);
 

@@ -13,7 +13,13 @@ import { useEffect, useRef, useState } from "react";
  * Honors prefers-reduced-motion (shows the final number immediately) and matches
  * the trust-bar's centered blue style.
  */
-export default function LiveInstallCounter({ end }: { end: number }) {
+export default function LiveInstallCounter({
+  end,
+  centered = true,
+}: {
+  end: number;
+  centered?: boolean;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
@@ -66,12 +72,12 @@ export default function LiveInstallCounter({ end }: { end: number }) {
 
   return (
     <div ref={ref}>
-      <div className="flex items-center justify-center gap-2">
+      <div className={`flex items-center gap-2 ${centered ? "justify-center" : ""}`}>
         <span className="relative flex h-2 w-2" aria-hidden="true">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue/60" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-blue" />
         </span>
-        <span className="text-[42px] font-bold leading-none text-blue tabular-nums">
+        <span className="type-num text-[34px] font-bold leading-none text-blue-bright">
           {count.toLocaleString()}
           <span>+</span>
         </span>

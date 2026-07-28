@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
  *
  * Cycles through headline variants every ~3s with a soft crossfade. Josh: "make
  * it change so that every two seconds or three seconds it changes to 'protect
- * what is on your lot', 'protect what you invest in' — basically like a slider."
+ * what is on your lot', 'protect what you invest in', basically like a slider."
  * The dealer-first line leads; "Protect What You Invest In" is kept but flagged
  * by Josh for review (he wondered if it's too consumer-facing).
  *
@@ -33,7 +33,7 @@ export default function RotatingHeadline({
     if (reduce) return;
 
     const cycle = setInterval(() => {
-      // Fade out, swap, fade in — a gentle crossfade rather than a hard cut.
+      // Fade out, swap, fade in, a gentle crossfade rather than a hard cut.
       setVisible(false);
       setTimeout(() => {
         setIndex((i) => (i + 1) % phrases.length);

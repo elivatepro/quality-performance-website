@@ -117,8 +117,7 @@ export default function SmsUpdatesForm() {
                 Request Received
               </p>
               <h1
-                className="mt-3 text-3xl font-bold text-white md:text-4xl"
-                style={{ letterSpacing: "-0.03em" }}
+                className="mt-3 type-display text-[30px] text-white md:text-[38px]"
               >
                 Thanks, {firstName}.
               </h1>
@@ -219,7 +218,6 @@ export default function SmsUpdatesForm() {
                 </p>
                 <h2
                   className="mt-3 text-2xl font-bold text-white md:text-[32px]"
-                  style={{ letterSpacing: "-0.03em" }}
                 >
                   Operational updates only.
                 </h2>

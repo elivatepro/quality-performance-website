@@ -33,8 +33,8 @@ export default function ProtectYourCar() {
               Protect Your Car
             </p>
             <h1
-              className="animate-hero mt-4 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl"
-              style={{ letterSpacing: "-0.03em", animationDelay: "0.1s" }}
+              className="animate-hero mt-4 type-display text-[40px] text-white md:text-[52px] lg:text-[60px]"
+              style={{ animationDelay: "0.1s" }}
             >
               Your Paint Deserves Better Than Hope.
             </h1>
@@ -43,7 +43,7 @@ export default function ProtectYourCar() {
               style={{ animationDelay: "0.3s" }}
             >
               Professional paint protection film that shields your vehicle from
-              rock chips, scratches, and everyday wear — invisible to the eye,
+              rock chips, scratches, and everyday wear, invisible to the eye,
               unmistakable in results.
             </p>
             <div
@@ -52,7 +52,7 @@ export default function ProtectYourCar() {
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
+                className="inline-flex items-center justify-center rounded-[6px] bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
               >
                 Get a Quote for Your Vehicle
               </Link>
@@ -71,8 +71,7 @@ export default function ProtectYourCar() {
                   Understanding PPF
                 </p>
                 <h2
-                  className="mt-3 text-3xl font-bold text-text-primary md:text-4xl"
-                  style={{ letterSpacing: "-0.02em" }}
+                  className="mt-3 type-display text-[30px] text-text-primary md:text-[38px]"
                 >
                   What Is Paint Protection Film?
                 </h2>
@@ -85,7 +84,7 @@ export default function ProtectYourCar() {
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-text-secondary">
                   Modern PPF features <strong>self-healing technology</strong>{" "}
-                  — minor scratches and swirl marks disappear on their own when
+                 , minor scratches and swirl marks disappear on their own when
                   exposed to heat. The film is optically clear, so it&apos;s
                   virtually invisible once installed, preserving your
                   vehicle&apos;s factory finish and color depth.
@@ -178,7 +177,7 @@ export default function ProtectYourCar() {
               },
               {
                 q: "Can you see the film on the car?",
-                a: "No. Modern PPF is optically clear and virtually invisible once professionally installed. The film preserves your vehicle's original color and gloss — most people can't tell it's there.",
+                a: "No. Modern PPF is optically clear and virtually invisible once professionally installed. The film preserves your vehicle's original color and gloss, most people can't tell it's there.",
               },
               {
                 q: "Does PPF damage the paint underneath?",

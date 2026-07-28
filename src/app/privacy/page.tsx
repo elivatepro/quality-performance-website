@@ -18,8 +18,8 @@ export default function PrivacyPolicy() {
               Legal
             </p>
             <h1
-              className="animate-hero mt-4 text-4xl font-bold leading-tight text-white md:text-5xl"
-              style={{ letterSpacing: "-0.03em", animationDelay: "0.1s" }}
+              className="animate-hero mt-4 type-display text-[40px] text-white md:text-[52px]"
+              style={{ animationDelay: "0.1s" }}
             >
               Privacy Policy
             </h1>
@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
                   {[
                     ["Contact Information:", "Name, email address, phone number, and business address."],
                     ["Business Information:", "Dealership name, dealer code, role or title, and fleet details."],
-                    ["Vehicle Information:", "Vehicle Identification Number (VIN), stock number, make, model, year, and color — collected solely for the purpose of performing and documenting PPF installations."],
+                    ["Vehicle Information:", "Vehicle Identification Number (VIN), stock number, make, model, year, and color, collected solely for the purpose of performing and documenting PPF installations."],
                     ["Account Credentials:", "Email and passcode used to access the dealer portal."],
                     ["Communication Records:", "Messages, emails, and inquiries you send to us through forms, email, or other channels."],
                   ].map(([label, text]) => (

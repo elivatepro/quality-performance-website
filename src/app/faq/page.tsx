@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
-import SectionHeading from "@/components/SectionHeading";
 import CTABlock from "@/components/CTABlock";
+import { contact } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -13,6 +12,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     category: "About PPF",
+    id: "about-ppf",
     questions: [
       {
         q: "What is paint protection film (PPF)?",
@@ -24,11 +24,11 @@ const faqs = [
       },
       {
         q: "Can you see the film on the car?",
-        a: "No. Modern PPF is optically clear and virtually invisible once professionally installed. The film preserves your vehicle's original color and gloss — most people can't tell it's there.",
+        a: "No. Modern PPF is optically clear and virtually invisible once professionally installed. The film preserves your vehicle's original color and gloss. Most people can't tell it's there.",
       },
       {
         q: "What does 'self-healing' mean?",
-        a: "Self-healing PPF contains a special top coat that repairs minor scratches and swirl marks when exposed to heat (direct sunlight or warm water). Light surface marks literally disappear on their own.",
+        a: "Self-healing PPF contains a special top coat that repairs minor scratches and swirl marks when exposed to heat, like direct sunlight or warm water. Light surface marks literally disappear on their own.",
       },
       {
         q: "Does PPF damage the paint underneath?",
@@ -38,6 +38,7 @@ const faqs = [
   },
   {
     category: "Installation & Pricing",
+    id: "installation-pricing",
     questions: [
       {
         q: "How much does PPF cost?",
@@ -49,7 +50,7 @@ const faqs = [
       },
       {
         q: "Do you come to my location?",
-        a: "Yes. For dealership partners, we provide on-site installation — no transport needed. For individual car owners, we coordinate installation at a convenient time and location.",
+        a: "Yes. For dealership partners, we provide on-site installation with no transport needed. For individual car owners, we coordinate installation at a convenient time and location.",
       },
       {
         q: "What areas of the car can be protected?",
@@ -59,6 +60,7 @@ const faqs = [
   },
   {
     category: "For Dealerships",
+    id: "for-dealerships",
     questions: [
       {
         q: "How does the dealership partnership work?",
@@ -66,7 +68,7 @@ const faqs = [
       },
       {
         q: "What is the dealership portal?",
-        a: "Our purpose-built platform at app.qualityperformance.io gives dealerships complete visibility into every install — scheduling, real-time status, automated billing with PO integration, quality assurance, and comprehensive reporting.",
+        a: "Our purpose-built platform at app.qualityperformance.io gives dealerships complete visibility into every install: scheduling, real-time status, automated billing with PO integration, quality assurance, and comprehensive reporting.",
       },
       {
         q: "What states do you cover?",
@@ -74,7 +76,7 @@ const faqs = [
       },
       {
         q: "Can I offer PPF as an F&I product?",
-        a: "Absolutely. Many of our dealership partners offer PPF as a service add-on through their F&I department. We handle the installation — you capture the margin. It's a new profit center with zero overhead.",
+        a: "Absolutely. Many of our dealership partners offer PPF as a service add-on through their F&I department. We handle the installation, you capture the margin. It's a new profit center with zero overhead.",
       },
     ],
   },
@@ -84,21 +86,18 @@ export default function FAQ() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-dark pb-24 pt-32 md:pb-32 md:pt-40">
+      <section className="bg-dark pb-20 pt-36 md:pb-24 md:pt-44">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <div className="max-w-2xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
-              FAQ
-            </p>
             <h1
-              className="animate-hero mt-4 text-4xl font-bold leading-tight text-white md:text-5xl"
-              style={{ letterSpacing: "-0.03em", animationDelay: "0.1s" }}
+              className="animate-hero type-display text-[40px] text-white md:text-[52px]"
+              style={{ animationDelay: "0.1s" }}
             >
-              Frequently Asked Questions
+              Questions, answered
             </h1>
             <p
-              className="animate-hero mt-4 text-lg text-white/70"
-              style={{ animationDelay: "0.3s" }}
+              className="animate-hero mt-5 max-w-xl text-lg text-white/70"
+              style={{ animationDelay: "0.25s" }}
             >
               How dealership onboarding works, what we protect, and the answers
               partners ask most.
@@ -107,111 +106,104 @@ export default function FAQ() {
         </div>
       </section>
 
-      {/* Dealership onboarding pathway (Josh sync, QP-162) */}
-      <section className="bg-surface-alt py-20 md:py-24">
+      {/* Onboarding: a real sequence */}
+      <section className="border-y border-border bg-dark-tertiary py-20 md:py-24">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <AnimatedSection>
-            <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-wider text-blue">
-                Getting Started
-              </p>
-              <h2 className="mt-3 text-3xl font-bold text-text-primary md:text-4xl" style={{ letterSpacing: "-0.02em" }}>
-                How dealership onboarding works
-              </h2>
-              <p className="mt-4 text-lg text-text-secondary">
-                Four simple steps from first conversation to a protected lot.
-              </p>
-            </div>
+            <h2 className="type-display max-w-2xl text-[28px] text-text-primary md:text-[36px]">
+              From first conversation to a protected lot
+            </h2>
           </AnimatedSection>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-border">
             {[
               {
-                step: "01",
+                step: "1",
                 title: "Consult",
                 desc: "We talk through your inventory, volume, and goals, and confirm we serve your area.",
               },
               {
-                step: "02",
-                title: "Sign Up",
+                step: "2",
+                title: "Sign up",
                 desc: "We set up your dealership account and portal access. Billing starts simple: we invoice you directly.",
               },
               {
-                step: "03",
-                title: "Load Inventory",
+                step: "3",
+                title: "Load inventory",
                 desc: "Your inventory connects to the portal so vehicles are ready for install requests, tracked by VIN.",
               },
               {
-                step: "04",
+                step: "4",
                 title: "Install",
                 desc: "Certified installers come on-site, protect each vehicle, and document every install for your records.",
               },
             ].map((item, i) => (
-              <AnimatedSection key={item.step} delay={i * 100}>
-                <div className="flex h-full flex-col rounded-2xl border border-white/[0.08] bg-dark-alt p-6">
-                  <span className="text-[28px] font-bold leading-none text-blue/50">{item.step}</span>
-                  <h3 className="mt-4 text-lg font-bold text-white">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/60">{item.desc}</p>
-                </div>
+              <AnimatedSection key={item.step} delay={i * 100} className="lg:px-8 lg:first:pl-0 lg:last:pr-0">
+                <div className="type-num text-[15px] font-semibold text-blue-bright">{item.step}</div>
+                <h3 className="mt-3 text-[18px] font-bold text-text-primary">{item.title}</h3>
+                <p className="mt-2.5 text-[14px] leading-relaxed text-text-secondary">{item.desc}</p>
               </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Sections */}
-      <section className="bg-dark py-20 md:py-28">
+      {/* FAQ: category rail + open answers */}
+      <section className="bg-surface py-20 md:py-28">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
-          <div className="mx-auto max-w-3xl space-y-16">
-            {faqs.map((section, sectionIdx) => (
-              <AnimatedSection key={section.category} delay={sectionIdx * 100}>
-                <div>
-                  <SectionHeading
-                    label={section.category}
-                    title=""
-                    centered={false}
-                  />
-                  <div className="space-y-4">
-                    {section.questions.map((faq, i) => (
-                      <div
-                        key={i}
-                        className="rounded-xl border border-border bg-surface-alt p-6"
-                      >
-                        <h3 className="text-base font-bold text-text-primary">
-                          {faq.q}
-                        </h3>
-                        <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-                          {faq.a}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          <AnimatedSection delay={300}>
-            <div className="mx-auto mt-16 max-w-lg text-center">
-              <p className="text-text-secondary">
-                Still have questions? We&apos;re happy to help.
-              </p>
-              <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
-                >
-                  Contact Us
-                </Link>
+          <div className="grid gap-14 lg:grid-cols-[260px_1fr]">
+            {/* Category rail */}
+            <nav aria-label="FAQ categories" className="lg:sticky lg:top-32 lg:self-start">
+              <ul className="flex flex-wrap gap-2 lg:flex-col lg:gap-1">
+                {faqs.map((section) => (
+                  <li key={section.id}>
+                    <a
+                      href={`#${section.id}`}
+                      className="inline-block rounded-[6px] px-4 py-2.5 text-[14px] font-semibold text-text-secondary transition-colors hover:bg-dark-tertiary hover:text-text-primary"
+                    >
+                      {section.category}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 hidden border-t border-border pt-6 lg:block">
+                <p className="text-[14px] text-text-secondary">
+                  Can&apos;t find your answer?
+                </p>
                 <a
-                  href="mailto:hello@qualityperformance.io"
-                  className="text-sm font-semibold text-blue hover:underline"
+                  href={`mailto:${contact.email}`}
+                  className="mt-1.5 inline-block text-[14px] font-semibold text-blue-bright transition-colors hover:text-white"
                 >
-                  Or email hello@qualityperformance.io
+                  {contact.email}
                 </a>
               </div>
+            </nav>
+
+            {/* Answers */}
+            <div className="space-y-16">
+              {faqs.map((section, sectionIdx) => (
+                <AnimatedSection key={section.category} delay={sectionIdx * 80}>
+                  <div id={section.id} className="scroll-mt-32">
+                    <h2 className="type-display text-[24px] text-text-primary md:text-[28px]">
+                      {section.category}
+                    </h2>
+                    <div className="mt-6 divide-y divide-border border-t border-border">
+                      {section.questions.map((faq) => (
+                        <div key={faq.q} className="py-7">
+                          <h3 className="text-[17px] font-bold text-text-primary">
+                            {faq.q}
+                          </h3>
+                          <p className="mt-3 max-w-[65ch] text-[15px] leading-relaxed text-text-secondary">
+                            {faq.a}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </AnimatedSection>
+              ))}
             </div>
-          </AnimatedSection>
+          </div>
         </div>
       </section>
 

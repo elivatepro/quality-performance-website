@@ -12,14 +12,14 @@ import { contact } from "@/lib/siteConfig";
  *
  * Replaces the previous multi-step quote / contact / demo flows with one
  * simple, single-submit form aimed at dealerships. Fields: name, email,
- * dealership name (required — Josh verifies the store is real), direct line,
+ * dealership name (required, Josh verifies the store is real), direct line,
  * "how can we help you?" interest checkmarks, a request-a-call option with best
  * time + call/text preference, and a comments box. Submitting posts to
  * /api/lead which emails Josh directly (reply-to the dealer).
  */
 
 const inputClass =
-  "w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/40 outline-none transition-colors duration-200 focus:border-blue focus:ring-1 focus:ring-blue";
+  "w-full rounded-[6px] border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/40 outline-none transition-colors duration-200 focus:border-blue focus:ring-1 focus:ring-blue";
 
 // "How can we help you?" interest options. The install-point package reflects
 // the five points Josh specified (headlights + side mirrors intentionally out).
@@ -103,8 +103,8 @@ export default function Contact() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h1 className="text-3xl font-bold text-white" style={{ letterSpacing: "-0.02em" }}>
-              Thanks, {name.split(" ")[0]}!
+            <h1 className="type-display text-[32px] text-white md:text-[38px]">
+              Thanks, {name.split(" ")[0]}.
             </h1>
             <p className="mt-4 text-lg text-white/60">
               We&apos;ve received your message about {dealership || "your dealership"} and
@@ -140,11 +140,10 @@ export default function Contact() {
         </div>
         <div className="relative mx-auto w-full max-w-[1280px] px-6 py-28 lg:px-12">
           <div className="max-w-2xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">Partner With Us</p>
-            <h1 className="animate-hero mt-4 text-4xl font-bold leading-tight text-white md:text-5xl" style={{ letterSpacing: "-0.03em", animationDelay: "0.1s" }}>
+            <h1 className="animate-hero type-display text-[38px] text-white md:text-[50px]" style={{ animationDelay: "0.1s" }}>
               Let&apos;s protect your inventory
             </h1>
-            <p className="animate-hero mt-4 text-lg text-white/70" style={{ animationDelay: "0.3s" }}>
+            <p className="animate-hero mt-5 text-lg text-white/70" style={{ animationDelay: "0.25s" }}>
               Tell us about your dealership and how we can help. We&apos;ll get
               back to you directly.
             </p>
@@ -296,7 +295,7 @@ export default function Contact() {
                   <ul className="mt-4 space-y-3">
                     {[
                       "We review your dealership and confirm we serve your area",
-                      "We reach out by email — or a call, if you asked for one",
+                      "We reach out by email, or a call if you asked for one",
                       "We walk through partnership, install, and how billing works",
                     ].map((item) => (
                       <li key={item} className="flex gap-2 text-sm text-white/60">

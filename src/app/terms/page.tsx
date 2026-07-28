@@ -18,8 +18,8 @@ export default function TermsOfService() {
               Legal
             </p>
             <h1
-              className="animate-hero mt-4 text-4xl font-bold leading-tight text-white md:text-5xl"
-              style={{ letterSpacing: "-0.03em", animationDelay: "0.1s" }}
+              className="animate-hero mt-4 type-display text-[40px] text-white md:text-[52px]"
+              style={{ animationDelay: "0.1s" }}
             >
               Terms of Service
             </h1>
@@ -179,7 +179,7 @@ export default function TermsOfService() {
               <div>
                 <h2 className="text-2xl font-bold text-white">6. Intellectual Property</h2>
                 <p className="mt-3 text-base leading-relaxed text-white/70">
-                  All content on the Quality Performance website — including text, graphics, logos, images, and software — is the property of Quality Performance or its licensors and is protected by applicable intellectual property laws.
+                  All content on the Quality Performance website, including text, graphics, logos, images, and software, is the property of Quality Performance or its licensors and is protected by applicable intellectual property laws.
                 </p>
                 <p className="mt-3 text-base leading-relaxed text-white/70">
                   You may not use, reproduce, modify, or distribute any of our content without prior written consent, except as necessary for the normal use of our services (such as viewing installation records or downloading invoices through the portal).
@@ -294,7 +294,7 @@ export default function TermsOfService() {
               <div>
                 <h2 className="text-2xl font-bold text-white">15. Entire Agreement</h2>
                 <p className="mt-3 text-base leading-relaxed text-white/70">
-                  These Terms, together with our Privacy Policy, constitute the entire agreement between you and Quality Performance regarding your use of our website and services. Any separate service agreements between your dealership and Quality Performance shall supplement — not replace — these Terms, except where explicitly stated otherwise in writing.
+                  These Terms, together with our Privacy Policy, constitute the entire agreement between you and Quality Performance regarding your use of our website and services. Any separate service agreements between your dealership and Quality Performance shall supplement, not replace, these Terms, except where explicitly stated otherwise in writing.
                 </p>
               </div>
 

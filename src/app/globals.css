@@ -4,9 +4,11 @@
   /* ─── Midnight Blue Palette ─── */
   --color-blue: #2563EB;
   --color-blue-hover: #3B82F6;
+  --color-blue-bright: #60A5FA;
   --color-blue-subtle: rgba(37, 99, 235, 0.15);
 
   --color-dark: #0A122B;
+  --color-dark-deep: #060B1D;
   --color-dark-alt: #182848;
   --color-dark-tertiary: #101D3B;
 
@@ -25,7 +27,7 @@
   --color-success: #10B981;
   --color-error: #EF4444;
 
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-archivo);
 
   --shadow-card: 0 1px 3px rgba(3,10,34,0.45), 0 4px 12px rgba(3,10,34,0.3);
   --shadow-elevated: 0 4px 16px rgba(3,10,34,0.55), 0 12px 40px rgba(3,10,34,0.4);
@@ -41,6 +43,50 @@ body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
 
+/* ─── Type voice ───
+   Display headlines use Archivo's width axis for an engineered,
+   automotive-signage presence. Body stays at normal width. */
+.type-display {
+  font-stretch: 112%;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.type-display-wide {
+  font-stretch: 125%;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.type-label {
+  font-stretch: 118%;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.type-num {
+  font-stretch: 118%;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Focus & selection ─── */
+:focus-visible {
+  outline: 2px solid var(--color-blue-hover);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.4);
+  color: #F6F9FF;
+}
+
 /* ─── Reduced Motion ─── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -48,37 +94,30 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  html {
+    scroll-behavior: auto;
+  }
 }
 
-/* ─── Hero text stagger animation ─── */
+/* ─── Hero entrance choreography ─── */
 @keyframes heroFadeIn {
-  from { opacity: 0; transform: translateY(40px); }
+  from { opacity: 0; transform: translateY(28px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-hero {
-  animation: heroFadeIn 0.6s ease-out 0.3s forwards;
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
   opacity: 0;
 }
 
-/* ─── Scroll indicator bounce ─── */
-@keyframes scrollBounce {
-  0%, 100% { transform: translateY(0); opacity: 0.4; }
-  50% { transform: translateY(8px); opacity: 0.8; }
-}
-
-.animate-scroll-cue {
-  animation: scrollBounce 2s ease-in-out infinite;
-}
-
-/* ─── Marquee animation ─── */
+/* ─── Marquee (trust strip) ─── */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 36s linear infinite;
 }
 
 /* ─── Protection map dot pulse ─── */

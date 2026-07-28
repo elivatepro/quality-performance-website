@@ -26,7 +26,7 @@ export default function Footer() {
                 height={36}
                 className="h-9 w-9"
               />
-              <span className="text-lg font-bold tracking-tight text-white">
+              <span className="[font-stretch:118%] text-lg font-bold tracking-tight text-white">
                 QUALITY<span className="text-blue">PERFORMANCE</span>
               </span>
             </div>
@@ -35,12 +35,12 @@ export default function Footer() {
               technology. Protecting inventory across the Northeast.
             </p>
 
-            {/* Existing customers / dealer portal — kept for legitimacy */}
+            {/* Existing customers / dealer portal, kept for legitimacy */}
             <a
               href={contact.dealerPortalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-1.5 rounded-lg border border-blue px-4 py-2 text-[12px] font-semibold tracking-[0.3px] text-blue transition-all duration-200 hover:bg-blue hover:text-white"
+              className="mt-6 inline-flex items-center gap-1.5 rounded-[6px] border border-blue px-4 py-2 text-[12px] font-semibold tracking-[0.3px] text-blue transition-all duration-200 hover:bg-blue hover:text-white"
             >
               Existing Customer? Dealer Portal
               <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -49,7 +49,7 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Explore — dealer-relevant links only */}
+          {/* Explore, dealer-relevant links only */}
           <div>
             <h3 className="mb-4 text-[12px] font-semibold uppercase tracking-[1.5px] text-white/40">
               Explore
@@ -74,7 +74,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact — email only, no personal phone */}
+          {/* Contact, email only, no personal phone */}
           <div>
             <h3 className="mb-4 text-[12px] font-semibold uppercase tracking-[1.5px] text-white/40">
               Get in Touch
@@ -97,7 +97,7 @@ export default function Footer() {
               <p className="text-[13px] text-white/50">{contact.location}</p>
               <Link
                 href="/contact"
-                className="mt-3 inline-flex items-center rounded-lg border-[1.5px] border-blue px-4 py-2 text-[12px] font-semibold tracking-[0.3px] text-blue transition-all duration-200 hover:bg-blue hover:text-white"
+                className="mt-3 inline-flex items-center rounded-[6px] border-[1.5px] border-blue px-4 py-2 text-[12px] font-semibold tracking-[0.3px] text-blue transition-all duration-200 hover:bg-blue hover:text-white"
               >
                 Partner With Us
               </Link>

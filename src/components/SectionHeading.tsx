@@ -5,15 +5,27 @@ interface SectionHeadingProps {
   centered?: boolean;
 }
 
-export default function SectionHeading({ label, title, description, centered = true }: SectionHeadingProps) {
+/**
+ * Section header. Left-aligned by default; labels (kickers) are rationed
+ * sitewide, so pass `label` only where a section genuinely needs
+ * categorization. Never on consecutive sections.
+ */
+export default function SectionHeading({
+  label,
+  title,
+  description,
+  centered = false,
+}: SectionHeadingProps) {
   return (
-    <div className={`mb-12 ${centered ? "text-center" : ""}`}>
-      {label && (
-        <p className="mb-3 text-[13px] font-semibold uppercase tracking-[2px] text-blue">{label}</p>
-      )}
-      <h2 className="text-3xl font-bold tracking-tight text-text-primary md:text-4xl" style={{ letterSpacing: "-0.02em" }}>{title}</h2>
+    <div className={`mb-14 ${centered ? "mx-auto max-w-2xl text-center" : "max-w-3xl"}`}>
+      {label && <p className="type-label mb-4 text-blue-bright">{label}</p>}
+      <h2 className="type-display text-[32px] text-text-primary md:text-[42px]">
+        {title}
+      </h2>
       {description && (
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-text-secondary">{description}</p>
+        <p className={`mt-5 text-lg leading-relaxed text-text-secondary ${centered ? "mx-auto" : ""} max-w-2xl`}>
+          {description}
+        </p>
       )}
     </div>
   );

@@ -36,7 +36,7 @@ export default function HeroVideo() {
 
   return (
     <>
-      {/* Media layer — slightly scaled up to hide blur edges */}
+      {/* Media layer, slightly scaled up to hide blur edges */}
       <div className="absolute inset-[-8px]">
         <Image
           src={POSTER_URL}
@@ -61,7 +61,7 @@ export default function HeroVideo() {
           <source src={VIDEO_URL} type="video/mp4" />
         </video>
       </div>
-      {/* Blur + color overlay — rendered by compositor, doesn't affect video playback */}
+      {/* Blur + color overlay, rendered by compositor, doesn't affect video playback */}
       <div className="absolute inset-0 backdrop-blur-[3px] bg-dark/60" />
     </>
   );

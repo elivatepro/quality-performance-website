@@ -22,7 +22,7 @@ export const products: ProductData[] = [
     tagline: "Invisible protection where doors meet the world.",
     heroImage: "/images/install-point-door-edges.png",
     description:
-      "Door edges are one of the most vulnerable areas on any vehicle. Every time a door opens — in a parking lot, a garage, or at a fuel pump — the edge is exposed to chips, dings, and paint damage. Our door edge PPF creates an invisible barrier that absorbs impact and prevents costly paint repairs.\n\nThe film conforms precisely to the contour of each door edge, providing seamless coverage that's virtually undetectable. Self-healing technology means minor scratches disappear with heat, keeping your edges looking factory-fresh for years.",
+      "Door edges are one of the most vulnerable areas on any vehicle. Every time a door opens, in a parking lot, a garage, or at a fuel pump, the edge is exposed to chips, dings, and paint damage. Our door edge PPF creates an invisible barrier that absorbs impact and prevents costly paint repairs.\n\nThe film conforms precisely to the contour of each door edge, providing seamless coverage that's virtually undetectable. Self-healing technology means minor scratches disappear with heat, keeping your edges looking factory-fresh for years.",
     protectionAreas: [
       "Leading edge of all four doors",
       "Contact points most prone to chipping",
@@ -31,14 +31,14 @@ export const products: ProductData[] = [
     benefits: [
       "Prevents paint chips from daily door use",
       "Self-healing film repairs minor scratches",
-      "Invisible once installed — preserves factory appearance",
+      "Invisible once installed, preserves factory appearance",
       "Significantly reduces touch-up paint costs",
     ],
     specs: {
       "Film Thickness": "8 mil (200 microns)",
       "Film Type": "Optically clear urethane",
-      "Self-Healing": "Yes — activates with heat",
-      Durability: "5–10 years depending on conditions",
+      "Self-Healing": "Yes, activates with heat",
+      Durability: "5-10 years depending on conditions",
       Warranty: "5-year manufacturer warranty included",
       Installation: "Professional precision-cut application",
     },
@@ -56,7 +56,7 @@ export const products: ProductData[] = [
     tagline: "Shield the spots your fingernails can't avoid.",
     heroImage: "/images/install-point-door-cups.png",
     description:
-      "The door handle cup area takes constant abuse — fingernails, rings, keys, and daily grabs leave scratches that accumulate over time. These fine scratches catch light and become increasingly visible, especially on darker paint colors.\n\nOur door cup PPF provides a precision-cut shield that fits perfectly into each door handle recess. The optically clear film is virtually invisible but incredibly effective at preventing the micro-scratches that devalue your vehicle's appearance.",
+      "The door handle cup area takes constant abuse, fingernails, rings, keys, and daily grabs leave scratches that accumulate over time. These fine scratches catch light and become increasingly visible, especially on darker paint colors.\n\nOur door cup PPF provides a precision-cut shield that fits perfectly into each door handle recess. The optically clear film is virtually invisible but incredibly effective at preventing the micro-scratches that devalue your vehicle's appearance.",
     protectionAreas: [
       "Door handle recesses on all four doors",
       "High-contact grip areas",
@@ -66,13 +66,13 @@ export const products: ProductData[] = [
       "Stops fingernail and ring scratches",
       "Preserves paint around door handles",
       "Virtually invisible protection",
-      "Easy to maintain — wash normally",
+      "Easy to maintain, wash normally",
     ],
     specs: {
       "Film Thickness": "8 mil (200 microns)",
       "Film Type": "Optically clear urethane",
-      "Self-Healing": "Yes — activates with heat",
-      Durability: "5–10 years depending on conditions",
+      "Self-Healing": "Yes, activates with heat",
+      Durability: "5-10 years depending on conditions",
       Warranty: "5-year manufacturer warranty included",
       Installation: "Professional precision-cut application",
     },
@@ -90,7 +90,7 @@ export const products: ProductData[] = [
     tagline: "Step in with confidence, step out without a trace.",
     heroImage: "/images/install-point-door-sills.png",
     description:
-      "Door sills endure constant foot traffic — every entry and exit scuffs, scratches, and wears the paint. Over time, this daily wear creates visible damage that detracts from your vehicle's interior-to-exterior transition area.\n\nOur door sill PPF provides a tough, clear protective layer over the sill plates and surrounding painted surfaces. The film handles the abrasion of shoes, boots, and cargo without compromising the factory finish underneath. Available for both front and rear door sills for complete coverage.",
+      "Door sills endure constant foot traffic, every entry and exit scuffs, scratches, and wears the paint. Over time, this daily wear creates visible damage that detracts from your vehicle's interior-to-exterior transition area.\n\nOur door sill PPF provides a tough, clear protective layer over the sill plates and surrounding painted surfaces. The film handles the abrasion of shoes, boots, and cargo without compromising the factory finish underneath. Available for both front and rear door sills for complete coverage.",
     protectionAreas: [
       "Front and rear door sill plates",
       "Painted surfaces around all door openings",
@@ -105,8 +105,8 @@ export const products: ProductData[] = [
     specs: {
       "Film Thickness": "8 mil (200 microns)",
       "Film Type": "Optically clear urethane",
-      "Self-Healing": "Yes — activates with heat",
-      Durability: "5–10 years depending on conditions",
+      "Self-Healing": "Yes, activates with heat",
+      Durability: "5-10 years depending on conditions",
       Warranty: "5-year manufacturer warranty included",
       Installation: "Professional precision-cut application",
     },
@@ -139,8 +139,8 @@ export const products: ProductData[] = [
     specs: {
       "Film Thickness": "6 mil (150 microns)",
       "Film Type": "Optically clear with anti-glare coating",
-      "Self-Healing": "Yes — minor surface scratches",
-      Durability: "3–5 years with daily use",
+      "Self-Healing": "Yes, minor surface scratches",
+      Durability: "3-5 years with daily use",
       Warranty: "Manufacturer warranty included",
       Installation: "Precision-cut to screen dimensions",
     },
@@ -158,7 +158,7 @@ export const products: ProductData[] = [
     tagline: "Defend against the damage you can't see coming.",
     heroImage: "/images/install-point-rear-bumper.png",
     description:
-      "The rear bumper takes punishment from every direction — shopping carts, parking lot mishaps, cargo loading, and road debris kicked up from the road surface. The top edge of the bumper is especially vulnerable during trunk loading and unloading.\n\nOur rear bumper guard PPF covers the most damage-prone areas of the rear bumper with a thick, durable film that absorbs impacts, prevents scratches, and maintains your vehicle's clean rear profile. The self-healing surface means minor scuffs disappear on their own.",
+      "The rear bumper takes punishment from every direction, shopping carts, parking lot mishaps, cargo loading, and road debris kicked up from the road surface. The top edge of the bumper is especially vulnerable during trunk loading and unloading.\n\nOur rear bumper guard PPF covers the most damage-prone areas of the rear bumper with a thick, durable film that absorbs impacts, prevents scratches, and maintains your vehicle's clean rear profile. The self-healing surface means minor scuffs disappear on their own.",
     protectionAreas: [
       "Top edge of rear bumper (loading zone)",
       "Upper bumper face panel",
@@ -173,8 +173,8 @@ export const products: ProductData[] = [
     specs: {
       "Film Thickness": "8 mil (200 microns)",
       "Film Type": "Optically clear urethane",
-      "Self-Healing": "Yes — activates with heat",
-      Durability: "5–10 years depending on conditions",
+      "Self-Healing": "Yes, activates with heat",
+      Durability: "5-10 years depending on conditions",
       Warranty: "5-year manufacturer warranty included",
       Installation: "Professional full-coverage application",
     },
@@ -192,10 +192,10 @@ export const products: ProductData[] = [
     tagline: "Frontline defense against road debris.",
     heroImage: "/images/install-point-partial-hood.png",
     description:
-      "The leading edge and first third of the hood take the brunt of highway driving — rock chips, bug impacts, sand abrasion, and road debris all target this high-impact zone. Once the paint chips, it exposes bare metal to moisture and accelerates corrosion.\n\nOur partial hood PPF covers the most vulnerable forward section of the hood with a thick, impact-resistant film. This targeted coverage protects where damage is most likely while keeping costs manageable. The seamless edge is virtually invisible, maintaining your vehicle's clean hood line.",
+      "The leading edge and first third of the hood take the brunt of highway driving, rock chips, bug impacts, sand abrasion, and road debris all target this high-impact zone. Once the paint chips, it exposes bare metal to moisture and accelerates corrosion.\n\nOur partial hood PPF covers the most vulnerable forward section of the hood with a thick, impact-resistant film. This targeted coverage protects where damage is most likely while keeping costs manageable. The seamless edge is virtually invisible, maintaining your vehicle's clean hood line.",
     protectionAreas: [
       "Leading edge of the hood",
-      "First 18–24 inches of hood surface",
+      "First 18-24 inches of hood surface",
       "High-impact zone facing oncoming road debris",
     ],
     benefits: [
@@ -207,8 +207,8 @@ export const products: ProductData[] = [
     specs: {
       "Film Thickness": "8 mil (200 microns)",
       "Film Type": "Optically clear urethane",
-      "Self-Healing": "Yes — activates with heat",
-      Durability: "5–10 years depending on conditions",
+      "Self-Healing": "Yes, activates with heat",
+      Durability: "5-10 years depending on conditions",
       Warranty: "5-year manufacturer warranty included",
       Installation: "Professional precision-cut application",
     },
@@ -226,7 +226,7 @@ export const products: ProductData[] = [
     tagline: "Keep your lights bright and your lenses clear.",
     heroImage: "/images/install-point-headlights.png",
     description:
-      "Headlights are expensive to replace and susceptible to yellowing, hazing, and stone chip damage over time. UV exposure degrades the polycarbonate lens, road debris leaves pitting, and oxidation turns clear lenses cloudy — reducing both aesthetics and nighttime visibility.\n\nOur headlight protection film shields the lens surface with optically clear, UV-blocking PPF that prevents yellowing, absorbs stone chip impacts, and maintains factory clarity. The film is precision-cut to fit each headlight housing perfectly.",
+      "Headlights are expensive to replace and susceptible to yellowing, hazing, and stone chip damage over time. UV exposure degrades the polycarbonate lens, road debris leaves pitting, and oxidation turns clear lenses cloudy, reducing both aesthetics and nighttime visibility.\n\nOur headlight protection film shields the lens surface with optically clear, UV-blocking PPF that prevents yellowing, absorbs stone chip impacts, and maintains factory clarity. The film is precision-cut to fit each headlight housing perfectly.",
     protectionAreas: [
       "Front headlight lenses (both sides)",
       "Full lens surface coverage",
@@ -241,8 +241,8 @@ export const products: ProductData[] = [
     specs: {
       "Film Thickness": "8 mil (200 microns)",
       "Film Type": "Optically clear urethane with UV blocking",
-      "Self-Healing": "Yes — activates with heat",
-      Durability: "5–7 years depending on conditions",
+      "Self-Healing": "Yes, activates with heat",
+      Durability: "5-7 years depending on conditions",
       Warranty: "Manufacturer warranty included",
       Installation: "Professional precision-cut application",
     },

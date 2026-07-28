@@ -86,7 +86,7 @@ export default function VinDecoderPage() {
   // Results view
   if (vehicle) {
     const title = [vehicle.ModelYear, vehicle.Make, vehicle.Model].filter(Boolean).join(" ");
-    const subtitle = [vehicle.Trim, vehicle.BodyClass].filter(Boolean).join(" — ");
+    const subtitle = [vehicle.Trim, vehicle.BodyClass].filter(Boolean).join(", ");
 
     return (
       <>
@@ -107,8 +107,7 @@ export default function VinDecoderPage() {
               VIN Decoded
             </p>
             <h1
-              className="mt-3 text-3xl font-bold text-white md:text-4xl lg:text-5xl"
-              style={{ letterSpacing: "-0.02em" }}
+              className="mt-3 type-display text-[30px] text-white md:text-[38px] lg:text-5xl"
             >
               {title || "Vehicle Details"}
             </h1>
@@ -163,7 +162,7 @@ export default function VinDecoderPage() {
                   </p>
                   <Link
                     href="/contact"
-                    className="group mt-4 inline-flex items-center gap-2 rounded-lg bg-blue px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
+                    className="group mt-4 inline-flex items-center gap-2 rounded-[6px] bg-blue px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
                   >
                     Get a Quote
                     <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -226,8 +225,8 @@ export default function VinDecoderPage() {
               Free Tool
             </p>
             <h1
-              className="animate-hero mt-4 text-4xl font-bold leading-tight text-white md:text-5xl"
-              style={{ letterSpacing: "-0.03em", animationDelay: "0.1s" }}
+              className="animate-hero mt-4 type-display text-[40px] text-white md:text-[52px]"
+              style={{ animationDelay: "0.1s" }}
             >
               VIN Decoder
             </h1>
@@ -264,7 +263,7 @@ export default function VinDecoderPage() {
                     placeholder="e.g. 1HGCM82633A004352"
                   />
                   <p className="mt-1.5 text-xs text-white/35">
-                    17 characters — found on your dashboard, driver&apos;s door jamb, or registration.
+                    17 characters, found on your dashboard, driver&apos;s door jamb, or registration.
                   </p>
                 </div>
 
@@ -331,7 +330,7 @@ export default function VinDecoderPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full rounded-lg bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed sm:w-auto"
+                  className="w-full rounded-[6px] bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed sm:w-auto"
                 >
                   {loading ? (
                     <span className="inline-flex items-center gap-2">

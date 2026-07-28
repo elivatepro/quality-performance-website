@@ -34,7 +34,7 @@ export const installPoints: InstallPoint[] = [
     x: 18,
     y: 33,
     description:
-      "Covers the leading 18–24 inches of your hood — the strike zone for rock chips, road debris, and bug impacts.",
+      "Covers the leading 18-24 inches of your hood, the strike zone for rock chips, road debris, and bug impacts.",
     detail:
       "The front portion of your hood absorbs the most highway abuse. Partial hood coverage protects this high-impact zone without full-hood cost.",
     image: "/images/install-point-partial-hood.png",
@@ -78,7 +78,7 @@ export const installPoints: InstallPoint[] = [
     description:
       "Protects against chipping from door swings, parking lot bumps, and accidental contact. One of the most common damage points on any vehicle.",
     detail:
-      "Self-healing PPF wraps the leading edge of each door — the thin strip most vulnerable to chips every time the door opens.",
+      "Self-healing PPF wraps the leading edge of each door, the thin strip most vulnerable to chips every time the door opens.",
     image: "/images/install-point-door-edges.png",
     tags: ["Self-Healing", "5-Year Warranty", "Made in USA"],
   },
@@ -106,7 +106,7 @@ export const installPoints: InstallPoint[] = [
     description:
       "Prevents scuffs and wear from shoes, grit, and debris every time someone enters or exits the vehicle.",
     detail:
-      "Film covers the painted or finished threshold below each door opening — the surface that takes a beating from foot traffic.",
+      "Film covers the painted or finished threshold below each door opening, the surface that takes a beating from foot traffic.",
     image: "/images/install-point-door-sills.png",
     tags: ["Self-Healing", "5-Year Warranty", "Made in USA"],
   },

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
-import SectionHeading from "@/components/SectionHeading";
 import CTABlock from "@/components/CTABlock";
+import Btn from "@/components/Btn";
+import { contact } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Partner With Us",
@@ -15,111 +15,75 @@ export default function PartnerWithUs() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-[85vh] items-center bg-dark">
+      <section className="relative flex min-h-[78vh] items-end bg-dark-deep">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1920&q=80"
-            alt="Dealership lot"
+            src="https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/pexels-davidmcbee-395537.jpg"
+            alt="Aerial view of a dealership lot full of inventory"
             fill
-            className="object-cover"
-            preload
+            className="object-cover opacity-60"
+            priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-dark-deep via-dark-deep/45 to-dark-deep/55" />
         </div>
-        <div className="relative mx-auto w-full max-w-[1280px] px-6 py-32 lg:px-12">
+        <div className="relative mx-auto w-full max-w-[1280px] px-6 pb-20 pt-40 lg:px-12">
           <div className="max-w-2xl">
-            <p className="animate-hero text-sm font-semibold uppercase tracking-wider text-blue">
-              Partner With Us
-            </p>
             <h1
-              className="animate-hero mt-4 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl"
-              style={{ letterSpacing: "-0.03em", animationDelay: "0.1s" }}
+              className="animate-hero type-display text-[40px] text-white md:text-[56px]"
+              style={{ animationDelay: "0.1s" }}
             >
-              Turn PPF Into a Dealership Profit Center.
+              Turn PPF into a dealership profit center.
             </h1>
             <p
-              className="animate-hero mt-6 text-lg text-white/70 md:text-xl"
+              className="animate-hero mt-6 max-w-xl text-lg leading-relaxed text-white/75"
               style={{ animationDelay: "0.3s" }}
             >
-              Protect your inventory, increase resale value, and streamline
-              operations with our turnkey PPF installation service and digital
-              management portal.
+              Protect inventory, add F&amp;I revenue, and keep operations
+              simple with turnkey installation and a digital portal.
             </p>
-            <div
-              className="animate-hero mt-8 flex flex-col gap-4 sm:flex-row"
-              style={{ animationDelay: "0.4s" }}
-            >
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
-              >
+            <div className="animate-hero mt-9" style={{ animationDelay: "0.45s" }}>
+              <Btn href="/contact" size="lg" arrow>
                 Partner With Us
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3.5 text-base font-semibold text-white transition-all hover:border-blue hover:text-blue"
-              >
-                Request More Information
-              </Link>
+              </Btn>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Key Benefits */}
-      <section className="bg-dark py-20 md:py-28">
+      {/* What partnership does: definition rows, not icon cards */}
+      <section className="bg-surface py-24 md:py-32">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <AnimatedSection>
-            <SectionHeading
-              label="Why Partner With Us"
-              title="Built for Dealership Operations"
-              description="We understand the pace and demands of dealership operations. Our service is designed to integrate seamlessly into your workflow."
-            />
+            <h2 className="type-display max-w-2xl text-[32px] text-text-primary md:text-[42px]">
+              Built for dealership operations
+            </h2>
           </AnimatedSection>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="mt-14 divide-y divide-border border-y border-border">
             {[
               {
-                title: "Protect Inventory Value",
+                title: "Protect inventory value",
                 description:
-                  "PPF on high-traffic areas prevents damage during lot operations, test drives, and transport. Maintain factory-fresh appearance that commands top dollar.",
-                icon: (
-                  <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                  </svg>
-                ),
+                  "PPF on high-traffic areas prevents damage during lot operations, test drives, and transport. Vehicles keep the factory-fresh appearance that commands top dollar.",
               },
               {
-                title: "Revenue Opportunity",
+                title: "A new revenue line",
                 description:
-                  "Offer PPF as an F&I product or service add-on. We handle installation — you capture the margin. A new profit center with zero overhead.",
-                icon: (
-                  <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
-                  </svg>
-                ),
+                  "Offer PPF as an F&I product or service add-on. We handle installation, you capture the margin. A profit center with zero added overhead.",
               },
               {
-                title: "Digital Tracking Portal",
+                title: "Digital tracking portal",
                 description:
-                  "Real-time install tracking, automated billing, reporting, and PO management through our dedicated dealership portal at app.qualityperformance.io.",
-                icon: (
-                  <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
-                  </svg>
-                ),
+                  "Real-time install tracking, automated billing, reporting, and PO management through the dedicated dealership portal at app.qualityperformance.io.",
               },
-            ].map((benefit, i) => (
-              <AnimatedSection key={benefit.title} delay={i * 100}>
-                <div className="rounded-xl bg-surface-alt p-8">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-subtle text-blue">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-text-primary">
-                    {benefit.title}
+            ].map((item, i) => (
+              <AnimatedSection key={item.title} delay={i * 90}>
+                <div className="grid gap-4 py-9 md:grid-cols-[minmax(240px,1fr)_1.6fr] md:gap-12">
+                  <h3 className="type-display text-[22px] text-text-primary md:text-[26px]">
+                    {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-                    {benefit.description}
+                  <p className="max-w-[60ch] text-[16px] leading-relaxed text-text-secondary">
+                    {item.description}
                   </p>
                 </div>
               </AnimatedSection>
@@ -128,145 +92,113 @@ export default function PartnerWithUs() {
         </div>
       </section>
 
-      {/* Portal Preview */}
-      <section className="bg-surface-alt py-20 md:py-28">
+      {/* Portal */}
+      <section className="bg-dark-tertiary py-24 md:py-32">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid items-start gap-14 lg:grid-cols-[1fr_1.1fr]">
             <AnimatedSection>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-blue">
-                  Dealership Portal
-                </p>
-                <h2
-                  className="mt-3 text-3xl font-bold text-text-primary md:text-4xl"
-                  style={{ letterSpacing: "-0.02em" }}
-                >
-                  Everything You Need, One Dashboard
-                </h2>
-                <p className="mt-4 text-lg text-text-secondary">
-                  Our purpose-built portal gives your team complete visibility
-                  into every install, every invoice, and every report — in real
-                  time.
-                </p>
-                <ul className="mt-8 space-y-4">
-                  {[
-                    "Real-time install tracking & status updates",
-                    "Automated billing with PO integration",
-                    "Detailed reports & analytics",
-                    "Multi-location support",
-                    "Quality assurance workflow with admin review",
-                  ].map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-text-primary">
-                      <svg className="mt-0.5 h-5 w-5 shrink-0 text-blue" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-base">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+              <h2 className="type-display text-[30px] text-text-primary md:text-[38px]">
+                Everything your team needs, one dashboard
+              </h2>
+              <p className="mt-5 max-w-lg text-lg leading-relaxed text-text-secondary">
+                Complete visibility into every install, every invoice, and
+                every report, in real time.
+              </p>
+              <ul className="mt-8 space-y-3.5">
+                {[
+                  "Real-time install tracking and status updates",
+                  "Automated billing with PO integration",
+                  "Detailed reports and analytics",
+                  "Multi-location support",
+                  "Quality assurance workflow with admin review",
+                ].map((feature) => (
+                  <li key={feature} className="flex items-start gap-3 text-[15px] text-text-primary">
+                    <svg className="mt-0.5 h-5 w-5 shrink-0 text-blue-bright" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-9">
+                <Btn href={contact.dealerPortalUrl} variant="outline" external>
+                  Visit the Dealer Portal
+                </Btn>
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={200}>
-              <div className="overflow-hidden rounded-xl bg-dark-alt p-2 shadow-elevated">
-                <div className="flex items-center gap-2 px-3 py-2">
-                  <div className="h-3 w-3 rounded-full bg-red-500/60" />
-                  <div className="h-3 w-3 rounded-full bg-yellow-500/60" />
-                  <div className="h-3 w-3 rounded-full bg-green-500/60" />
-                  <span className="ml-2 text-xs text-white/40">
-                    app.qualityperformance.io
-                  </span>
+            <AnimatedSection delay={150}>
+              <figure>
+                <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-elevated">
+                  <Image
+                    src="https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/8dc886c1-ae1e-4ffb-b15a-abd14360d38c.png"
+                    alt="The Quality Performance dealer dashboard showing install reports, VIN tracking, and vehicles protected"
+                    width={1680}
+                    height={1003}
+                    className="w-full"
+                  />
                 </div>
-                <div className="rounded-lg bg-dark p-6">
-                  <div className="mb-4 flex items-center justify-between">
-                    <div className="text-sm font-semibold text-white">Install Dashboard</div>
-                    <div className="rounded bg-blue/20 px-2 py-1 text-xs text-blue">Live</div>
-                  </div>
-                  <div className="grid grid-cols-3 gap-3">
-                    {[
-                      { label: "Active Installs", value: "12" },
-                      { label: "This Month", value: "47" },
-                      { label: "Pending Review", value: "3" },
-                    ].map((stat) => (
-                      <div key={stat.label} className="rounded-lg bg-dark-alt p-3">
-                        <div className="text-lg font-bold text-white">{stat.value}</div>
-                        <div className="text-xs text-white/50">{stat.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-4 space-y-2">
-                    {[
-                      { vin: "···4521", status: "In Progress", color: "text-yellow-400" },
-                      { vin: "···8903", status: "Completed", color: "text-green-400" },
-                      { vin: "···2217", status: "Scheduled", color: "text-blue" },
-                    ].map((install) => (
-                      <div key={install.vin} className="flex items-center justify-between rounded-lg bg-dark-alt px-3 py-2">
-                        <span className="text-xs text-white/60">VIN {install.vin}</span>
-                        <span className={`text-xs font-medium ${install.color}`}>{install.status}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+                <figcaption className="mt-4 text-[14px] text-text-secondary">
+                  The dealer dashboard: install reports, VIN tracking, and PO management in one place.
+                </figcaption>
+              </figure>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* Coverage */}
-      <section className="bg-dark py-20 md:py-28">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
+      {/* Network: photo band with hairline columns */}
+      <section className="relative overflow-hidden py-24 md:py-32">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80"
+            alt=""
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-dark-deep/88" />
+        </div>
+        <div className="relative mx-auto max-w-[1280px] px-6 lg:px-12">
           <AnimatedSection>
-            <SectionHeading
-              label="Coverage"
-              title="Multi-State Installation Network"
-              description="Our certified installer network covers dealerships across the country, with capacity to scale as your needs grow."
-            />
+            <h2 className="type-display max-w-xl text-[32px] text-white md:text-[42px]">
+              A network that scales with your group
+            </h2>
           </AnimatedSection>
-
-          <AnimatedSection delay={200}>
-            <div className="mt-12 grid gap-6 md:grid-cols-4">
-              {[
-                { title: "Certified Installers", desc: "Trained and vetted professionals at every location" },
-                { title: "On-Site Service", desc: "We come to your dealership — no transport needed" },
-                { title: "Scalable Network", desc: "Add locations as your dealership group grows" },
-                { title: "Consistent Quality", desc: "Admin review process ensures every install meets standards" },
-              ].map((item) => (
-                <div key={item.title} className="text-center">
-                  <h3 className="text-base font-bold text-text-primary">{item.title}</h3>
-                  <p className="mt-2 text-sm text-text-secondary">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>
+          <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-white/12">
+            {[
+              { title: "Certified installers", desc: "Trained and vetted professionals at every location." },
+              { title: "On-site service", desc: "We come to your dealership. No transport needed." },
+              { title: "Scalable coverage", desc: "Add locations as your dealership group grows." },
+              { title: "Consistent quality", desc: "Admin review ensures every install meets standard." },
+            ].map((item, i) => (
+              <AnimatedSection key={item.title} delay={i * 110} className="lg:px-8 lg:first:pl-0 lg:last:pr-0">
+                <h3 className="text-[17px] font-bold text-white">{item.title}</h3>
+                <p className="mt-2.5 text-[14px] leading-relaxed text-white/70">{item.desc}</p>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Process */}
-      <section className="bg-surface-alt py-20 md:py-28">
+      {/* Onboarding: a real sequence */}
+      <section className="bg-surface py-24 md:py-32">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <AnimatedSection>
-            <SectionHeading
-              label="The Process"
-              title="Onboarding Is Simple"
-            />
+            <h2 className="type-display text-[30px] text-text-primary md:text-[38px]">
+              Onboarding is simple
+            </h2>
           </AnimatedSection>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-4">
+          <div className="mt-14 grid gap-10 border-t border-border pt-10 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { step: "1", title: "Onboard", desc: "We set up your portal account and learn your specific needs." },
               { step: "2", title: "Schedule", desc: "Submit installs through the portal or let us manage scheduling." },
               { step: "3", title: "Install", desc: "Certified installers apply PPF on-site at your dealership." },
-              { step: "4", title: "Track & Bill", desc: "Monitor installs in real-time. Transparent invoicing with PO integration." },
+              { step: "4", title: "Track and bill", desc: "Monitor installs in real time with transparent, PO-integrated invoicing." },
             ].map((item, i) => (
               <AnimatedSection key={item.step} delay={i * 100}>
-                <div className="text-center">
-                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue text-lg font-bold text-white">
-                    {item.step}
-                  </div>
-                  <h3 className="text-lg font-bold text-text-primary">{item.title}</h3>
-                  <p className="mt-2 text-sm text-text-secondary">{item.desc}</p>
-                </div>
+                <div className="type-num text-[15px] font-semibold text-blue-bright">{item.step}</div>
+                <h3 className="mt-3 text-[19px] font-bold text-text-primary">{item.title}</h3>
+                <p className="mt-2.5 max-w-[280px] text-[14px] leading-relaxed text-text-secondary">{item.desc}</p>
               </AnimatedSection>
             ))}
           </div>
@@ -274,7 +206,7 @@ export default function PartnerWithUs() {
       </section>
 
       <CTABlock
-        headline="Ready to Protect Your Dealership Inventory?"
+        headline="Ready to protect your dealership inventory?"
         description="Tell us about your lot and we'll follow up to set up your partnership."
         buttonText="Partner With Us"
       />

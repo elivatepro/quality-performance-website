@@ -44,8 +44,8 @@ export default function Careers() {
               Careers
             </p>
             <h1
-              className="animate-hero mt-4 text-4xl font-bold leading-tight text-white md:text-5xl"
-              style={{ letterSpacing: "-0.03em", animationDelay: "0.1s" }}
+              className="animate-hero mt-4 type-display text-[40px] text-white md:text-[52px]"
+              style={{ animationDelay: "0.1s" }}
             >
               Join Our Growing Team
             </h1>
@@ -79,7 +79,7 @@ export default function Careers() {
               },
               {
                 title: "Technology-Backed",
-                description: "Our platform handles scheduling, tracking, and billing — so you can focus on what you do best: installing.",
+                description: "Our platform handles scheduling, tracking, and billing, so you can focus on what you do best: installing.",
               },
               {
                 title: "Growing Network",
@@ -135,7 +135,7 @@ export default function Careers() {
               <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
+                  className="inline-flex items-center rounded-[6px] bg-blue px-6 py-3 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
                 >
                   Apply Now
                 </Link>

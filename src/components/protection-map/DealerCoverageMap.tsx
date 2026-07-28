@@ -7,7 +7,7 @@ import { dealerInstallPointSlugs } from "@/lib/siteConfig";
 /**
  * DealerCoverageMap (Josh sync, QP-157).
  *
- * A single, always-visible labeled car diagram — the "one graphic that makes it
+ * A single, always-visible labeled car diagram, the "one graphic that makes it
  * very clear what's being covered" Josh asked for, in place of the tap-to-explore
  * interactive map. Shows exactly the five dealer install points (headlights and
  * side mirrors are excluded via dealerInstallPointSlugs). Numbered markers on the
@@ -15,7 +15,7 @@ import { dealerInstallPointSlugs } from "@/lib/siteConfig";
  * glance without clicking.
  */
 
-// Marker positions tuned to public/images/vehicle-protection-map.png — a
+// Marker positions tuned to public/images/vehicle-protection-map.png, a
 // left-facing dark sedan (front at left, rear at right). Percentages are of the
 // image box. Kept here (not in the generic installPoints hotspot data) so the
 // five dealer markers land precisely on this specific photo.
@@ -51,7 +51,7 @@ export default function DealerCoverageMap() {
           </h2>
           <p className="mt-4 text-lg text-text-secondary">
             We cover the areas that take the most abuse on every vehicle on your
-            lot — clearly marked, precisely installed.
+            lot, clearly marked, precisely installed.
           </p>
         </div>
 

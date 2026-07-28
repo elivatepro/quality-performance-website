@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { products } from "@/data/products";
 
 // Dealer-focused navigation. Consumer paths (Protect Your Car, Gallery) are
-// hidden per the Josh sync — see src/lib/siteConfig.ts. Bring them back by
+// hidden per the Josh sync, see src/lib/siteConfig.ts. Bring them back by
 // re-adding entries here when dealerOnlyMode is turned off.
 const navLinks = [
   { href: "/services", label: "How We Protect", hasDropdown: true },
@@ -44,10 +44,10 @@ export default function Navbar() {
       if (y <= 80) {
         setHidden(false);
       } else if (delta > 10) {
-        // Scrolling down — hide
+        // Scrolling down, hide
         setHidden(true);
       } else if (delta < -10) {
-        // Scrolling up — show
+        // Scrolling up, show
         setHidden(false);
       }
       // If delta is between -10 and 10, keep current state (no change)
@@ -110,12 +110,12 @@ export default function Navbar() {
               height={32}
               className="h-7 w-7 sm:h-8 sm:w-8"
             />
-            <span className="text-[13px] font-bold tracking-wide text-white sm:text-[15px] lg:text-lg lg:tracking-tight">
+            <span className="[font-stretch:118%] text-[13px] font-bold tracking-wide text-white sm:text-[15px] lg:text-lg lg:tracking-tight">
               QUALITY<span className="text-blue">PERFORMANCE</span>
             </span>
           </Link>
 
-          {/* Desktop Nav — Center */}
+          {/* Desktop Nav, Center */}
           <div className="hidden items-center gap-8 lg:flex">
             {navLinks.map((link) =>
               link.hasDropdown ? (
@@ -215,13 +215,13 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Desktop Right — CTAs */}
+          {/* Desktop Right, CTAs */}
           <div className="hidden items-center gap-3 lg:flex">
             <a
               href="https://app.qualityperformance.io"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.12] px-4 py-2 text-[13px] font-medium tracking-[0.3px] text-white/70 transition-all duration-200 hover:border-white/[0.25] hover:text-white"
+              className="inline-flex items-center gap-1.5 rounded-[6px] border border-white/[0.12] px-4 py-2 text-[13px] font-medium tracking-[0.3px] text-white/70 transition-all duration-200 hover:border-white/[0.25] hover:text-white"
             >
               Dealer Portal
               <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -230,16 +230,16 @@ export default function Navbar() {
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-lg border-[1.5px] border-blue px-5 py-2 text-[13px] font-semibold tracking-[0.3px] text-blue transition-all duration-200 hover:bg-blue hover:text-white"
+              className="inline-flex items-center rounded-[6px] border-[1.5px] border-blue px-5 py-2 text-[13px] font-semibold tracking-[0.3px] text-blue transition-all duration-200 hover:bg-blue hover:text-white"
             >
               Partner With Us
             </Link>
           </div>
 
-          {/* Mobile — Hamburger button */}
+          {/* Mobile, Hamburger button */}
           <button
             onClick={() => setMobileOpen(true)}
-            className="relative z-10 flex h-11 w-11 items-center justify-center rounded-lg border border-white/[0.08] transition-all duration-200 hover:border-white/[0.15] lg:hidden"
+            className="relative z-10 flex h-11 w-11 items-center justify-center rounded-[6px] border border-white/[0.08] transition-all duration-200 hover:border-white/[0.15] lg:hidden"
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
             aria-label="Open menu"
@@ -252,7 +252,7 @@ export default function Navbar() {
         </nav>
       </header>
 
-      {/* Mobile Menu — Full-Screen Overlay (outside header so translate doesn't affect it) */}
+      {/* Mobile Menu, Full-Screen Overlay (outside header so translate doesn't affect it) */}
       <div
         id="mobile-menu"
         className={`fixed inset-0 z-[60] bg-[#0A122B] transition-opacity duration-300 ease-out lg:hidden ${
@@ -269,7 +269,7 @@ export default function Navbar() {
                 height={32}
                 className="h-7 w-7 sm:h-8 sm:w-8"
               />
-              <span className="text-[13px] font-bold tracking-wide text-white sm:text-[15px]">
+              <span className="[font-stretch:118%] text-[13px] font-bold tracking-wide text-white sm:text-[15px]">
                 QUALITY<span className="text-blue">PERFORMANCE</span>
               </span>
             </Link>
@@ -287,7 +287,7 @@ export default function Navbar() {
 
           {/* Menu Content */}
           <div className="flex h-[calc(100%-60px)] flex-col overflow-y-auto px-7 pb-10 pt-10">
-            {/* Nav Links — Large display style */}
+            {/* Nav Links, Large display style */}
             <nav className="flex-1">
               <div className="space-y-1">
                 {mobileLinks.map((link, i) => (
@@ -415,7 +415,7 @@ export default function Navbar() {
                   href="https://app.qualityperformance.io"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border border-white/[0.12] px-5 py-2.5 text-[14px] font-semibold text-white/80 transition-all hover:border-white/[0.25] hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-[6px] border border-white/[0.12] px-5 py-2.5 text-[14px] font-semibold text-white/80 transition-all hover:border-white/[0.25] hover:text-white"
                 >
                   Dealer Portal
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

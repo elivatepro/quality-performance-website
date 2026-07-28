@@ -107,7 +107,7 @@ export default function ProtectionMapFull() {
       {/* Bottom CTA */}
       <div className="mt-16 text-center">
         <p className="text-sm text-text-secondary">
-          Every protection point uses self-healing film — made in the USA,
+          Every protection point uses self-healing film, made in the USA,
           backed by a 5-year warranty.
         </p>
         <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">

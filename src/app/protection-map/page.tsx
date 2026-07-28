@@ -19,8 +19,8 @@ export default function ProtectionMapPage() {
               Interactive Protection Map
             </p>
             <h1
-              className="animate-hero mt-4 text-4xl font-bold leading-tight text-white md:text-5xl"
-              style={{ letterSpacing: "-0.03em", animationDelay: "0.1s" }}
+              className="animate-hero mt-4 type-display text-[40px] text-white md:text-[52px]"
+              style={{ animationDelay: "0.1s" }}
             >
               See Where We Protect Your Vehicle
             </h1>

@@ -3,7 +3,7 @@
  *
  * Per the "Meet With Mr Josh" dev sync (2026-07-21), the site is being focused
  * to a single dealer-facing landing experience. Direct-to-consumer (DTC)
- * surfaces are HIDDEN, not deleted — flip `dealerOnlyMode` to false (or the
+ * surfaces are HIDDEN, not deleted, flip `dealerOnlyMode` to false (or the
  * individual flags) to bring the consumer experience back once the CRM /
  * quoting tooling exists.
  *
@@ -44,7 +44,7 @@ export const features = {
 export const installCount = Number(process.env.NEXT_PUBLIC_INSTALL_COUNT) || 20000;
 
 /** Contact details surfaced publicly. Phone is intentionally omitted for the
- * dealer-only launch — leads come by email so Josh sees them directly. */
+ * dealer-only launch, leads come by email so Josh sees them directly. */
 export const contact = {
   email: "hello@qualityperformance.io",
   /** Where dealer lead-form submissions are delivered. TODO: confirm with Josh. */

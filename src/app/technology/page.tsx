@@ -8,7 +8,7 @@ import CTABlock from "@/components/CTABlock";
 export const metadata: Metadata = {
   title: "Dealer Portal | Our Technology",
   description:
-    "Quality Performance's dealer portal gives dealerships real-time visibility into every PPF installation, every invoice, and every dollar — from install to final billing.",
+    "Quality Performance's dealer portal gives dealerships real-time visibility into every PPF installation, every invoice, and every dollar, from install to final billing.",
 };
 
 export default function Technology() {
@@ -32,8 +32,8 @@ export default function Technology() {
               Dealer Portal
             </p>
             <h1
-              className="animate-hero mt-4 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl"
-              style={{ letterSpacing: "-0.03em", animationDelay: "0.1s" }}
+              className="animate-hero mt-4 type-display text-[40px] text-white md:text-[52px] lg:text-[60px]"
+              style={{ animationDelay: "0.1s" }}
             >
               Your Installations. Your Data. One Dashboard.
             </h1>
@@ -49,7 +49,7 @@ export default function Technology() {
             >
               <Link
                 href="/contact?type=demo"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
+                className="inline-flex items-center justify-center gap-2 rounded-[6px] bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
               >
                 Request a Demo
               </Link>
@@ -79,8 +79,7 @@ export default function Technology() {
                   The Problem We Solved
                 </p>
                 <h2
-                  className="mt-3 text-3xl font-bold text-white md:text-4xl"
-                  style={{ letterSpacing: "-0.02em" }}
+                  className="mt-3 type-display text-[30px] text-white md:text-[38px]"
                 >
                   No Phone Calls. No Spreadsheets. No Guesswork.
                 </h2>
@@ -89,7 +88,7 @@ export default function Technology() {
                     Dealerships working with PPF providers typically deal with installation records that live in someone else&apos;s notebook, billing discrepancies that take days to resolve, and zero visibility into what&apos;s happening on the ground.
                   </p>
                   <p>
-                    When you can&apos;t see the work, you can&apos;t manage the relationship. You&apos;re trusting blindly. And when discrepancies surface — a missing purchase order, an unexpected line item, an install that was never logged — the back-and-forth eats into your time and your bottom line.
+                    When you can&apos;t see the work, you can&apos;t manage the relationship. You&apos;re trusting blindly. And when discrepancies surface (a missing purchase order, an unexpected line item, an install that was never logged) the back-and-forth eats into your time and your bottom line.
                   </p>
                   <p className="font-medium text-white/80">
                     We built the portal to eliminate that friction entirely.
@@ -131,7 +130,7 @@ export default function Technology() {
             <SectionHeading
               label="Admin Dashboard"
               title="Complete Operational Visibility"
-              description="A single screen shows today's installs, month-to-date volume, payroll, duplicates, and invoice readiness — so you start every day knowing exactly where things stand."
+              description="A single screen shows today's installs, month-to-date volume, payroll, duplicates, and invoice readiness, so you start every day knowing exactly where things stand."
             />
           </AnimatedSection>
 
@@ -265,14 +264,13 @@ export default function Technology() {
                   Real-Time Installation Tracking
                 </p>
                 <h2
-                  className="mt-3 text-3xl font-bold text-white md:text-4xl"
-                  style={{ letterSpacing: "-0.02em" }}
+                  className="mt-3 type-display text-[30px] text-white md:text-[38px]"
                 >
                   Every Install. Logged Instantly.
                 </h2>
                 <div className="mt-6 space-y-4 text-base leading-relaxed text-text-secondary">
                   <p>
-                    Every installation is logged the moment it&apos;s completed — not days later, not at the end of the month. Each record captures the full picture: VIN, stock number, make, model, year, the specific PPF products applied, and photographic documentation.
+                    Every installation is logged the moment it&apos;s completed, not days later, not at the end of the month. Each record captures the full picture: VIN, stock number, make, model, year, the specific PPF products applied, and photographic documentation.
                   </p>
                   <p>
                     Your team can view installation history at any time, filter by date range or vehicle, and confirm exactly what was done without picking up the phone.
@@ -280,7 +278,7 @@ export default function Technology() {
                 </div>
                 <div className="mt-6 rounded-xl border border-blue/15 bg-blue/[0.04] p-4">
                   <p className="text-sm font-medium text-white/80">
-                    Complete accountability for every vehicle. No disputed installs, no missing records — just a clean log you can reference anytime.
+                    Complete accountability for every vehicle. No disputed installs, no missing records, just a clean log you can reference anytime.
                   </p>
                 </div>
               </div>
@@ -354,7 +352,7 @@ export default function Technology() {
               },
               {
                 title: "Daily Installation Summaries",
-                description: "Every morning, designated contacts receive a recap of the previous day's installations: VINs, stock numbers, dates, and unit counts — all in a clean email summary.",
+                description: "Every morning, designated contacts receive a recap of the previous day's installations: VINs, stock numbers, dates, and unit counts, all in a clean email summary.",
                 icon: (
                   <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
@@ -463,17 +461,16 @@ export default function Technology() {
                   Billing & Financial Transparency
                 </p>
                 <h2
-                  className="mt-3 text-3xl font-bold text-white md:text-4xl"
-                  style={{ letterSpacing: "-0.02em" }}
+                  className="mt-3 type-display text-[30px] text-white md:text-[38px]"
                 >
                   Every Dollar Ties Back to a Documented Install.
                 </h2>
                 <div className="mt-6 space-y-4 text-base leading-relaxed text-text-secondary">
                   <p>
-                    Every invoice is backed by installation records in your portal. Cross-reference any line item against the actual install log — the vehicle, the products applied, the date, the installer. There&apos;s no black box.
+                    Every invoice is backed by installation records in your portal. Cross-reference any line item against the actual install log, the vehicle, the products applied, the date, the installer. There&apos;s no black box.
                   </p>
                   <p>
-                    Pricing is configured on a per-dealership basis, so your rates are locked in and visible. Invoices are generated from approved records only — every installation goes through our internal review process before it hits your books.
+                    Pricing is configured on a per-dealership basis, so your rates are locked in and visible. Invoices are generated from approved records only, every installation goes through our internal review process before it hits your books.
                   </p>
                   <p>
                     Payment terms, outstanding balances, and invoice history are all accessible from the portal, giving your finance team a single source of truth.
@@ -538,7 +535,7 @@ export default function Technology() {
                     "Notifications go to the right people automatically",
                     "Invoices are transparent and verifiable",
                     "Complete visibility from install to billing",
-                    "Your team is proactive — your PPF program runs itself",
+                    "Your team is proactive, your PPF program runs itself",
                   ].map((item) => (
                     <li key={item} className="flex gap-2 text-sm text-white/80">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue/60" />
@@ -572,7 +569,7 @@ export default function Technology() {
               {
                 step: "01",
                 title: "We Set Up Your Profile",
-                description: "We configure your pricing, products, and notification preferences based on your needs. No software to install — the portal runs in your browser.",
+                description: "We configure your pricing, products, and notification preferences based on your needs. No software to install, the portal runs in your browser.",
               },
               {
                 step: "02",
@@ -637,7 +634,7 @@ export default function Technology() {
               },
               {
                 title: "Quality Assurance Workflow",
-                description: "Every completed install goes through admin review. Photos, notes, and quality checks logged — ensuring consistency across the entire network.",
+                description: "Every completed install goes through admin review. Photos, notes, and quality checks logged, ensuring consistency across the entire network.",
                 icon: (
                   <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
@@ -646,7 +643,7 @@ export default function Technology() {
               },
               {
                 title: "Installer Management",
-                description: "Multi-state installer network coordinated centrally. Assignments, schedules, and workload balancing — dealerships just submit the request.",
+                description: "Multi-state installer network coordinated centrally. Assignments, schedules, and workload balancing, dealerships just submit the request.",
                 icon: (
                   <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
@@ -664,7 +661,7 @@ export default function Technology() {
               },
               {
                 title: "Reporting & Insights",
-                description: "Comprehensive reporting on install volumes, revenue, turnaround times, and trends — data that drives better business decisions.",
+                description: "Comprehensive reporting on install volumes, revenue, turnaround times, and trends, data that drives better business decisions.",
                 icon: (
                   <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
@@ -698,8 +695,7 @@ export default function Technology() {
               See It in Action
             </p>
             <h2
-              className="mt-3 text-2xl font-bold text-white md:text-3xl"
-              style={{ letterSpacing: "-0.02em" }}
+              className="mt-3 type-display text-[26px] text-white md:text-[32px]"
             >
               The best way to understand the portal is to see it.
             </h2>
@@ -709,7 +705,7 @@ export default function Technology() {
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="/contact?type=demo"
-                className="inline-flex items-center gap-2 rounded-lg bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-[6px] bg-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
               >
                 Request a Demo
               </Link>

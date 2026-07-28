@@ -31,8 +31,7 @@ export default function NotFound() {
         </p>
 
         <h1
-          className="mt-4 text-3xl font-bold text-white md:text-4xl"
-          style={{ letterSpacing: "-0.02em" }}
+          className="mt-4 type-display text-[30px] text-white md:text-[38px]"
         >
           Page Not Found
         </h1>
@@ -46,7 +45,7 @@ export default function NotFound() {
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 rounded-[6px] bg-blue px-6 py-3 text-base font-semibold text-white transition-all hover:bg-blue-hover hover:scale-[1.02]"
           >
             <svg
               className="h-4 w-4"
@@ -65,13 +64,13 @@ export default function NotFound() {
           </Link>
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 rounded-lg border border-white/[0.12] px-6 py-3 text-base font-medium text-white/70 transition-all hover:border-white/[0.25] hover:text-white"
+            className="inline-flex items-center gap-2 rounded-[6px] border border-white/[0.12] px-6 py-3 text-base font-medium text-white/70 transition-all hover:border-white/[0.25] hover:text-white"
           >
             View Services
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-lg border border-white/[0.12] px-6 py-3 text-base font-medium text-white/70 transition-all hover:border-white/[0.25] hover:text-white"
+            className="inline-flex items-center gap-2 rounded-[6px] border border-white/[0.12] px-6 py-3 text-base font-medium text-white/70 transition-all hover:border-white/[0.25] hover:text-white"
           >
             Contact Us
           </Link>
