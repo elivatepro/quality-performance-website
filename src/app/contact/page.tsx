@@ -38,9 +38,8 @@ export default function Contact() {
   const [dealership, setDealership] = useState("");
   const [directLine, setDirectLine] = useState("");
   const [interests, setInterests] = useState<string[]>([]);
-  const [wantsCall, setWantsCall] = useState(true);
   const [bestTime, setBestTime] = useState("");
-  const [contactPreference, setContactPreference] = useState<"call" | "text" | "">("call");
+  const [okToText, setOkToText] = useState(false);
   const [comments, setComments] = useState("");
 
   const [submitting, setSubmitting] = useState(false);
@@ -73,9 +72,10 @@ export default function Contact() {
           dealership,
           directLine,
           interests,
-          wantsCall,
-          bestTime: wantsCall ? bestTime : "",
-          contactPreference,
+          // A call is now the default path; texting is the opt-in.
+          wantsCall: true,
+          bestTime,
+          contactPreference: okToText ? "text" : "call",
           comments,
         }),
       });
@@ -108,7 +108,7 @@ export default function Contact() {
             </h1>
             <p className="mt-4 text-lg text-white/60">
               We&apos;ve received your message about {dealership || "your dealership"} and
-              will reach out{wantsCall ? " to set up a call" : ""} shortly.
+              will reach out shortly to set up a call.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
@@ -206,51 +206,43 @@ export default function Contact() {
                   </div>
                 </fieldset>
 
-                {/* Request a call */}
+                {/* Call scheduling. A call is the default; texting is the opt-in. */}
                 <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-4">
-                  <label htmlFor="wantsCall" className="flex items-start gap-3">
-                    <input
-                      id="wantsCall"
-                      type="checkbox"
-                      checked={wantsCall}
-                      onChange={(e) => setWantsCall(e.target.checked)}
-                      className="mt-0.5 h-4 w-4 rounded border-white/25 bg-transparent text-blue focus:ring-blue"
-                    />
-                    <span className="text-sm font-medium text-text-primary">
-                      I&apos;d like a phone call
-                      <span className="block text-[13px] font-normal text-white/50">Let us know the best time and how you prefer to connect.</span>
-                    </span>
-                  </label>
-
-                  {wantsCall && (
-                    <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                      <div>
-                        <label htmlFor="bestTime" className="mb-1.5 block text-sm font-medium text-text-primary">Best time to call</label>
-                        <select id="bestTime" value={bestTime} onChange={(e) => setBestTime(e.target.value)} className={inputClass}>
-                          <option value="">Select a time</option>
-                          {bestTimeOptions.map((t) => (
-                            <option key={t} value={t}>{t}</option>
-                          ))}
-                        </select>
-                      </div>
-                      <div>
-                        <span className="mb-1.5 block text-sm font-medium text-text-primary">Call or text?</span>
-                        <div className="flex gap-2">
-                          {(["call", "text"] as const).map((pref) => (
-                            <button
-                              key={pref}
-                              type="button"
-                              onClick={() => setContactPreference(pref)}
-                              aria-pressed={contactPreference === pref}
-                              className={`flex-1 rounded-lg border px-4 py-3 text-sm font-semibold capitalize transition-colors duration-200 active:scale-[0.98] ${contactPreference === pref ? "border-blue bg-blue/10 text-blue" : "border-border-dark text-white/60 hover:border-blue/30"}`}
-                            >
-                              {pref}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <label htmlFor="bestTime" className="mb-1.5 block text-sm font-medium text-text-primary">
+                        Best time to call
+                      </label>
+                      <select id="bestTime" value={bestTime} onChange={(e) => setBestTime(e.target.value)} className={inputClass}>
+                        <option value="">Anytime</option>
+                        {bestTimeOptions.map((t) => (
+                          <option key={t} value={t}>{t}</option>
+                        ))}
+                      </select>
                     </div>
-                  )}
+                    <div className="flex items-end">
+                      <label
+                        htmlFor="okToText"
+                        className={`flex w-full cursor-pointer items-start gap-3 rounded-[6px] border px-4 py-3 transition-colors duration-200 ${
+                          okToText ? "border-blue bg-blue/10" : "border-border-dark hover:border-blue/30"
+                        }`}
+                      >
+                        <input
+                          id="okToText"
+                          type="checkbox"
+                          checked={okToText}
+                          onChange={(e) => setOkToText(e.target.checked)}
+                          className="mt-0.5 h-4 w-4 rounded border-white/25 bg-transparent text-blue focus:ring-blue"
+                        />
+                        <span className="text-sm font-medium text-text-primary">
+                          Text me too
+                          <span className="block text-[13px] font-normal text-white/50">
+                            We can send updates by text.
+                          </span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Comments */}

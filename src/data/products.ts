@@ -88,7 +88,7 @@ export const products: ProductData[] = [
     slug: "door-sill-guards",
     name: "Door Sill Guards",
     tagline: "Step in with confidence, step out without a trace.",
-    heroImage: "/images/install-point-door-sills.png",
+    heroImage: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/Door%20Sill%20Image.png",
     description:
       "Door sills endure constant foot traffic, every entry and exit scuffs, scratches, and wears the paint. Over time, this daily wear creates visible damage that detracts from your vehicle's interior-to-exterior transition area.\n\nOur door sill PPF provides a tough, clear protective layer over the sill plates and surrounding painted surfaces. The film handles the abrasion of shoes, boots, and cargo without compromising the factory finish underneath. Available for both front and rear door sills for complete coverage.",
     protectionAreas: [
@@ -224,7 +224,7 @@ export const products: ProductData[] = [
     slug: "headlight-protection",
     name: "Headlight Protection",
     tagline: "Keep your lights bright and your lenses clear.",
-    heroImage: "/images/install-point-headlights.png",
+    heroImage: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/Headlight%20Image.png",
     description:
       "Headlights are expensive to replace and susceptible to yellowing, hazing, and stone chip damage over time. UV exposure degrades the polycarbonate lens, road debris leaves pitting, and oxidation turns clear lenses cloudy, reducing both aesthetics and nighttime visibility.\n\nOur headlight protection film shields the lens surface with optically clear, UV-blocking PPF that prevents yellowing, absorbs stone chip impacts, and maintains factory clarity. The film is precision-cut to fit each headlight housing perfectly.",
     protectionAreas: [

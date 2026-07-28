@@ -23,7 +23,7 @@ export const installPoints: InstallPoint[] = [
       "Shields headlight lenses from yellowing, hazing, rock chips, and UV damage that degrades visibility over time.",
     detail:
       "Optically-clear film over each headlight lens preserves light output and appearance while blocking UV degradation and road debris impacts.",
-    image: "/images/install-point-headlights.png",
+    image: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/Headlight%20Image.png",
     tags: ["Self-Healing", "5-Year Warranty", "Made in USA"],
   },
   {
@@ -107,7 +107,7 @@ export const installPoints: InstallPoint[] = [
       "Prevents scuffs and wear from shoes, grit, and debris every time someone enters or exits the vehicle.",
     detail:
       "Film covers the painted or finished threshold below each door opening, the surface that takes a beating from foot traffic.",
-    image: "/images/install-point-door-sills.png",
+    image: "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/Door%20Sill%20Image.png",
     tags: ["Self-Healing", "5-Year Warranty", "Made in USA"],
   },
   {

@@ -70,9 +70,8 @@ function buildText(lead: LeadPayload): string {
     `Dealership:    ${lead.dealership}`,
     `Direct line:   ${lead.directLine || "-"}`,
     lead.interests.length ? `Interested in: ${lead.interests.join(", ")}` : `Interested in: -`,
-    `Wants a call:  ${lead.wantsCall ? "Yes" : "No"}`,
-    lead.wantsCall ? `Best time:     ${lead.bestTime || "-"}` : ``,
-    lead.contactPreference ? `Prefers:       ${lead.contactPreference}` : ``,
+    `Best time:     ${lead.bestTime || "Anytime"}`,
+    `OK to text:    ${lead.contactPreference === "text" ? "Yes" : "No"}`,
     ``,
     `Comments:`,
     lead.comments.trim() || "(none)",
@@ -108,16 +107,14 @@ function buildHtml(lead: LeadPayload): string {
     ? lead.interests
         .map(
           (i) =>
-            `<span style="display:inline-block;margin:0 6px 6px 0;padding:4px 10px;background:#FBF6E6;border:1px solid #EBDDB2;border-radius:999px;color:#7A6320;font-size:13px;">${esc(i)}</span>`,
+            `<span style="display:inline-block;margin:0 6px 6px 0;padding:4px 10px;background:#EFF5FE;border:1px solid #C7DBF9;border-radius:999px;color:#1D4ED8;font-size:13px;">${esc(i)}</span>`,
         )
         .join("")
     : `<span style="color:${muted};">None selected</span>`;
 
-  const callHtml = lead.wantsCall
-    ? `<span style="color:${ink};">Yes${lead.bestTime ? ` &middot; best time: <strong>${esc(lead.bestTime)}</strong>` : ""}${
-        lead.contactPreference ? ` &middot; prefers <strong>${esc(lead.contactPreference)}</strong>` : ""
-      }</span>`
-    : `<span style="color:${muted};">No call requested</span>`;
+  const callHtml = `<span style="color:${ink};">Best time: <strong>${esc(lead.bestTime || "Anytime")}</strong>${
+    lead.contactPreference === "text" ? ` &middot; <strong>OK to text</strong>` : ""
+  }</span>`;
 
   const commentsHtml = lead.comments.trim()
     ? esc(lead.comments.trim()).replace(/\n/g, "<br>")
@@ -148,10 +145,10 @@ function buildHtml(lead: LeadPayload): string {
           <td style="padding:16px 32px 8px;">
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
               ${row("Contact", `<strong style="color:${ink};">${esc(lead.name)}</strong>`)}
-              ${row("Email", `<a href="mailto:${esc(lead.email)}" style="color:#B08A1F;text-decoration:none;font-weight:600;">${esc(lead.email)}</a>`)}
+              ${row("Email", `<a href="mailto:${esc(lead.email)}" style="color:#1D4ED8;text-decoration:none;font-weight:600;">${esc(lead.email)}</a>`)}
               ${row("Direct line", directLineHtml)}
               ${row("Interested in", interestsHtml)}
-              ${row("Phone call", callHtml)}
+              ${row("Call preference", callHtml)}
             </table>
           </td>
         </tr>
@@ -289,7 +286,7 @@ function buildConfirmationHtml(lead: LeadPayload): string {
         <tr>
           <td style="padding:20px 32px 28px;color:${ink};font-size:15px;line-height:1.6;">
             Need us sooner? Just reply to this email or reach us at
-            <a href="mailto:${esc(contact.email)}" style="color:#B08A1F;text-decoration:none;font-weight:600;">${esc(contact.email)}</a>.
+            <a href="mailto:${esc(contact.email)}" style="color:#1D4ED8;text-decoration:none;font-weight:600;">${esc(contact.email)}</a>.
           </td>
         </tr>
         <!-- Footer -->
