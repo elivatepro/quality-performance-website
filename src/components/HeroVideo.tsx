@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const VIDEO_URL =
-  "https://hutflemsxuoaeubrzzvu.supabase.co/storage/v1/object/sign/attachments/Dolly%20Shot%20Parked%20Vehicles%20Video.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80ZGZkYWNkMy00ZjBmLTQzZWItOThlMS05YmI4MzIzZTEwMjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhdHRhY2htZW50cy9Eb2xseSBTaG90IFBhcmtlZCBWZWhpY2xlcyBWaWRlby5tcDQiLCJpYXQiOjE3NzUyNTk2MjcsImV4cCI6NDkyODg1OTYyN30.V4GTd4kqUwG_aARCizhOgBXcKSIEm7G1ZiInbFsfNb0";
+  "https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/5982894-hd_1920_1080_30fps.mp4";
 
 const POSTER_URL =
   "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=1920&q=80";
@@ -24,10 +24,13 @@ export default function HeroVideo() {
       });
     };
 
-    video.addEventListener("canplaythrough", handleCanPlay);
+    // Fires once enough has buffered to start; canplaythrough can never fire
+    // on slow connections, which would strand the hero on the poster.
+    video.addEventListener("canplay", handleCanPlay);
+    if (video.readyState >= 3) handleCanPlay();
 
     return () => {
-      video.removeEventListener("canplaythrough", handleCanPlay);
+      video.removeEventListener("canplay", handleCanPlay);
     };
   }, []);
 
@@ -49,7 +52,8 @@ export default function HeroVideo() {
           muted
           loop
           playsInline
-          preload="auto"
+          autoPlay
+          preload="metadata"
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
             ready ? "opacity-100" : "opacity-0"
           }`}
