@@ -72,6 +72,11 @@ export default function PartnerWithUs() {
                   "Offer PPF as an F&I product or service add-on. We handle installation, you capture the margin. A profit center with zero added overhead.",
               },
               {
+                title: "Built for volume",
+                description:
+                  "High-volume stores are the norm, not the exception. We staff to your throughput, schedule around your delivery cadence, and add installers as your numbers climb, so a busy month never turns into a backlog.",
+              },
+              {
                 title: "Digital tracking portal",
                 description:
                   "Real-time install tracking, automated billing, reporting, and PO management through the dedicated dealership portal at app.qualityperformance.io.",

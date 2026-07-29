@@ -30,7 +30,15 @@ const interestOptions = [
   "General question",
 ];
 
-const bestTimeOptions = ["Morning", "Midday", "Afternoon", "Evening"];
+// Explicit brackets so "morning" is never ambiguous. The stored value carries
+// the range, so the lead email reads "Morning (8:30-11am ET)" without extra work.
+const bestTimeOptions = [
+  { value: "Anytime (8:30am-7pm ET)", label: "Anytime (8:30am - 7pm)" },
+  { value: "Morning (8:30-11am ET)", label: "Morning (8:30 - 11am)" },
+  { value: "Midday (11am-2pm ET)", label: "Midday (11am - 2pm)" },
+  { value: "Afternoon (2-4pm ET)", label: "Afternoon (2 - 4pm)" },
+  { value: "Evening (4-7pm ET)", label: "Evening (4 - 7pm)" },
+];
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -38,7 +46,7 @@ export default function Contact() {
   const [dealership, setDealership] = useState("");
   const [directLine, setDirectLine] = useState("");
   const [interests, setInterests] = useState<string[]>([]);
-  const [bestTime, setBestTime] = useState("");
+  const [bestTime, setBestTime] = useState(bestTimeOptions[0].value);
   const [okToText, setOkToText] = useState(false);
   const [comments, setComments] = useState("");
 
@@ -172,7 +180,7 @@ export default function Contact() {
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
                     <label htmlFor="dealership" className="mb-1.5 block text-sm font-medium text-text-primary">Dealership Name *</label>
-                    <input type="text" id="dealership" value={dealership} onChange={(e) => setDealership(e.target.value)} required className={inputClass} placeholder="Northeast Auto Group" />
+                    <input type="text" id="dealership" value={dealership} onChange={(e) => setDealership(e.target.value)} required className={inputClass} placeholder="Performance Auto Group" />
                   </div>
                   <div>
                     <label htmlFor="directLine" className="mb-1.5 block text-sm font-medium text-text-primary">Direct Line</label>
@@ -211,12 +219,12 @@ export default function Contact() {
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <label htmlFor="bestTime" className="mb-1.5 block text-sm font-medium text-text-primary">
-                        Best time to call
+                        Best time to call{" "}
+                        <span className="font-normal text-white/50">(Eastern)</span>
                       </label>
                       <select id="bestTime" value={bestTime} onChange={(e) => setBestTime(e.target.value)} className={inputClass}>
-                        <option value="">Anytime</option>
                         {bestTimeOptions.map((t) => (
-                          <option key={t} value={t}>{t}</option>
+                          <option key={t.value} value={t.value}>{t.label}</option>
                         ))}
                       </select>
                     </div>
@@ -237,7 +245,7 @@ export default function Contact() {
                         <span className="text-sm font-medium text-text-primary">
                           Text me too
                           <span className="block text-[13px] font-normal text-white/50">
-                            We can send updates by text.
+                            I can receive texts at this number.
                           </span>
                         </span>
                       </label>
