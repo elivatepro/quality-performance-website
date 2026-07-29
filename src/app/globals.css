@@ -76,11 +76,29 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* ─── Focus & selection ─── */
+/* ─── Focus & selection ───
+   Keyboard users still get a clear ring on links and buttons. Text fields
+   are excluded: they signal focus with their own border and a soft glow
+   below, so a hard outline on top just reads as browser chrome. */
 :focus-visible {
   outline: 2px solid var(--color-blue-hover);
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+}
+
+/* Soft focus treatment for text fields: the border brightens and a low
+   halo lifts the field off the surface. No boxy ring. */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.16);
 }
 
 ::selection {

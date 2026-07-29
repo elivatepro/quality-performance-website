@@ -33,7 +33,7 @@ const audienceLabels: Record<Exclude<Audience, "">, string> = {
 };
 
 const fieldClass =
-  "mt-2 w-full rounded-xl border border-white/[0.1] bg-white/[0.03] px-4 py-3.5 text-sm text-white placeholder:text-white/30 outline-none transition-colors focus:border-blue focus:ring-1 focus:ring-blue";
+  "mt-2 w-full rounded-xl border border-white/[0.1] bg-white/[0.03] px-4 py-3.5 text-sm text-white placeholder:text-white/30 outline-none transition-colors";
 
 export default function SmsUpdatesForm() {
   const [form, setForm] = useState<FormState>(initialForm);
@@ -422,7 +422,7 @@ export default function SmsUpdatesForm() {
                     name="consent"
                     checked={form.consent}
                     onChange={handleConsentChange}
-                    className="mt-1 h-4 w-4 rounded border-white/20 bg-transparent text-blue focus:ring-blue"
+                    className="mt-1 h-4 w-4 rounded border-white/20 bg-transparent text-blue"
                   />
                   <span className="text-sm leading-relaxed text-white/78">
                     Optional: I agree to receive automated text messages from Quality

@@ -19,7 +19,7 @@ import { contact } from "@/lib/siteConfig";
  */
 
 const inputClass =
-  "w-full rounded-[6px] border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/40 outline-none transition-colors duration-200 focus:border-blue focus:ring-1 focus:ring-blue";
+  "w-full rounded-[6px] border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/40 outline-none transition-colors duration-200";
 
 // "How can we help you?" interest options. The install-point package reflects
 // the five points Josh specified (headlights + side mirrors intentionally out).
@@ -240,7 +240,7 @@ export default function Contact() {
                           type="checkbox"
                           checked={okToText}
                           onChange={(e) => setOkToText(e.target.checked)}
-                          className="mt-0.5 h-4 w-4 rounded border-white/25 bg-transparent text-blue focus:ring-blue"
+                          className="mt-0.5 h-4 w-4 rounded border-white/25 bg-transparent text-blue"
                         />
                         <span className="text-sm font-medium text-text-primary">
                           Text me too

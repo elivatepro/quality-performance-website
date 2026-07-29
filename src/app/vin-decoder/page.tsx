@@ -259,7 +259,7 @@ export default function VinDecoderPage() {
                     onChange={(e) => setVin(e.target.value.toUpperCase())}
                     required
                     maxLength={17}
-                    className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 font-mono text-sm tracking-wider text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-blue focus:ring-1 focus:ring-blue"
+                    className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 font-mono text-sm tracking-wider text-text-primary placeholder:text-white/30 outline-none transition-colors"
                     placeholder="e.g. 1HGCM82633A004352"
                   />
                   <p className="mt-1.5 text-xs text-white/35">
@@ -279,7 +279,7 @@ export default function VinDecoderPage() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       required
-                      className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-blue focus:ring-1 focus:ring-blue"
+                      className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors"
                       placeholder="John Smith"
                     />
                   </div>
@@ -293,7 +293,7 @@ export default function VinDecoderPage() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-blue focus:ring-1 focus:ring-blue"
+                      className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -309,7 +309,7 @@ export default function VinDecoderPage() {
                     id="phone"
                     value={phone}
                     onChange={(e) => setPhone(formatPhoneNumber(e.target.value))}
-                    className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors focus:border-blue focus:ring-1 focus:ring-blue"
+                    className="w-full rounded-lg border border-border-dark bg-dark-tertiary px-4 py-3 text-sm text-text-primary placeholder:text-white/30 outline-none transition-colors"
                     placeholder="(555) 123-4567"
                   />
                 </div>

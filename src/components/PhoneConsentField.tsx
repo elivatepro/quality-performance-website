@@ -37,7 +37,7 @@ export default function PhoneConsentField({
           type="checkbox"
           checked={checked}
           onChange={onChange}
-          className="mt-1 h-4 w-4 rounded border-white/20 bg-transparent text-blue focus:ring-blue"
+          className="mt-1 h-4 w-4 rounded border-white/20 bg-transparent text-blue"
         />
         <span className="text-sm leading-relaxed text-white/78">
           Optional: I agree to receive automated text messages from Quality
