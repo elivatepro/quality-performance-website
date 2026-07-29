@@ -23,6 +23,26 @@ export default function LiveInstallCounter({
   const ref = useRef<HTMLDivElement>(null);
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
+  // Starts at the static figure so the counter renders instantly, then swaps to
+  // the live unit total from Zoho once /api/install-count responds.
+  const [target, setTarget] = useState(end);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/install-count")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data: { units?: number } | null) => {
+        if (!cancelled && typeof data?.units === "number" && data.units > 0) {
+          setTarget(data.units);
+        }
+      })
+      .catch(() => {
+        /* keep the static fallback */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     const el = ref.current;
@@ -32,7 +52,7 @@ export default function LiveInstallCounter({
       typeof window !== "undefined" &&
       window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {
-      setCount(end);
+      setCount(target);
       setStarted(true);
       return;
     }
@@ -48,11 +68,11 @@ export default function LiveInstallCounter({
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, [started, end]);
+  }, [started, target]);
 
   useEffect(() => {
     if (!started) return;
-    if (count === end) return;
+    if (count === target) return;
     const duration = 2000;
     const steps = 80;
     let current = 0;
@@ -60,15 +80,15 @@ export default function LiveInstallCounter({
       current += 1;
       const progress = current / steps;
       const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.round(eased * end));
+      setCount(Math.round(eased * target));
       if (current >= steps) {
-        setCount(end);
+        setCount(target);
         clearInterval(timer);
       }
     }, duration / steps);
     return () => clearInterval(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [started, end]);
+  }, [started, target]);
 
   return (
     <div ref={ref}>
