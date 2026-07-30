@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CoverageSequence from "@/components/protected/CoverageSequence";
 import ClaimForm from "@/components/protected/ClaimForm";
+import HeroRotator from "@/components/protected/HeroRotator";
 import { contact } from "@/lib/siteConfig";
 
 /**
@@ -38,28 +39,30 @@ export default function ProtectedPage() {
       {/* Slim owner-facing header: no dealer navigation. */}
       <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-dark-deep/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-6 py-4 lg:px-12">
-          <Link href="/protected" className="flex shrink-0 items-center gap-2.5">
+          <Link href="/protected" className="flex min-w-0 shrink items-center gap-2.5">
             <Image
               src="/images/qp-logo.png"
               alt="Quality Performance"
               width={36}
               height={36}
-              className="h-8 w-8"
+              className="h-8 w-8 shrink-0"
             />
-            <span className="text-[15px] font-bold tracking-tight text-white sm:text-lg">
+            {/* The wordmark is the first thing to give up space on small
+                screens; the logo alone still identifies the brand. */}
+            <span className="hidden truncate text-[15px] font-bold tracking-tight text-white min-[380px]:inline sm:text-lg">
               QUALITY<span className="text-blue">PERFORMANCE</span>
             </span>
           </Link>
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <a
               href="#claim"
-              className="rounded-[6px] border border-white/20 px-3.5 py-2 text-[13px] font-semibold text-white/85 transition-colors duration-200 hover:border-white/45 hover:text-white sm:px-5"
+              className="whitespace-nowrap rounded-[6px] border border-white/20 px-3 py-2 text-[13px] font-semibold text-white/85 transition-colors duration-200 hover:border-white/45 hover:text-white sm:px-5"
             >
               File a claim
             </a>
             <a
               href={`mailto:${contact.email}`}
-              className="rounded-[6px] bg-blue px-3.5 py-2 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-blue-hover sm:px-5"
+              className="whitespace-nowrap rounded-[6px] bg-blue px-3 py-2 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-blue-hover sm:px-5"
             >
               Contact us
             </a>
@@ -69,18 +72,20 @@ export default function ProtectedPage() {
 
       {/* Hero: the reassurance, immediately. */}
       <section className="relative overflow-hidden bg-dark-deep">
+        {/* Quiet backdrop: the rotator carries the visual weight here, so the
+            paint macro stays a texture rather than competing with it. */}
         <div className="absolute inset-0">
           <Image
             src="https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/ChatGPT%20Image%20Jul%2028,%202026,%2007_32_23%20AM.png"
             alt=""
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity-20"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark-deep via-dark-deep/85 to-dark-deep/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-dark-deep/85 via-dark-deep/75 to-dark-deep" />
         </div>
 
-        <div className="relative mx-auto max-w-[1280px] px-6 py-20 lg:px-12 lg:py-28">
+        <div className="relative mx-auto grid max-w-[1280px] items-center gap-12 px-6 py-20 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:px-12 lg:py-24">
           <div className="max-w-[640px]">
             <div className="animate-hero mb-7 inline-flex items-center gap-2.5 rounded-full border border-success/30 bg-success/10 px-4 py-2">
               <svg className="h-4 w-4 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -122,6 +127,11 @@ export default function ProtectedPage() {
                 Warranty and care
               </a>
             </div>
+          </div>
+
+          {/* Rotating annotated install points. */}
+          <div className="animate-hero" style={{ animationDelay: "0.5s" }}>
+            <HeroRotator />
           </div>
         </div>
       </section>
