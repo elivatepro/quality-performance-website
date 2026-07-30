@@ -4,6 +4,7 @@ import Link from "next/link";
 import CoverageSequence from "@/components/protected/CoverageSequence";
 import ClaimForm from "@/components/protected/ClaimForm";
 import HeroRotator from "@/components/protected/HeroRotator";
+import ProtectedHeroVideo from "@/components/protected/ProtectedHeroVideo";
 /** Claims and owner support route to the address named in the warranty. */
 const SUPPORT_EMAIL = "support@qualityinstallsco.com";
 /** Warrantor address of record, from the Elite Guard warranty. */
@@ -77,18 +78,7 @@ export default function ProtectedPage() {
           the header so nothing of the next section shows until the visitor
           scrolls. */}
       <section className="relative flex min-h-[calc(100dvh-69px)] items-center overflow-hidden bg-dark-deep">
-        {/* Quiet backdrop: the rotator carries the visual weight here, so the
-            paint macro stays a texture rather than competing with it. */}
-        <div className="absolute inset-0">
-          <Image
-            src="https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/ChatGPT%20Image%20Jul%2028,%202026,%2007_32_23%20AM.png"
-            alt=""
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-dark-deep/85 via-dark-deep/75 to-dark-deep" />
-        </div>
+        <ProtectedHeroVideo />
 
         <div className="relative mx-auto grid w-full max-w-[1280px] items-center gap-12 px-6 py-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:px-12">
           <div className="max-w-[640px]">
