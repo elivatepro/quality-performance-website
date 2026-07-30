@@ -95,7 +95,7 @@ export default function HeroRotator() {
           {/* Caption for wide screens: pinned to the frame's dark upper-right,
               where every image deliberately leaves room, so each drawn leader
               line reads as terminating at the text. */}
-          <div className="pointer-events-none absolute right-4 top-4 hidden w-[58%] max-w-[300px] lg:block xl:w-[52%]">
+          <div className="pointer-events-none absolute right-4 top-4 z-10 hidden w-[58%] max-w-[300px] lg:block xl:w-[52%]">
             <div
               key={current.id}
               className="animate-hero rounded-xl border border-white/15 bg-dark-deep/80 px-4 py-3.5 backdrop-blur-md"

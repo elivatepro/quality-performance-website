@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { contact } from "@/lib/siteConfig";
+/** Claims route to the address named in the Elite Guard warranty. */
+const SUPPORT_EMAIL = "support@qualityinstallsco.com";
+/** Warrantor address of record. */
+const WARRANTOR_ADDRESS = "175 Capital Blvd, Rocky Hill CT 06067";
 
 /**
  * Warranty claim intake for vehicle owners (consumer /protected page).
@@ -166,8 +169,9 @@ function buildConfirmationHtml(claim: ClaimPayload): string {
               You'll hear back from us by email within one business day.
             </p>
             <p style="margin:14px 0 0;color:${ink};font-size:15px;line-height:1.6;">
-              <strong>Have photos?</strong> Reply to this email and attach them. Pictures of the affected
-              area help us resolve claims faster.
+              <strong>Reply to this email with photos of the damage, your purchase order, and your
+              current registration.</strong> We may need them to process your claim, and having them
+              up front is the fastest route to a decision.
             </p>
           </td>
         </tr>
@@ -179,9 +183,10 @@ function buildConfirmationHtml(claim: ClaimPayload): string {
         </tr>
         <tr>
           <td style="padding:20px 32px;background:#FAFBFC;border-top:1px solid ${line};color:${muted};font-size:12px;line-height:1.5;">
-            Quality Performance &middot; ${esc(contact.location)}<br>
+            Quality Performance LLC &middot; ${esc(WARRANTOR_ADDRESS)}<br>
+            Do not remove the Elite Guard film before you receive written authorization from us.<br>
             Questions? Reply to this email or write to
-            <a href="mailto:${esc(contact.email)}" style="color:#1D4ED8;text-decoration:none;font-weight:600;">${esc(contact.email)}</a>.
+            <a href="mailto:${esc(SUPPORT_EMAIL)}" style="color:#1D4ED8;text-decoration:none;font-weight:600;">${esc(SUPPORT_EMAIL)}</a>.
           </td>
         </tr>
       </table>
@@ -218,7 +223,7 @@ export async function POST(req: NextRequest) {
   };
 
   const mailer = getTransporter();
-  const inbox = process.env.LEAD_INBOX || contact.leadInbox;
+  const inbox = process.env.CLAIM_INBOX || SUPPORT_EMAIL;
   const from = process.env.GMAIL_USER;
 
   if (!mailer || !from) {

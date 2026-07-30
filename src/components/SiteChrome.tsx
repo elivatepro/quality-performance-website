@@ -12,7 +12,7 @@ import type { ReactNode } from "react";
  * portal. Keeping the rule here means the root layout stays unchanged and any
  * future consumer route only needs adding to this list.
  */
-const CHROMELESS_ROUTES = ["/protected"];
+const CHROMELESS_ROUTES = ["/protected", "/warranty"];
 
 export default function SiteChrome({ children }: { children: ReactNode }) {
   const pathname = usePathname();

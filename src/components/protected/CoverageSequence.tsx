@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { coveragePoints } from "@/data/coveragePoints";
 
 /**
@@ -201,21 +200,6 @@ export default function CoverageSequence() {
                   <p className="mt-3 max-w-[46ch] text-[16px] leading-relaxed text-text-secondary">
                     {point.caption}
                   </p>
-                  <Link
-                    href={`/services/${point.slug}`}
-                    className="group mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-blue-bright transition-colors hover:text-white"
-                  >
-                    How this film works
-                    <svg
-                      className="h-4 w-4 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </Link>
                 </div>
               </div>
             ))}

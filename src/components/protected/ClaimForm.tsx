@@ -2,7 +2,8 @@
 
 import { useState, type FormEvent } from "react";
 import { formatPhoneNumber } from "@/lib/phone";
-import { contact } from "@/lib/siteConfig";
+/** The claims address named in the Elite Guard warranty. */
+const SUPPORT_EMAIL = "support@qualityinstallsco.com";
 
 /**
  * Warranty claim form for vehicle owners.
@@ -62,7 +63,7 @@ export default function ClaimForm() {
       }
       setSubmitted(true);
     } catch {
-      setError(`Something went wrong. Please email us at ${contact.email}.`);
+      setError(`Something went wrong. Please email us at ${SUPPORT_EMAIL}.`);
     } finally {
       setSubmitting(false);
     }
@@ -210,7 +211,8 @@ export default function ClaimForm() {
           placeholder="Tell us what you're seeing: lifting at an edge, a bubble, discoloration, or anything else."
         />
         <p className="mt-2 text-[13px] text-white/45">
-          Have photos? Reply to our confirmation email and attach them there.
+          Have photos, your purchase order, or your registration? Reply to our
+          confirmation email and attach them there.
         </p>
       </div>
 

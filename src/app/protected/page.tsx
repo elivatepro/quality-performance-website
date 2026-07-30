@@ -4,7 +4,10 @@ import Link from "next/link";
 import CoverageSequence from "@/components/protected/CoverageSequence";
 import ClaimForm from "@/components/protected/ClaimForm";
 import HeroRotator from "@/components/protected/HeroRotator";
-import { contact } from "@/lib/siteConfig";
+/** Claims and owner support route to the address named in the warranty. */
+const SUPPORT_EMAIL = "support@qualityinstallsco.com";
+/** Warrantor address of record, from the Elite Guard warranty. */
+const WARRANTOR_ADDRESS = "175 Capital Blvd, Rocky Hill CT 06067";
 
 /**
  * Consumer-facing vehicle owner page.
@@ -61,7 +64,7 @@ export default function ProtectedPage() {
               File a claim
             </a>
             <a
-              href={`mailto:${contact.email}`}
+              href={`mailto:${SUPPORT_EMAIL}`}
               className="whitespace-nowrap rounded-[6px] bg-blue px-3 py-2 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-blue-hover sm:px-5"
             >
               Contact us
@@ -70,8 +73,10 @@ export default function ProtectedPage() {
         </div>
       </header>
 
-      {/* Hero: the reassurance, immediately. */}
-      <section className="relative overflow-hidden bg-dark-deep">
+      {/* Hero: the reassurance, immediately. Sized to fill the viewport below
+          the header so nothing of the next section shows until the visitor
+          scrolls. */}
+      <section className="relative flex min-h-[calc(100dvh-69px)] items-center overflow-hidden bg-dark-deep">
         {/* Quiet backdrop: the rotator carries the visual weight here, so the
             paint macro stays a texture rather than competing with it. */}
         <div className="absolute inset-0">
@@ -85,48 +90,56 @@ export default function ProtectedPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-dark-deep/85 via-dark-deep/75 to-dark-deep" />
         </div>
 
-        <div className="relative mx-auto grid max-w-[1280px] items-center gap-12 px-6 py-20 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:px-12 lg:py-24">
+        <div className="relative mx-auto grid w-full max-w-[1280px] items-center gap-12 px-6 py-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:px-12">
           <div className="max-w-[640px]">
-            <div className="animate-hero mb-7 inline-flex items-center gap-2.5 rounded-full border border-success/30 bg-success/10 px-4 py-2">
-              <svg className="h-4 w-4 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-              <span className="text-[13px] font-semibold text-white">
-                Protection confirmed
-              </span>
-            </div>
-
-            <h1 className="animate-hero type-display text-[40px] text-white md:text-[58px]" style={{ animationDelay: "0.1s" }}>
+            <p className="animate-hero type-label text-blue-bright">
+              Elite Guard
+            </p>
+            <h1 className="animate-hero type-display mt-4 text-[40px] text-white md:text-[58px]" style={{ animationDelay: "0.1s" }}>
               Your vehicle is protected.
             </h1>
             <p
               className="animate-hero mt-6 max-w-[560px] text-lg leading-relaxed text-white/75"
               style={{ animationDelay: "0.25s" }}
             >
-              Quality Performance installed professional-grade paint protection
-              film on your vehicle before you took delivery. It is optically
-              clear, self-healing, and already doing its job.
+              Quality Performance installed Elite Guard paint protection film on
+              your vehicle before you took delivery. It is optically clear,
+              self-healing, and already doing its job.
             </p>
             <div
               className="animate-hero mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
               style={{ animationDelay: "0.4s" }}
             >
-              <a
-                href="#coverage"
+              <Link
+                href="/warranty"
                 className="group inline-flex items-center justify-center gap-2 rounded-[6px] bg-blue px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-200 hover:bg-blue-hover active:scale-[0.98]"
               >
-                See what&apos;s protected
+                View your warranty
+                <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+              <a
+                href="#claim"
+                className="inline-flex items-center justify-center rounded-[6px] border border-white/20 px-7 py-3.5 text-[15px] font-semibold text-white/85 transition-colors duration-200 hover:border-white/45 hover:text-white"
+              >
+                File a claim
+              </a>
+            </div>
+
+            {/* Scroll cue into the coverage tour. */}
+            <a
+              href="#coverage"
+              className="animate-hero group mt-10 inline-flex items-center gap-2.5 text-[14px] font-medium text-white/55 transition-colors hover:text-white"
+              style={{ animationDelay: "0.55s" }}
+            >
+              <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 transition-colors group-hover:border-white/45">
                 <svg className="h-4 w-4 transition-transform group-hover:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
                 </svg>
-              </a>
-              <a
-                href="#warranty"
-                className="inline-flex items-center justify-center rounded-[6px] border border-white/20 px-7 py-3.5 text-[15px] font-semibold text-white/85 transition-colors duration-200 hover:border-white/45 hover:text-white"
-              >
-                Warranty and care
-              </a>
-            </div>
+              </span>
+              See more protections
+            </a>
           </div>
 
           {/* Rotating annotated install points. */}
@@ -141,71 +154,55 @@ export default function ProtectedPage() {
         <CoverageSequence />
       </div>
 
-      {/* Warranty and care, side by side. */}
+      {/* Warranty summary. The binding terms live on /warranty; this is a
+          pointer to them, not a restatement, so the two can never drift. */}
       <section id="warranty" className="scroll-mt-20 bg-dark-tertiary py-20 md:py-28">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
             <div>
-              <h2 className="type-display text-[30px] text-text-primary md:text-[38px]">
-                Your warranty
+              <p className="type-label text-blue-bright">Elite Guard</p>
+              <h2 className="type-display mt-4 text-[30px] text-text-primary md:text-[38px]">
+                Backed by a limited product warranty
               </h2>
-              <dl className="mt-8 divide-y divide-border border-y border-border">
-                {[
-                  {
-                    term: "Coverage",
-                    detail:
-                      "The film carries a 5-year manufacturer warranty against yellowing, cracking, bubbling, and peeling under normal use.",
-                  },
-                  {
-                    term: "Our workmanship",
-                    detail:
-                      "We stand behind the installation itself. If an edge lifts or the film was not applied correctly, that is on us to put right.",
-                  },
-                  {
-                    term: "What is not covered",
-                    detail:
-                      "Damage from collisions, road hazards beyond the film's rating, chemical exposure, pressure washing at close range, or attempts to remove the film.",
-                  },
-                  {
-                    term: "Transferring it",
-                    detail:
-                      "Coverage follows the vehicle, so it stays valid if you sell the car within the warranty period.",
-                  },
-                ].map((item) => (
-                  <div key={item.term} className="py-6">
-                    <dt className="text-[16px] font-bold text-text-primary">{item.term}</dt>
-                    <dd className="mt-2 max-w-[52ch] text-[15px] leading-relaxed text-text-secondary">
-                      {item.detail}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+              <p className="mt-5 max-w-[52ch] text-[16px] leading-relaxed text-text-secondary">
+                Your Elite Guard door edge protection is covered by a limited
+                product warranty from Quality Performance LLC, registered
+                automatically when the product appeared on your purchase order.
+              </p>
+              <div className="mt-8">
+                <Link
+                  href="/warranty"
+                  className="group inline-flex items-center gap-2 rounded-[6px] bg-blue px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-200 hover:bg-blue-hover active:scale-[0.98]"
+                >
+                  Read the full warranty
+                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              </div>
             </div>
 
-            <div>
-              <h2 className="type-display text-[30px] text-text-primary md:text-[38px]">
-                Caring for the film
-              </h2>
-              <p className="mt-4 max-w-[52ch] text-[16px] leading-relaxed text-text-secondary">
-                The film needs no special products. Treat it like the paint
-                underneath, with a few exceptions worth knowing.
+            <div className="rounded-2xl border border-blue/25 bg-blue/[0.07] p-7">
+              <h3 className="text-[17px] font-bold text-text-primary">
+                The one thing to remember
+              </h3>
+              <p className="mt-3 max-w-[52ch] text-[15px] leading-relaxed text-text-primary">
+                You must report any covered damage within{" "}
+                <strong>30 days</strong> of noticing it. Reporting later voids
+                the warranty. Do not remove the film before you hear back from
+                us, or coverage on that door ends.
               </p>
-              <ul className="mt-8 space-y-5">
-                {[
-                  "Wait 48 hours after installation before washing the vehicle, so the film can fully bond.",
-                  "Keep pressure washers at least a foot away from film edges, and never aim directly at an edge.",
-                  "Skip abrasive polishes, cutting compounds, and wax with grit. A pH-neutral car soap is ideal.",
-                  "Light scratches and swirls self-heal in warm sun or with warm water. Give them a day before worrying.",
-                  "Remove bird droppings, bug splatter, and tree sap promptly. The film blocks them from the paint, but they can still stain the film itself.",
-                ].map((tip) => (
-                  <li key={tip} className="flex items-start gap-3">
-                    <svg className="mt-0.5 h-5 w-5 shrink-0 text-blue-bright" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-[15px] leading-relaxed text-text-primary">{tip}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-6 border-t border-white/10 pt-5">
+                <p className="text-[14px] text-text-secondary">
+                  Questions about coverage?
+                </p>
+                <a
+                  href={`mailto:${SUPPORT_EMAIL}`}
+                  className="mt-1.5 inline-block text-[15px] font-semibold text-blue-bright transition-colors hover:text-white"
+                >
+                  {SUPPORT_EMAIL}
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -229,22 +226,22 @@ export default function ProtectedPage() {
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-white/70">
               Most vehicles leave the lot with a few key areas protected. If
-              you&apos;d like film on more of your car, we can arrange it
-              through the dealership you bought from.
+              you&apos;d like film on more of your car, get in touch with us
+              directly and we&apos;ll take it from there.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
-                href={`mailto:${contact.email}?subject=More%20coverage%20for%20my%20vehicle`}
+                href={`mailto:${SUPPORT_EMAIL}?subject=More%20coverage%20for%20my%20vehicle`}
                 className="inline-flex items-center justify-center gap-2 rounded-[6px] bg-blue px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-200 hover:bg-blue-hover active:scale-[0.98]"
               >
                 Ask about more coverage
               </a>
-              <Link
-                href="/services"
+              <a
+                href="#claim"
                 className="inline-flex items-center justify-center rounded-[6px] border border-white/20 px-7 py-3.5 text-[15px] font-semibold text-white/85 transition-colors duration-200 hover:border-white/45 hover:text-white"
               >
-                See every install point
-              </Link>
+                Contact us
+              </a>
             </div>
           </div>
         </div>
@@ -266,13 +263,13 @@ export default function ProtectedPage() {
               <div className="mt-8 border-t border-border pt-6">
                 <p className="text-[14px] text-text-secondary">Prefer to write to us?</p>
                 <a
-                  href={`mailto:${contact.email}`}
+                  href={`mailto:${SUPPORT_EMAIL}`}
                   className="mt-1.5 inline-block text-[15px] font-semibold text-blue-bright transition-colors hover:text-white"
                 >
-                  {contact.email}
+                  {SUPPORT_EMAIL}
                 </a>
                 <p className="mt-4 text-[14px] leading-relaxed text-text-secondary">
-                  {contact.location}
+                  {WARRANTOR_ADDRESS}
                 </p>
               </div>
             </div>
