@@ -3,6 +3,7 @@ import { Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SiteChrome from "@/components/SiteChrome";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
 
 const inter = Inter({
@@ -47,9 +48,13 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${interTight.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans">
         <LocalBusinessJsonLd />
-        <Navbar />
+        <SiteChrome>
+          <Navbar />
+        </SiteChrome>
         <main className="flex-1">{children}</main>
-        <Footer />
+        <SiteChrome>
+          <Footer />
+        </SiteChrome>
         <script
           dangerouslySetInnerHTML={{
             __html: `window.$zoho=window.$zoho||{};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}`,

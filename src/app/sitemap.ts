@@ -40,6 +40,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...productPages,
     {
+      // Vehicle owner page, reached by scanning the addendum QR. Indexed so
+      // owners searching for their warranty find it, but deliberately absent
+      // from the dealer navigation.
+      url: `${baseUrl}/protected`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/faq`,
       lastModified: new Date(),
       changeFrequency: "monthly",
