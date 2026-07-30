@@ -1,6 +1,4 @@
-import Link from "next/link";
 import Image from "next/image";
-import { products } from "@/data/products";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroVideo from "@/components/HeroVideo";
 import LiveInstallCounter from "@/components/LiveInstallCounter";
@@ -8,18 +6,9 @@ import RotatingHeadline from "@/components/RotatingHeadline";
 import Btn from "@/components/Btn";
 import DealerCoverageMap from "@/components/protection-map/DealerCoverageMap";
 import CTABlock from "@/components/CTABlock";
-import { installCount, dealerInstallPointSlugs } from "@/lib/siteConfig";
+import { installCount } from "@/lib/siteConfig";
 
 export default function Home() {
-  // Josh's dealer-facing order leads; remaining products follow.
-  const ordered = [
-    ...dealerInstallPointSlugs
-      .map((slug) => products.find((p) => p.slug === slug))
-      .filter((p): p is NonNullable<typeof p> => Boolean(p)),
-    ...products.filter((p) => !(dealerInstallPointSlugs as readonly string[]).includes(p.slug)),
-  ];
-  const [featured, ...rest] = ordered;
-
   return (
     <>
       {/* ─── 1. HERO ─── */}
@@ -156,88 +145,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 4. INSTALL POINTS ─── */}
-      <section className="bg-dark-tertiary py-24 md:py-32">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
-          <AnimatedSection>
-            <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
-              <div className="max-w-xl">
-                <h2 className="type-display text-[32px] text-text-primary md:text-[42px]">
-                  Precision install points
-                </h2>
-                <p className="mt-4 text-lg text-text-secondary">
-                  Precision-cut PPF for every vulnerable area of a vehicle.
-                </p>
-              </div>
-              <Link href="/services" className="group inline-flex items-center gap-2 pb-1 text-[15px] font-semibold text-blue-bright transition-colors hover:text-white">
-                View all services
-                <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-              </Link>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid gap-5 lg:grid-cols-[2fr_1fr]">
-            {/* Featured point: large editorial tile */}
-            <AnimatedSection>
-              <Link
-                href={`/services/${featured.slug}`}
-                className="group relative block h-full min-h-[320px] overflow-hidden rounded-2xl bg-dark-deep lg:min-h-[520px]"
-              >
-                <Image
-                  src={featured.heroImage}
-                  alt={featured.name}
-                  fill
-                  className="object-cover opacity-80 transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-deep via-dark-deep/30 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-8">
-                  <h3 className="type-display text-[26px] text-white md:text-[32px]">{featured.name}</h3>
-                  <p className="mt-2 max-w-md text-[15px] text-white/70">{featured.tagline}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-blue-bright transition-colors group-hover:text-white">
-                    See the coverage
-                    <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-                  </span>
-                </div>
-              </Link>
-            </AnimatedSection>
-
-            {/* Remaining points: compact media rows stacked beside the feature */}
-            <div className="flex flex-col gap-3">
-              {rest.map((product, i) => (
-                <AnimatedSection key={product.slug} delay={i * 70} className="flex-1">
-                  <Link
-                    href={`/services/${product.slug}`}
-                    className="group flex h-full items-center gap-4 rounded-2xl border border-border bg-surface p-3.5 transition-all duration-300 hover:border-blue/40 hover:bg-dark-alt/40"
-                  >
-                    <div className="relative h-14 w-20 shrink-0 overflow-hidden rounded-xl bg-dark-alt">
-                      <Image
-                        src={product.heroImage}
-                        alt={product.name}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="text-[15px] font-bold text-text-primary transition-colors group-hover:text-white">
-                        {product.name}
-                      </h3>
-                      <p className="mt-0.5 line-clamp-1 text-[13px] leading-snug text-text-secondary">
-                        {product.tagline}
-                      </p>
-                    </div>
-                    <svg className="h-4 w-4 shrink-0 text-text-tertiary transition-all group-hover:translate-x-1 group-hover:text-blue-bright" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-                  </Link>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 5. DEALER COVERAGE MAP ─── */}
+      {/* ─── 4. DEALER COVERAGE MAP ─── */}
       <DealerCoverageMap />
 
-      {/* ─── 6. PROCESS ─── */}
+      {/* ─── 5. PROCESS ─── */}
       <section className="bg-dark-deep py-24 md:py-32">
         <div className="mx-auto grid max-w-[1280px] items-center gap-14 px-6 lg:grid-cols-[1fr_1.1fr] lg:px-12">
           <div>

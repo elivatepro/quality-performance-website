@@ -52,7 +52,7 @@ export default function DealerCoverageMap() {
               />
             ))}
             <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/85 via-transparent to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-4 p-7">
+            <div className="absolute inset-x-0 bottom-0 p-7">
               <div className="max-w-md">
                 <h3 className="type-display text-[24px] text-white md:text-[28px]">
                   {current.label}
@@ -61,33 +61,21 @@ export default function DealerCoverageMap() {
                   {current.detail}
                 </p>
               </div>
-              {current.slug && (
-                <Link
-                  href={`/services/${current.slug}`}
-                  className="group inline-flex shrink-0 items-center gap-2 text-[14px] font-semibold text-blue-bright transition-colors hover:text-white"
-                >
-                  Install details
-                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </Link>
-              )}
             </div>
           </div>
 
-          {/* Point selector */}
-          <div className="flex flex-col divide-y divide-border border-y border-border" role="tablist" aria-label="Install points">
+          {/* Point selector. Each row is itself the link, so the element you
+              hover to preview a point is the one you click to open it. */}
+          <div className="flex flex-col divide-y divide-border border-y border-border">
             {points.map((point, i) => {
               const isActive = i === active;
               return (
-                <button
+                <Link
                   key={point.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={isActive}
-                  onClick={() => setActive(i)}
+                  href={point.slug ? `/services/${point.slug}` : "#"}
                   onMouseEnter={() => setActive(i)}
                   onFocus={() => setActive(i)}
+                  aria-current={isActive ? "true" : undefined}
                   className={`group flex flex-1 items-center gap-4 px-5 py-5 text-left transition-colors duration-200 ${
                     isActive ? "bg-dark-tertiary/70" : "hover:bg-dark-tertiary/40"
                   }`}
@@ -111,7 +99,7 @@ export default function DealerCoverageMap() {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
-                </button>
+                </Link>
               );
             })}
           </div>
