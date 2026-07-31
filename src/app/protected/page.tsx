@@ -113,7 +113,7 @@ export default function ProtectedPage() {
                 href="#claim"
                 className="inline-flex items-center justify-center rounded-[6px] border border-white/20 px-7 py-3.5 text-[15px] font-semibold text-white/85 transition-colors duration-200 hover:border-white/45 hover:text-white"
               >
-                File a claim
+                Get in touch
               </a>
             </div>
 
@@ -237,18 +237,20 @@ export default function ProtectedPage() {
         </div>
       </section>
 
-      {/* Claim form, last: findable without being alarming. */}
+      {/* Contact form, last. Framed around getting in touch rather than
+          inspecting the car: a claim is one reason to write, not a prompt to
+          go looking for faults. */}
       <section id="claim" className="scroll-mt-20 bg-surface py-20 md:py-28">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:gap-16">
             <div>
               <h2 className="type-display text-[30px] text-text-primary md:text-[38px]">
-                Something not right?
+                Get in touch
               </h2>
               <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-text-secondary">
-                If the film is lifting, bubbling, or discolouring, tell us and
-                we&apos;ll make it right. Filing a claim takes a minute, and we
-                respond within one business day.
+                Want more of your car covered, have a question about your
+                warranty, or need to make a claim? Send us a note and we&apos;ll
+                reply within one business day.
               </p>
               <div className="mt-8 border-t border-border pt-6">
                 <p className="text-[14px] text-text-secondary">Prefer to write to us?</p>
