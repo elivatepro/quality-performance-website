@@ -3,15 +3,18 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * Animated "live" installation counter (Josh sync, QP-155).
+ * Live installed-unit counter (Josh sync, QP-155).
  *
- * Counts up to the configured lifetime install figure when scrolled into view,
- * with a subtle live indicator. Josh wanted this to feel real ("a live counter
- * with an exact amount makes it look more real"). The value comes from
- * siteConfig.installCount; swap in a real app fetch when the QP app exposes one.
+ * Reads the real figure from /api/install-count, which sums
+ * No_of_Installed_Units across the Creator install log. That call walks the
+ * report, so it can take a moment on a cold cache: until it resolves the
+ * counter reads "Calculating" rather than animating to a stale static number
+ * and then jumping, which would look like the figure was wrong.
  *
- * Honors prefers-reduced-motion (shows the final number immediately) and matches
- * the trust-bar's centered blue style.
+ * The live indicator is labelled rather than left as a bare pulsing dot, so the
+ * claim that this is a live feed is stated instead of implied.
+ *
+ * Honors prefers-reduced-motion by skipping the count-up entirely.
  */
 export default function LiveInstallCounter({
   end,
@@ -23,43 +26,42 @@ export default function LiveInstallCounter({
   const ref = useRef<HTMLDivElement>(null);
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
-  // Starts at the static figure so the counter renders instantly, then swaps to
-  // the live unit total from Zoho once /api/install-count responds.
-  const [target, setTarget] = useState(end);
+  /** Null until the live figure arrives; falls back to `end` on failure. */
+  const [target, setTarget] = useState<number | null>(null);
 
   useEffect(() => {
     let cancelled = false;
     fetch("/api/install-count")
       .then((res) => (res.ok ? res.json() : null))
       .then((data: { units?: number } | null) => {
-        if (!cancelled && typeof data?.units === "number" && data.units > 0) {
-          setTarget(data.units);
-        }
+        if (cancelled) return;
+        setTarget(
+          typeof data?.units === "number" && data.units > 0 ? data.units : end,
+        );
       })
       .catch(() => {
-        /* keep the static fallback */
+        if (!cancelled) setTarget(end);
       });
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [end]);
 
+  // Visibility is tracked independently of the fetch: the element is often
+  // already on screen before the live figure lands, and waiting for both
+  // before observing would leave the counter stuck on "Calculating".
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || started) return;
 
-    const reduce =
-      typeof window !== "undefined" &&
-      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      setCount(target);
+    if (typeof IntersectionObserver === "undefined") {
       setStarted(true);
       return;
     }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started) {
+        if (entry.isIntersecting) {
           setStarted(true);
           observer.unobserve(el);
         }
@@ -68,11 +70,20 @@ export default function LiveInstallCounter({
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, [started, target]);
+  }, [started]);
 
   useEffect(() => {
-    if (!started) return;
+    if (!started || target === null) return;
     if (count === target) return;
+
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setCount(target);
+      return;
+    }
+
     const duration = 2000;
     const steps = 80;
     let current = 0;
@@ -90,18 +101,31 @@ export default function LiveInstallCounter({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [started, target]);
 
+  const loading = target === null;
+
   return (
     <div ref={ref}>
       <div className={`flex items-baseline gap-2.5 ${centered ? "justify-center" : ""}`}>
-        {/* Live dot sits on its own so the number reads as plain white text,
+        {/* The dot sits apart so the number itself reads as plain white text,
             legible over bright photography rather than tinted into it. */}
         <span className="relative flex h-2 w-2 translate-y-[-6px]" aria-hidden="true">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-bright/70" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-bright shadow-[0_0_8px_rgba(96,165,250,0.9)]" />
         </span>
-        <span className="type-num text-[34px] font-bold leading-none text-white">
-          {count.toLocaleString()}
-          <span>+</span>
+        <span
+          className={`type-num font-bold leading-none text-white ${
+            loading ? "text-[24px] text-white/70" : "text-[34px]"
+          }`}
+          aria-live="polite"
+        >
+          {loading ? (
+            "Calculating"
+          ) : (
+            <>
+              {count.toLocaleString()}
+              <span>+</span>
+            </>
+          )}
         </span>
       </div>
     </div>

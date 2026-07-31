@@ -43,6 +43,18 @@ export const features = {
  */
 export const installCount = Number(process.env.NEXT_PUBLIC_INSTALL_COUNT) || 20000;
 
+/**
+ * Headline coverage figures shown beside the live install counter.
+ *
+ * These stay curated rather than derived: dealership addresses in the Creator
+ * app are inconsistently entered, so counting distinct states from them would
+ * be wrong. Update here when the footprint actually changes.
+ */
+export const coverage = {
+  states: 4,
+  dealershipPartners: "20+",
+};
+
 /** Contact details surfaced publicly. Phone is intentionally omitted for the
  * dealer-only launch, leads come by email so Josh sees them directly. */
 export const contact = {

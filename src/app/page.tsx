@@ -6,7 +6,7 @@ import RotatingHeadline from "@/components/RotatingHeadline";
 import Btn from "@/components/Btn";
 import DealerCoverageMap from "@/components/protection-map/DealerCoverageMap";
 import CTABlock from "@/components/CTABlock";
-import { installCount } from "@/lib/siteConfig";
+import { installCount, coverage } from "@/lib/siteConfig";
 
 export default function Home() {
   return (
@@ -123,18 +123,27 @@ export default function Home() {
               <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-end gap-x-8 gap-y-4 p-7">
                 <div>
                   <LiveInstallCounter end={installCount} centered={false} />
-                  <div className="mt-2 text-[12px] font-medium text-white/75">
+                  {/* Names the source: the figure is read live from our install
+                      system, not a number typed into the page. */}
+                  <div className="mt-2 flex items-center gap-2 text-[12px] font-medium text-white/75">
                     Installations
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-blue-bright">
+                      Live
+                    </span>
                   </div>
                 </div>
                 <div className="border-l border-white/15 pl-8">
-                  <div className="type-num text-[34px] font-bold leading-none text-white">20+</div>
+                  <div className="type-num text-[34px] font-bold leading-none text-white">
+                    {coverage.dealershipPartners}
+                  </div>
                   <div className="mt-2 text-[12px] font-medium text-white/75">
                     Dealership partners
                   </div>
                 </div>
                 <div className="border-l border-white/15 pl-8">
-                  <div className="type-num text-[34px] font-bold leading-none text-white">4-5</div>
+                  <div className="type-num text-[34px] font-bold leading-none text-white">
+                    {coverage.states}
+                  </div>
                   <div className="mt-2 text-[12px] font-medium text-white/75">
                     States covered
                   </div>
