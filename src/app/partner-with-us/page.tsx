@@ -135,11 +135,14 @@ export default function PartnerWithUs() {
             <AnimatedSection delay={150}>
               <figure>
                 <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-elevated">
+                  {/* Served through Cloudinary's transformer: the source PNG is
+                      1.1 MB, and f_auto,q_auto delivers roughly a tenth of that
+                      without visible loss at this size. */}
                   <Image
-                    src="https://tbkdlwkmomsuzfwfofoy.supabase.co/storage/v1/object/public/site-images/8dc886c1-ae1e-4ffb-b15a-abd14360d38c.png"
+                    src="https://res.cloudinary.com/dwajqgdxw/image/upload/f_auto,q_auto,w_1600/v1785777795/1bbf6585-5037-413e-816f-3d1a96c28ccf.png"
                     alt="The Quality Performance dealer dashboard showing install reports, VIN tracking, and vehicles protected"
-                    width={1680}
-                    height={1003}
+                    width={1600}
+                    height={923}
                     className="w-full"
                   />
                 </div>
