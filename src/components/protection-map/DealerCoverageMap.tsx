@@ -36,9 +36,9 @@ export default function DealerCoverageMap() {
           </p>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-stretch">
+        <div className="grid gap-5 lg:grid-cols-[1.4fr_1fr] lg:items-stretch lg:gap-10">
           {/* Active point, in close-up */}
-          <div className="relative min-h-[320px] overflow-hidden rounded-2xl bg-dark-deep md:min-h-[440px]">
+          <div className="relative min-h-[260px] overflow-hidden rounded-2xl bg-dark-deep sm:min-h-[340px] lg:min-h-[440px]">
             {points.map((point, i) => (
               <Image
                 key={point.id}
@@ -52,9 +52,9 @@ export default function DealerCoverageMap() {
               />
             ))}
             <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/85 via-transparent to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-7">
+            <div className="absolute inset-x-0 bottom-0 p-5 md:p-7">
               <div className="max-w-md">
-                <h3 className="type-display text-[24px] text-white md:text-[28px]">
+                <h3 className="type-display text-[22px] text-white md:text-[28px]">
                   {current.label}
                 </h3>
                 <p className="mt-2 text-[14px] leading-relaxed text-white/75">
@@ -64,19 +64,40 @@ export default function DealerCoverageMap() {
             </div>
           </div>
 
-          {/* Point selector. Each row is itself the link, so the element you
-              hover to preview a point is the one you click to open it. */}
-          <div className="flex flex-col divide-y divide-border border-y border-border">
+          {/* Point selector. On phones this is a horizontal scroll of chips
+              sitting directly under the image, so the visual stays in view
+              while moving between points; from lg it becomes the stacked list
+              alongside, where each row is itself the link. */}
+          <div className="-mx-6 flex snap-x snap-mandatory gap-2 overflow-x-auto px-6 pb-1 lg:mx-0 lg:flex-col lg:gap-0 lg:divide-y lg:divide-border lg:overflow-visible lg:border-y lg:border-border lg:px-0 lg:pb-0 scrollbar-subtle">
+            {points.map((point, i) => {
+              const isActive = i === active;
+              return (
+                <button
+                  key={point.id}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  aria-pressed={isActive}
+                  className={`shrink-0 snap-start rounded-full border px-4 py-2.5 text-[14px] font-semibold transition-colors duration-200 lg:hidden ${
+                    isActive
+                      ? "border-blue bg-blue/15 text-blue-bright"
+                      : "border-border-dark text-text-primary"
+                  }`}
+                >
+                  {point.label}
+                </button>
+              );
+            })}
+
             {points.map((point, i) => {
               const isActive = i === active;
               return (
                 <Link
-                  key={point.id}
+                  key={`row-${point.id}`}
                   href={point.slug ? `/services/${point.slug}` : "#"}
                   onMouseEnter={() => setActive(i)}
                   onFocus={() => setActive(i)}
                   aria-current={isActive ? "true" : undefined}
-                  className={`group flex flex-1 items-center gap-4 px-5 py-5 text-left transition-colors duration-200 ${
+                  className={`group hidden flex-1 items-center gap-4 px-5 py-5 text-left transition-colors duration-200 lg:flex ${
                     isActive ? "bg-dark-tertiary/70" : "hover:bg-dark-tertiary/40"
                   }`}
                 >
@@ -103,6 +124,20 @@ export default function DealerCoverageMap() {
               );
             })}
           </div>
+
+          {/* Mobile: one link for the active point, since the chips above only
+              switch the image. */}
+          {current.slug && (
+            <Link
+              href={`/services/${current.slug}`}
+              className="group inline-flex items-center gap-2 text-[14px] font-semibold text-blue-bright transition-colors hover:text-white lg:hidden"
+            >
+              Install details
+              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          )}
         </div>
       </div>
     </section>

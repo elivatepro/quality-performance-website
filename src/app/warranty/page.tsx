@@ -54,10 +54,10 @@ export default function WarrantyPage() {
               height={36}
               className="h-8 w-8 shrink-0"
             />
-            {/* "PERFORMANCE" is the first thing to go on narrow screens: a
-                truncated wordmark reads worse than a short one. */}
-            <span className="truncate text-[15px] font-bold tracking-tight text-white sm:text-lg">
-              QUALITY<span className="hidden text-blue min-[430px]:inline">PERFORMANCE</span>
+            {/* All or nothing: below 430px the mark stands alone rather than
+                showing a half wordmark. */}
+            <span className="hidden whitespace-nowrap text-[15px] font-bold tracking-tight text-white min-[430px]:inline sm:text-lg">
+              QUALITY<span className="text-blue">PERFORMANCE</span>
             </span>
           </Link>
           {/* One action on phones so the wordmark is never crowded out. */}

@@ -51,10 +51,10 @@ export default function ProtectedPage() {
               height={36}
               className="h-8 w-8 shrink-0"
             />
-            {/* "PERFORMANCE" is the first thing to go on narrow screens: a
-                truncated wordmark reads worse than a short one. */}
-            <span className="truncate text-[15px] font-bold tracking-tight text-white sm:text-lg">
-              QUALITY<span className="hidden text-blue min-[430px]:inline">PERFORMANCE</span>
+            {/* All or nothing: below 430px the mark stands alone rather than
+                showing a half wordmark. */}
+            <span className="hidden whitespace-nowrap text-[15px] font-bold tracking-tight text-white min-[430px]:inline sm:text-lg">
+              QUALITY<span className="text-blue">PERFORMANCE</span>
             </span>
           </Link>
           {/* One action on phones so the wordmark is never crowded out; both
@@ -80,19 +80,19 @@ export default function ProtectedPage() {
       {/* Hero: the reassurance, immediately. Sized to fill the viewport below
           the header so nothing of the next section shows until the visitor
           scrolls. */}
-      <section className="relative flex min-h-[calc(100dvh-69px)] items-center overflow-hidden bg-dark-deep">
+      <section className="relative flex min-h-[calc(100dvh-68px)] items-center overflow-hidden bg-dark-deep">
         <ProtectedHeroVideo />
 
-        <div className="relative mx-auto grid w-full max-w-[1280px] items-center gap-12 px-6 py-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:px-12">
+        <div className="relative mx-auto grid w-full max-w-[1280px] items-center gap-7 px-6 py-8 sm:gap-10 sm:py-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:px-12">
           <div className="max-w-[640px]">
             <p className="animate-hero type-label text-blue-bright">
               Elite Guard
             </p>
-            <h1 className="animate-hero type-display mt-4 text-[40px] text-white md:text-[58px]" style={{ animationDelay: "0.1s" }}>
+            <h1 className="animate-hero type-display mt-3 text-[32px] text-white sm:text-[40px] md:text-[58px]" style={{ animationDelay: "0.1s" }}>
               Your vehicle is protected.
             </h1>
             <p
-              className="animate-hero mt-6 max-w-[560px] text-lg leading-relaxed text-white/75"
+              className="animate-hero mt-4 max-w-[560px] text-[15px] leading-relaxed text-white/75 sm:mt-6 sm:text-lg"
               style={{ animationDelay: "0.25s" }}
             >
               Quality Performance installed Elite Guard paint protection film on
@@ -100,7 +100,7 @@ export default function ProtectedPage() {
               self-healing, and already doing its job.
             </p>
             <div
-              className="animate-hero mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+              className="animate-hero mt-6 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:items-center"
               style={{ animationDelay: "0.4s" }}
             >
               <Link
@@ -123,7 +123,7 @@ export default function ProtectedPage() {
             {/* Scroll cue into the coverage tour. */}
             <a
               href="#coverage"
-              className="animate-hero group mt-10 inline-flex items-center gap-2.5 text-[14px] font-medium text-white/55 transition-colors hover:text-white"
+              className="animate-hero group mt-6 inline-flex items-center gap-2.5 text-[14px] font-medium text-white/55 transition-colors hover:text-white sm:mt-10"
               style={{ animationDelay: "0.55s" }}
             >
               <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 transition-colors group-hover:border-white/45">

@@ -30,9 +30,44 @@ export default function CoverageSequence() {
           </p>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-[1.4fr_1fr] lg:items-stretch lg:gap-10">
+        {/* Phones get a plain stack: one card per area, image above its own
+            words. A shared visual with a separate selector works on a wide
+            screen, but on a phone it means tapping in one place and looking in
+            another, and the caption ends up on top of the photograph. */}
+        <ul className="space-y-4 lg:hidden">
+          {coveragePoints.map((point, i) => (
+            <li
+              key={point.id}
+              className="overflow-hidden rounded-2xl border border-border bg-dark-tertiary"
+            >
+              <div className="relative h-[190px] bg-dark-deep sm:h-[240px]">
+                <Image
+                  src={point.image}
+                  alt={point.label}
+                  fill
+                  className="object-cover"
+                  priority={i === 0}
+                  sizes="100vw"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="type-display text-[20px] text-text-primary">
+                  {point.label}
+                </h3>
+                <p className="mt-1 text-[13px] font-medium text-blue-bright">
+                  {point.location}
+                </p>
+                <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
+                  {point.caption}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <div className="hidden gap-5 lg:grid lg:grid-cols-[1.4fr_1fr] lg:items-stretch lg:gap-10">
           {/* Active point, in close-up */}
-          <div className="relative min-h-[260px] overflow-hidden rounded-2xl bg-dark-deep sm:min-h-[340px] lg:min-h-[440px]">
+          <div className="relative min-h-[440px] overflow-hidden rounded-2xl bg-dark-deep">
             {coveragePoints.map((point, i) => (
               <div
                 key={point.id}
@@ -89,12 +124,10 @@ export default function CoverageSequence() {
             </div>
           </div>
 
-          {/* Point selector. On phones this is a horizontal scroll of chips
-              directly under the image, so the visual stays in view while you
-              move between points; on wider screens it becomes the stacked
-              list that sits alongside. */}
+          {/* Point selector, wide screens only: the mobile stack above needs
+              no separate control. */}
           <div
-            className="-mx-6 flex snap-x snap-mandatory gap-2 overflow-x-auto px-6 pb-1 lg:mx-0 lg:flex-col lg:gap-0 lg:divide-y lg:divide-border lg:overflow-visible lg:border-y lg:border-border lg:px-0 lg:pb-0 scrollbar-subtle"
+            className="flex flex-col divide-y divide-border border-y border-border"
             role="tablist"
             aria-label="Protected areas"
           >
@@ -109,23 +142,19 @@ export default function CoverageSequence() {
                   onClick={() => setActive(i)}
                   onMouseEnter={() => setActive(i)}
                   onFocus={() => setActive(i)}
-                  className={`group shrink-0 snap-start rounded-full border px-4 py-2.5 text-left text-[14px] font-semibold transition-colors duration-200 lg:flex lg:flex-1 lg:shrink lg:items-center lg:gap-4 lg:rounded-none lg:border-0 lg:px-5 lg:py-5 lg:text-[16px] ${
-                    isActive
-                      ? "border-blue bg-blue/15 text-blue-bright lg:bg-dark-tertiary/70"
-                      : "border-border-dark text-text-primary lg:hover:bg-dark-tertiary/40"
+                  className={`group flex flex-1 items-center gap-4 px-5 py-5 text-left transition-colors duration-200 ${
+                    isActive ? "bg-dark-tertiary/70" : "hover:bg-dark-tertiary/40"
                   }`}
                 >
                   <span className="min-w-0 flex-1">
                     <span
-                      className={`block transition-colors lg:text-[16px] lg:font-bold ${
-                        isActive ? "lg:text-blue-bright" : "lg:text-text-primary"
+                      className={`block text-[16px] font-bold transition-colors ${
+                        isActive ? "text-blue-bright" : "text-text-primary"
                       }`}
                     >
                       {point.label}
                     </span>
-                    {/* The location line is useful beside the image, but on a
-                        phone it would make each chip too wide to scan. */}
-                    <span className="mt-0.5 hidden text-[13px] font-normal leading-snug text-text-secondary lg:block">
+                    <span className="mt-0.5 block text-[13px] leading-snug text-text-secondary">
                       {point.location}
                     </span>
                   </span>
