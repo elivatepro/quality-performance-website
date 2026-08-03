@@ -139,7 +139,7 @@ export default function PartnerWithUs() {
                       1.1 MB, and f_auto,q_auto delivers roughly a tenth of that
                       without visible loss at this size. */}
                   <Image
-                    src="https://res.cloudinary.com/dwajqgdxw/image/upload/f_auto,q_auto,w_1600/v1785777795/1bbf6585-5037-413e-816f-3d1a96c28ccf.png"
+                    src="https://res.cloudinary.com/dwajqgdxw/image/upload/f_auto,q_auto,w_1600/v1785779022/3e3d9b60-e9fb-4ae0-a3d2-bbbdce57a8a4.png"
                     alt="The Quality Performance dealer dashboard showing install reports, VIN tracking, and vehicles protected"
                     width={1600}
                     height={923}
