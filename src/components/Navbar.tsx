@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { products } from "@/data/products";
-import { features } from "@/lib/siteConfig";
+import { features, social } from "@/lib/siteConfig";
 
 // Dealer-focused navigation. Consumer paths (Protect Your Car, Gallery) are
 // hidden per the Josh sync, see src/lib/siteConfig.ts. Bring them back by
@@ -391,25 +391,27 @@ export default function Navbar() {
                 </a>
               </div>
 
-              {/* Social */}
-              <div className="mb-5">
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-[14px] text-white/50 transition-colors hover:text-white"
-                >
-                  Instagram: @qualityperformance
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 block text-[14px] text-white/50 transition-colors hover:text-white"
-                >
-                  LinkedIn: @qualityperformance
-                </a>
-              </div>
+              {/* Social, hidden until the accounts are live (features.socialLinks) */}
+              {features.socialLinks && (
+                <div className="mb-5">
+                  <a
+                    href={social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-[14px] text-white/50 transition-colors hover:text-white"
+                  >
+                    Instagram: {social.handle}
+                  </a>
+                  <a
+                    href={social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block text-[14px] text-white/50 transition-colors hover:text-white"
+                  >
+                    LinkedIn: {social.handle}
+                  </a>
+                </div>
+              )}
 
               {/* Dealer Portal */}
               <div className="mb-5">

@@ -35,7 +35,24 @@ export const features = {
    * unlinked from nav, footer and sitemap. Flip to true to bring it back.
    */
   aboutPage: false,
+  /**
+   * Social profile links. Hidden until the accounts are live; the markup
+   * stays in place, so turning this on is the only step needed once the
+   * handles exist. Set the real URLs in `social` below at the same time.
+   */
+  socialLinks: false,
 } as const;
+
+/**
+ * Social profiles, surfaced only when `features.socialLinks` is true. The
+ * current values point at the platform homepages rather than real profiles,
+ * so they must be corrected before the flag is flipped.
+ */
+export const social = {
+  instagram: "https://instagram.com",
+  linkedin: "https://linkedin.com",
+  handle: "@qualityperformance",
+};
 
 /**
  * Lifetime installation count shown on the site.
