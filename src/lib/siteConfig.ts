@@ -30,6 +30,11 @@ export const features = {
   gallery: !dealerOnlyMode,
   /** Platform / technology dashboard detail (save for in-person / deck). */
   platformShowcase: !dealerOnlyMode,
+  /**
+   * About page. Temporarily hidden: the route still renders, it is just
+   * unlinked from nav, footer and sitemap. Flip to true to bring it back.
+   */
+  aboutPage: false,
 } as const;
 
 /**

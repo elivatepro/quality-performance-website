@@ -723,8 +723,8 @@ export default function Technology() {
             </div>
             <p className="mt-6 text-sm text-white/40">
               Have a quick question? Reach us at{" "}
-              <a href="mailto:support@qualityinstallsco.com" className="text-blue hover:underline">
-                support@qualityinstallsco.com
+              <a href="mailto:support@qualityperformance.io" className="text-blue hover:underline">
+                support@qualityperformance.io
               </a>
             </p>
           </AnimatedSection>

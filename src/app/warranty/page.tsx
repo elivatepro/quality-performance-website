@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/warranty" },
 };
 
-const SUPPORT_EMAIL = "support@qualityinstallsco.com";
+const SUPPORT_EMAIL = "support@qualityperformance.io";
 
 /** Section heading shared across the document. */
 function H2({ children }: { children: React.ReactNode }) {
@@ -53,23 +53,26 @@ export default function WarrantyPage() {
               height={36}
               className="h-8 w-8 shrink-0"
             />
-            <span className="hidden truncate text-[15px] font-bold tracking-tight text-white min-[380px]:inline sm:text-lg">
-              QUALITY<span className="text-blue">PERFORMANCE</span>
+            {/* "PERFORMANCE" is the first thing to go on narrow screens: a
+                truncated wordmark reads worse than a short one. */}
+            <span className="truncate text-[15px] font-bold tracking-tight text-white sm:text-lg">
+              QUALITY<span className="hidden text-blue min-[430px]:inline">PERFORMANCE</span>
             </span>
           </Link>
+          {/* One action on phones so the wordmark is never crowded out. */}
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <Link
               href="/protected#claim"
-              className="whitespace-nowrap rounded-[6px] border border-white/20 px-3 py-2 text-[13px] font-semibold text-white/85 transition-colors duration-200 hover:border-white/45 hover:text-white sm:px-5"
+              className="hidden whitespace-nowrap rounded-[6px] border border-white/20 px-4 py-2 text-[13px] font-semibold text-white/85 transition-colors duration-200 hover:border-white/45 hover:text-white sm:inline-flex"
             >
               File a claim
             </Link>
-            <a
-              href={`mailto:${SUPPORT_EMAIL}`}
-              className="whitespace-nowrap rounded-[6px] bg-blue px-3 py-2 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-blue-hover sm:px-5"
+            <Link
+              href="/protected#claim"
+              className="whitespace-nowrap rounded-[6px] bg-blue px-4 py-2 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-blue-hover sm:px-5"
             >
-              Contact us
-            </a>
+              Get in touch
+            </Link>
           </div>
         </div>
       </header>

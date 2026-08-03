@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 const contactCards = [
   {
     label: "Email",
-    value: "support@qualityinstallsco.com",
-    href: "mailto:support@qualityinstallsco.com",
+    value: "support@qualityperformance.io",
+    href: "mailto:support@qualityperformance.io",
     meta: "Best for technical issues, billing questions, and account access.",
   },
   {
@@ -35,8 +35,8 @@ const faqs = [
         The Quality Performance app requires an active dealership account. If your credentials
         aren&apos;t working, confirm you&apos;re using the email tied to your dealership profile.
         If you&apos;re still locked out, email{" "}
-        <a href="mailto:support@qualityinstallsco.com" className="text-blue transition-colors hover:text-blue-hover">
-          support@qualityinstallsco.com
+        <a href="mailto:support@qualityperformance.io" className="text-blue transition-colors hover:text-blue-hover">
+          support@qualityperformance.io
         </a>{" "}
         and we&apos;ll reset your access.
       </>
@@ -65,8 +65,8 @@ const faqs = [
     answer: (
       <>
         Email{" "}
-        <a href="mailto:support@qualityinstallsco.com" className="text-blue transition-colors hover:text-blue-hover">
-          support@qualityinstallsco.com
+        <a href="mailto:support@qualityperformance.io" className="text-blue transition-colors hover:text-blue-hover">
+          support@qualityperformance.io
         </a>{" "}
         with the install ID, expected amount, and the amount shown in the app. Our billing team
         reviews and responds within one business day.
@@ -101,8 +101,8 @@ const faqs = [
     answer: (
       <>
         Email{" "}
-        <a href="mailto:support@qualityinstallsco.com" className="text-blue transition-colors hover:text-blue-hover">
-          support@qualityinstallsco.com
+        <a href="mailto:support@qualityperformance.io" className="text-blue transition-colors hover:text-blue-hover">
+          support@qualityperformance.io
         </a>{" "}
         with a short description, the steps to reproduce, and a screenshot if possible. Feature
         requests are reviewed by our product team monthly.

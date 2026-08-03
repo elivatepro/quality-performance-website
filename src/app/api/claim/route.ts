@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 /** Claims route to the address named in the Elite Guard warranty. */
-const SUPPORT_EMAIL = "support@qualityinstallsco.com";
+const SUPPORT_EMAIL = "support@qualityperformance.io";
 /** Warrantor address of record. */
 const WARRANTOR_ADDRESS = "175 Capital Blvd, Rocky Hill CT 06067";
 

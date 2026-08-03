@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { products } from "@/data/products";
+import { features } from "@/lib/siteConfig";
 
 // Dealer-focused navigation. Consumer paths (Protect Your Car, Gallery) are
 // hidden per the Josh sync, see src/lib/siteConfig.ts. Bring them back by
@@ -12,9 +13,10 @@ import { products } from "@/data/products";
 const navLinks = [
   { href: "/services", label: "How We Protect", hasDropdown: true },
   { href: "/partner-with-us", label: "Partner With Us" },
+  // About is behind features.aboutPage; filtered below.
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
-];
+].filter((l) => l.href !== "/about" || features.aboutPage);
 
 const mobileLinks = [
   { href: "/services", label: "How We Protect", hasSubmenu: true },
@@ -22,7 +24,7 @@ const mobileLinks = [
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact Us" },
-];
+].filter((l) => l.href !== "/about" || features.aboutPage);
 
 export default function Navbar() {
   const pathname = usePathname();

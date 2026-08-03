@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { contact } from "@/lib/siteConfig";
+import { contact, features } from "@/lib/siteConfig";
 
 /**
  * Simplified dealer-focused footer (Josh sync).
@@ -58,7 +58,7 @@ export default function Footer() {
               {[
                 { href: "/services", label: "How We Protect" },
                 { href: "/partner-with-us", label: "Partner With Us" },
-                { href: "/about", label: "About" },
+                ...(features.aboutPage ? [{ href: "/about", label: "About" }] : []),
                 { href: "/faq", label: "FAQ" },
                 { href: "/contact", label: "Contact Us" },
               ].map((link) => (

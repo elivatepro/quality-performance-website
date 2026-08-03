@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import { formatPhoneNumber } from "@/lib/phone";
 
 /** The support address named in the Elite Guard warranty. */
-const SUPPORT_EMAIL = "support@qualityinstallsco.com";
+const SUPPORT_EMAIL = "support@qualityperformance.io";
 
 /**
  * Owner contact form for the /protected page.
