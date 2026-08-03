@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import PrintButton from "@/components/protected/PrintButton";
 
 /**
  * Elite Guard Limited Product Warranty, reproduced in full.
@@ -80,6 +81,12 @@ export default function WarrantyPage() {
       <article className="bg-surface py-16 md:py-24">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12">
           <div className="max-w-[800px]">
+            {/* Print-only identification: the page header is hidden on paper,
+                so the document has to name itself. */}
+            <p className="hidden text-[13px] print:block">
+              Quality Performance LLC &middot; qualityperformance.io/warranty
+            </p>
+
             <p className="type-label text-blue-bright">Elite Guard</p>
             <h1 className="type-display mt-4 text-[34px] text-text-primary md:text-[46px]">
               Exclusive Door Edge Protection Limited Product Warranty
@@ -90,6 +97,10 @@ export default function WarrantyPage() {
               Elite Guard film. The warranty is subject to all terms and
               conditions as set forth in this document.
             </p>
+
+            <div className="mt-8 print:hidden">
+              <PrintButton />
+            </div>
 
             <div className="mt-8 rounded-2xl border border-blue/25 bg-blue/[0.07] p-6">
               <p className="text-[15px] font-semibold leading-relaxed text-text-primary">

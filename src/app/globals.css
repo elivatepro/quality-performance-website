@@ -275,3 +275,112 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .tabular-nums {
   font-variant-numeric: tabular-nums;
 }
+
+/* ─── Print ───
+   Aimed at the warranty, which owners are told to keep with their purchase
+   order. The dark theme would burn ink and read poorly on paper, so printing
+   inverts to black on white and drops navigation, buttons, and decoration.
+   Everything here is scoped to @media print, so the screen design is
+   untouched. */
+@media print {
+  @page {
+    margin: 16mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  /* Force readable text regardless of the token a section used on screen. */
+  main,
+  article,
+  section,
+  header,
+  footer,
+  div,
+  p,
+  li,
+  dd,
+  dt,
+  span,
+  h1,
+  h2,
+  h3,
+  h4 {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Callout panels keep their emphasis as a rule rather than a fill. */
+  [class*="rounded-2xl"],
+  [class*="rounded-xl"] {
+    border: 1px solid #999 !important;
+    border-radius: 0 !important;
+  }
+
+  /* Hairlines between definition rows survive as light rules. */
+  [class*="divide-y"] > * + *,
+  [class*="border-y"],
+  [class*="border-t"],
+  [class*="border-b"] {
+    border-color: #ccc !important;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+
+  /* Spell out link targets, which are otherwise lost on paper. */
+  a[href^="mailto:"]::after {
+    content: " (" attr(href) ")";
+    text-decoration: none;
+  }
+
+  /* Site chrome and controls carry no meaning in a printed document.
+     The Zoho SalesIQ widget injects itself outside our markup, so it is
+     targeted by id as well. */
+  header,
+  footer,
+  nav,
+  button,
+  video,
+  .print\:hidden,
+  #zsiq_float,
+  .zsiq_floatmain,
+  [id^="zsiq"] {
+    display: none !important;
+  }
+
+  /* Keep headings with the text they introduce. */
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Avoid splitting a definition or a coverage tier across pages. */
+  dl > div,
+  li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Grids collapse to a single column so nothing is squeezed. */
+  [class*="grid-cols"] {
+    display: block !important;
+  }
+
+  [class*="grid-cols"] > * {
+    margin-bottom: 8pt;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+}
