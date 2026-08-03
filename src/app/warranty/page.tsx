@@ -54,23 +54,23 @@ export default function WarrantyPage() {
               height={36}
               className="h-8 w-8 shrink-0"
             />
-            {/* All or nothing: below 430px the mark stands alone rather than
-                showing a half wordmark. */}
-            <span className="hidden whitespace-nowrap text-[15px] font-bold tracking-tight text-white min-[430px]:inline sm:text-lg">
+            {/* All or nothing: with two buttons alongside, the wordmark only
+                fits from sm up. */}
+            <span className="hidden whitespace-nowrap text-[15px] font-bold tracking-tight text-white sm:inline sm:text-lg">
               QUALITY<span className="text-blue">PERFORMANCE</span>
             </span>
           </Link>
-          {/* One action on phones so the wordmark is never crowded out. */}
+          {/* Both actions at every width, matching the owner page header. */}
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <Link
               href="/protected#claim"
-              className="hidden whitespace-nowrap rounded-[6px] border border-white/20 px-4 py-2 text-[13px] font-semibold text-white/85 transition-colors duration-200 hover:border-white/45 hover:text-white sm:inline-flex"
+              className="whitespace-nowrap rounded-[6px] border border-white/20 px-3 py-2 text-[12px] font-semibold text-white/85 transition-colors duration-200 hover:border-white/45 hover:text-white min-[400px]:px-4 min-[400px]:text-[13px]"
             >
               File a claim
             </Link>
             <Link
               href="/protected#claim"
-              className="whitespace-nowrap rounded-[6px] bg-blue px-4 py-2 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-blue-hover sm:px-5"
+              className="whitespace-nowrap rounded-[6px] bg-blue px-3 py-2 text-[12px] font-semibold text-white transition-colors duration-200 hover:bg-blue-hover min-[400px]:px-4 min-[400px]:text-[13px] sm:px-5"
             >
               Get in touch
             </Link>
